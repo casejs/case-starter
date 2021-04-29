@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "createResource": {
+      "description": "Create Abacus resource (front)",
+      "factory": "./schematics/index#createResource",
+      "schema": "./create-angular-resource-schema.json"
+    }
+  }
+}
