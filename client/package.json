@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "case:resource": "schematics ./schematics/src/collection.json:createResource    --debug=false"
+    "case:resource": "schematics abacus-schematics/collection.json:createResourceClient"
   },
   "private": true,
   "dependencies": {
