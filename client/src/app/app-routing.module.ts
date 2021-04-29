@@ -1,7 +1,7 @@
 import { Route } from '@angular/compiler/src/core'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { abcRoutes, AuthGuard } from 'abacus-angular-library'
+import { abcRoutes, AuthGuard } from '@case-app/angular-library'
 import { HomeComponent } from './pages/home/home.component'
 
 const routes: Routes = [

@@ -13,7 +13,7 @@ import {
 import { Notification } from './notification.entity'
 import { Role } from './role.entity'
 
-import { AbacusUser } from '../../server/node_modules/abacus-nest-library'
+import { AbacusUser } from '../../server/node_modules/@case-app/nest-library'
 
 @Entity({ name: 'users' })
 @Unique(['email'])

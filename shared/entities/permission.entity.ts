@@ -9,7 +9,7 @@ import {
 } from '../../server/node_modules/typeorm'
 
 import { Role } from './role.entity'
-import { AbacusPermission } from '../../server/node_modules/abacus-nest-library'
+import { AbacusPermission } from '../../server/node_modules/@case-app/nest-library'
 
 @Entity({ name: 'permissions' })
 export class Permission implements AbacusPermission {

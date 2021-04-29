@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
-import { AbacusModule } from 'abacus-angular-library'
+import { AbacusModule } from '@case-app/angular-library'
 import { environment } from '../environments/environment'
 
 import { AppRoutingModule } from './app-routing.module'

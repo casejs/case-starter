@@ -7,7 +7,7 @@ This README would normally document whatever steps are necessary to get your app
 Install schematics cli and abacus-schematics globally :
 ```bash
 sudo npm i @angular-devkit/schematics-cli
-sudo npm i -g abacus-schematics@latest
+sudo npm i -g @case-app/schematics
 ```
 
 ```bash

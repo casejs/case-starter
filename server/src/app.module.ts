@@ -3,7 +3,10 @@ import { MiddlewareConsumer, Module } from '@nestjs/common'
 import { APP_GUARD } from '@nestjs/core'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { BugsnagModule } from '@nkaurelien/nest-bugsnag'
-import { AbacusNestLibraryModule, PermissionGuard } from 'abacus-nest-library'
+import {
+  AbacusNestLibraryModule,
+  PermissionGuard
+} from '@case-app/nest-library'
 import { ScheduleModule } from 'nest-schedule'
 import { Connection } from 'typeorm'
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'

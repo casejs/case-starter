@@ -9,7 +9,7 @@ import {
   User,
   VersionService,
   ViewportService,
-} from 'abacus-angular-library'
+} from '@case-app/angular-library'
 import { Subscription } from 'rxjs'
 import { menuItems } from './menu-items'
 

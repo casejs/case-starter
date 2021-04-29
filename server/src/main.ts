@@ -7,7 +7,7 @@ import * as express from 'express'
 import { useContainer } from 'typeorm'
 
 import { AppModule } from './app.module'
-import { BugsnagLoggerService } from 'abacus-nest-library'
+import { BugsnagLoggerService } from '@case-app/nest-library'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {

@@ -1,4 +1,4 @@
-import { MenuItem } from 'abacus-angular-library'
+import { MenuItem } from '@case-app/angular-library'
 
 export const menuItems: MenuItem[] = [
   {

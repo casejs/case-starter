@@ -19,7 +19,7 @@ import {
   AuthGuard,
   Paginator,
   SelectOption
-} from 'abacus-nest-library'
+} from '@case-app/nest-library'
 
 import { CreateUserDto } from './dtos/create-user.dto'
 import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto'

@@ -5,7 +5,7 @@ import {
   Validate,
   IsOptional
 } from 'class-validator'
-import { IsUserAlreadyExist } from 'abacus-nest-library'
+import { IsUserAlreadyExist } from '@case-app/nest-library'
 
 export class CreateUserDto {
   @IsNotEmpty()

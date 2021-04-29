@@ -12,7 +12,7 @@ import {
   UpdateResult
 } from 'typeorm'
 
-import { ExcelService, PaginationService } from 'abacus-nest-library'
+import { ExcelService, PaginationService } from '@case-app/nest-library'
 import { Role } from '../../../../shared/entities/role.entity'
 import { CreateUserDto } from './dtos/create-user.dto'
 import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto'

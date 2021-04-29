@@ -11,7 +11,7 @@ import {
 import { Permission } from './permission.entity'
 import { User } from './user.entity'
 
-import { AbacusRole } from '../../server/node_modules/abacus-nest-library'
+import { AbacusRole } from '../../server/node_modules/@case-app/nest-library'
 
 @Entity({ name: 'roles' })
 export class Role implements AbacusRole {
