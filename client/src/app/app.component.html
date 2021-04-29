@@ -1,0 +1,45 @@
+<ng-container *ngIf="!isLogin">
+  <abc-top-menu
+    [ngClass]="{ 'is-collapsed': isCollapsed }"
+    *ngIf="!isTouchResolution"
+  ></abc-top-menu>
+  <abc-touch-menu *ngIf="isTouchResolution"></abc-touch-menu>
+  <div class="collapse-button" *ngIf="!isTouchResolution">
+    <a
+      role="button"
+      class="navbar-burger burger ghost"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+      (click)="isCollapsed = !isCollapsed"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</ng-container>
+
+<abc-flash-message></abc-flash-message>
+
+<!--  Main Content -->
+<div class="wrapper" [ngClass]="{ 'is-collapsed': isCollapsed }">
+  <div class="columns">
+    <aside
+      #menuList
+      class="column is-3-tablet is-2-widescreen is-12percent-fullhd aside menu p-x-0"
+      *ngIf="!isLogin && !isTouchResolution"
+    >
+      <abc-side-menu
+        [path]="path"
+        [isCollapsed]="isCollapsed"
+        [menuItems]="menuItems"
+      ></abc-side-menu>
+    </aside>
+    <div class="column main">
+      <article>
+        <router-outlet></router-outlet>
+      </article>
+    </div>
+  </div>
+</div>
