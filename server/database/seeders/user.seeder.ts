@@ -35,9 +35,12 @@ export class UserSeeder {
       name: 'teamMember'
     })
 
+    const firstName: string = faker.name.firstName()
+    const lastName: string = faker.name.lastName()
+
     const user: User = this.entityManager.create(User, {
-      name: faker.name.firstName() + ' ' + faker.name.lastName(),
-      email: faker.internet.email(),
+      name: `${firstName} ${lastName}`,
+      email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@case.app`,
       password: sha3('azerty').toString(),
       image:
         'users/' +

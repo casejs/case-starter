@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
     "@auth0/angular-jwt": "^5.0.2",
-    "@case-app/angular-library": "^0.0.1",
+    "@case-app/angular-library": "^0.0.3",
     "@ckeditor/ckeditor5-angular": "^2.0.1",
     "@ckeditor/ckeditor5-build-classic": "^26.0.0",
     "angular-calendar": "^0.28.22",
