@@ -11,7 +11,7 @@
     "start:server": "cd server && npm run start:dev",
     "seed": "cd server && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "case:resource": "cd client && npm run case:resource && cd ../server && npm run case:resource"
+    "case:resource": "cd client && npm run case:resourceFront && cd ../server && npm run case:resourceBack"
   },
   "repository": {
     "type": "git",

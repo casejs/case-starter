@@ -28,8 +28,5 @@ export const allPermissions: string[] = [].concat(
   }),
   // * Extra permissions.
   'canLogin',
-  'validateProjects',
-  'validateInvoices',
-  'browseAnalytics',
-  'browseBonuses'
+  'browseAnalytics'
 )

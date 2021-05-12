@@ -3,7 +3,10 @@
     [ngClass]="{ 'is-collapsed': isCollapsed }"
     *ngIf="!isTouchResolution"
   ></abc-top-menu>
-  <abc-touch-menu *ngIf="isTouchResolution"></abc-touch-menu>
+  <abc-touch-menu
+    *ngIf="isTouchResolution"
+    [menuItems]="menuItems"
+  ></abc-touch-menu>
   <div class="collapse-button" *ngIf="!isTouchResolution">
     <a
       role="button"
@@ -27,7 +30,13 @@
   <div class="columns">
     <aside
       #menuList
-      class="column is-3-tablet is-2-widescreen is-12percent-fullhd aside menu p-x-0"
+      class="
+        column
+        is-3-tablet is-2-widescreen is-12percent-fullhd
+        aside
+        menu
+        p-x-0
+      "
       *ngIf="!isLogin && !isTouchResolution"
     >
       <abc-side-menu

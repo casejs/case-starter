@@ -19,7 +19,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "webpack": "webpack --config webpack.config.js",
     "seed": "ts-node database/seeders/seeder.ts && cp -R assets/dummy/* public/storage/",
-    "case:resource": "schematics @case-app/schematics/collection.json:createResourceServer && npm run seed"
+    "case:resourceBack": "schematics @case-app/schematics/collection.json:createResourceServer && npm run seed"
   },
   "dependencies": {
     "@bugsnag/js": "^7.9.0",
