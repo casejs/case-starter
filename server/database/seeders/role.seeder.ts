@@ -40,7 +40,22 @@ export class RoleSeeder {
       displayName: 'Collaborateur'
     })
 
-    role.permissions = await this.entityManager.find(Permission)
+    const allPermissions: Permission[] = await this.entityManager.find(
+      Permission
+    )
+
+    // We give to teamMember a defined list of permissions.
+    const teamMemberPermissions = [
+      'browseUsers',
+      'browseOwnUsers',
+      'readUsers',
+      'readOwnUsers',
+      'canLogin'
+    ]
+
+    role.permissions = allPermissions.filter((p: Permission) =>
+      teamMemberPermissions.includes(p.name)
+    )
 
     return role
   }

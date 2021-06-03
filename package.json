@@ -6,7 +6,7 @@
   "scripts": {
     "install": "npm run install:client && npm run install:server",
     "install:client": "cd client && npm i",
-    "install:server": "cd server && npm i --force && cp .env.example .env",
+    "install:server": "cd server && npm i && cp .env.example .env",
     "start:client": "cd client && ng serve",
     "start:server": "cd server && npm run start:dev",
     "seed": "cd server && npm run seed",

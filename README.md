@@ -11,6 +11,8 @@ sudo npm i -g @angular-devkit/schematics-cli
 sudo npm i -g @case-app/schematics
 ```
 
+*Note for development :* Always make sure that you have the latest version of those 2 dependencies with `@latest` as the versions evolve very fast. 
+
 ```
 npm run install
 ```
