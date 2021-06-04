@@ -19,17 +19,17 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "webpack": "webpack --config webpack.config.js",
     "seed": "ts-node database/seeders/seeder.ts && cp -R assets/dummy/* public/storage/",
-    "case:resource": "schematics @case-app/schematics/collection.json:createResourceServer && npm run seed"
+    "case:resourceBack": "schematics @case-app/schematics/collection.json:createResourceServer && npm run seed"
   },
   "dependencies": {
     "@bugsnag/js": "^7.9.0",
     "@bugsnag/plugin-express": "^7.9.0",
+    "@case-app/nest-library": "^0.0.1",
     "@nestjs/common": "^6.5.3",
     "@nestjs/core": "^6.5.3",
     "@nestjs/platform-express": "^6.5.3",
     "@nestjs/typeorm": "^6.1.3",
     "@nkaurelien/nest-bugsnag": "^6.1.0",
-    "@case-app/nest-library": "^0.0.19",
     "bluebird": "^3.7.2",
     "class-transformer": "^0.2.0",
     "class-validator": "^0.9.1",

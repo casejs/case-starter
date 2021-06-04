@@ -5,12 +5,15 @@ This README would normally document whatever steps are necessary to get your app
 ### Install
 
 Install schematics cli and abacus-schematics globally :
+
 ```bash
-sudo npm i @angular-devkit/schematics-cli
+sudo npm i -g @angular-devkit/schematics-cli
 sudo npm i -g @case-app/schematics
 ```
 
-```bash
+*Note for development :* Always make sure that you have the latest version of those 2 dependencies with `@latest` as the versions evolve very fast. 
+
+```
 npm run install
 ```
 
@@ -23,4 +26,5 @@ npm run install
 - Important for DEMO : `npm run seed` for dummy data
 
 ## Create a resource
-- `cd client` and `npm run case:resource` 
+
+- `npm run case:resource`

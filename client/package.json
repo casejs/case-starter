@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "case:resource": "schematics @case-app/schematics/collection.json:createResourceClient"
+    "case:resourceFront": "schematics @case-app/schematics/collection.json:createResourceClient"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
     "@auth0/angular-jwt": "^5.0.2",
-    "@case-app/angular-library": "^0.0.3",
+    "@case-app/angular-library": "^0.0.9",
     "@ckeditor/ckeditor5-angular": "^2.0.1",
     "@ckeditor/ckeditor5-build-classic": "^26.0.0",
     "angular-calendar": "^0.28.22",
@@ -44,6 +44,9 @@
     "@angular/compiler-cli": "~11.2.6",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "bulma": "^0.7.4",
+    "bulma-switch": "^2.0.0",
+    "bulma-tooltip": "^3.0.0",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
