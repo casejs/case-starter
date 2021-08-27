@@ -79,9 +79,9 @@ export class UserSeeder {
     })
 
     const user: User = this.entityManager.create(User, {
-      name: 'Admin Buddyweb',
-      email: 'admin@buddyweb.fr',
-      password: sha3('azerty').toString(),
+      name: 'Admin CASE',
+      email: 'admin@case.app',
+      password: sha3('case').toString(),
       image: 'users/admin',
       token: faker.random.alphaNumeric(20),
       isGhost: false,
