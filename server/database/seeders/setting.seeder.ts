@@ -15,6 +15,7 @@ export class SettingSeeder {
   }
 
   async seed(): Promise<Setting[]> {
+    console.log('\x1b[35m', '[] Seeding settings...')
     const saveSettingPromises: Promise<Setting>[] = Array.from(
       Array(this.count)
     ).map(() => {

@@ -1,8 +1,7 @@
 {
-  "name": "abacus-framework",
-  "version": "0.1.0",
-  "description": "ABC Framework McLAREN - PROTOTYPE",
-  "main": "index.js",
+  "name": "case",
+  "version": "0.1.1",
+  "description": "CASE Framework for custom web apps",
   "scripts": {
     "install": "npm run install:client && npm run install:server",
     "install:client": "cd client && npm i --force",
@@ -15,9 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/brunobuddy/abacus-framework.git"
+    "url": "git+https://github.com/case-app/case.git"
   },
-  "author": "Buddyweb",
+  "author": "CASE",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/brunobuddy/abacus-framework#readme"
+  "homepage": "https://case.app"
 }

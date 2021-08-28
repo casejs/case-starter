@@ -17,6 +17,8 @@ export class UserSeeder {
   }
 
   async seed(): Promise<User[]> {
+    console.log('\x1b[35m', '[] Seeding users...')
+
     const saveUserPromises: Promise<User>[] = Array.from(Array(this.count)).map(
       async (_item, index: number) => {
         return this.entityManager.save(
@@ -79,9 +81,9 @@ export class UserSeeder {
     })
 
     const user: User = this.entityManager.create(User, {
-      name: 'Admin Buddyweb',
-      email: 'admin@buddyweb.fr',
-      password: sha3('azerty').toString(),
+      name: 'Admin CASE',
+      email: 'admin@case.app',
+      password: sha3('case').toString(),
       image: 'users/admin',
       token: faker.random.alphaNumeric(20),
       isGhost: false,

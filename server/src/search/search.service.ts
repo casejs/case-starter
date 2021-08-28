@@ -1,14 +1,14 @@
-import { SearchResult } from '@case-app/nest-library';
-import { Injectable } from '@nestjs/common';
-import { Brackets, getConnection } from 'typeorm';
-import { User } from '../../../shared/entities/user.entity';
+import { SearchResult } from '@case-app/nest-library'
+import { Injectable } from '@nestjs/common'
+import { Brackets, getConnection } from 'typeorm'
+import { User } from '../../../shared/entities/user.entity'
 
 @Injectable()
 export class SearchService {
-     // Main search function : searches terms on several pre-defined fields of several resources.
+  // Main search function : searches terms on several pre-defined fields of several resources.
   async search({
     terms,
-    resources,
+    resources
   }: {
     terms: string
     resources: string[]
@@ -28,10 +28,9 @@ export class SearchService {
     return searchResults
   }
 
-
   // Get full SearchResult object based on resource Ids. Useful to retrieve object with label from an id in URL params
   async getSearchResultObjects({
-    userIds,
+    userIds
   }: {
     userIds?: string[]
   }): Promise<SearchResult[]> {
@@ -59,7 +58,6 @@ export class SearchService {
         ]
       }
     }
-
 
     return searchResults
   }
