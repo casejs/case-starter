@@ -25,7 +25,6 @@
     "@ckeditor/ckeditor5-angular": "^2.0.1",
     "@ckeditor/ckeditor5-build-classic": "^26.0.0",
     "angular-calendar": "^0.28.22",
-    "angular-google-place": "^0.0.3",
     "angular-mydatepicker": "^0.11.0",
     "chart.js": "^2.9.4",
     "date-fns": "^2.19.0",
