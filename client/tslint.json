@@ -51,6 +51,7 @@
         "named": "never"
       }
     },
+    "trailing-comma": false,
     "typedef": [true, "call-signature"],
     "typedef-whitespace": {
       "options": [

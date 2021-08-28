@@ -17,6 +17,8 @@ export class UserSeeder {
   }
 
   async seed(): Promise<User[]> {
+    console.log('\x1b[35m', '[] Seeding users...')
+
     const saveUserPromises: Promise<User>[] = Array.from(Array(this.count)).map(
       async (_item, index: number) => {
         return this.entityManager.save(

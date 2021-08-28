@@ -10,6 +10,8 @@ export class PermissionSeeder {
   }
 
   async seed(): Promise<Permission[]> {
+    console.log('\x1b[35m', '[] Seeding permissions...')
+
     return Promise.all(
       allPermissions.map((permissionName: string) => {
         const permission: Permission = this.entityManager.create(Permission, {

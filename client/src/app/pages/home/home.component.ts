@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { FlashMessageService } from '@case-app/angular-library'
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  constructor(private flashMessageService: FlashMessageService) {}
 
   ngOnInit(): void {
+    // Info message.
+    this.flashMessageService.info('Welcome to CASE.')
   }
-
 }
