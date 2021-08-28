@@ -11,6 +11,8 @@ export class RoleSeeder {
   }
 
   async seed(): Promise<Role[]> {
+    console.log('\x1b[35m', '[] Seeding roles...')
+
     const saveRolePromises: Promise<Role>[] = [
       this.entityManager.save(await this.getAdminRole()),
       this.entityManager.save(await this.getTeamMemberRole())

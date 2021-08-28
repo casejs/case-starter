@@ -11,7 +11,7 @@ sudo npm i -g @angular-devkit/schematics-cli
 sudo npm i -g @case-app/schematics
 ```
 
-*Note for development :* Always make sure that you have the latest version of those 2 dependencies with `@latest` as the versions evolve very fast. 
+_Note for development :_ Always make sure that you have the latest version of those 2 dependencies with `@latest` as the versions evolve very fast.
 
 ```
 npm run install
@@ -22,9 +22,13 @@ npm run install
 
 ### Serve
 
-- Open 2 terminal windows and run `npm run start:client` and `npm run start:server` simultaneously
-- Important for DEMO : `npm run seed` for dummy data
+- Open 2 terminal windows and run `npm run start:client` and `npm run start:server` simultaneously and open your browser on http://localhost:4200
+- Important for DEMO : `npm run seed` for dummy data. You can then connect with the user **admin@case.app** with the password **case**
 
 ## Create a resource
 
-- `npm run case:resource`
+```
+npm run case:resource
+```
+
+Check the full documentation at https://case-app.github.io/docs/#/.

@@ -1,3 +1,7 @@
+import { CatSeeder } from './cat.seeder'
+import { SnakeSeeder } from './snake.seeder'
+import { BoxSeeder } from './box.seeder'
+import { ItemSeeder } from './item.seeder'
 import { Connection, createConnection } from 'typeorm'
 
 import 'dotenv/config'
@@ -10,10 +14,12 @@ import { UserSeeder } from './user.seeder'
 seed()
 
 async function seed() {
+  // * Resource counts (keep comment for schematics).
+
   const settingCount = 10
   const userCount = 40
 
-  // Create connection
+  // Create connection.
   const connection: Connection = await createConnection(appConnectionOptions)
 
   const settingSeeder: SettingSeeder = new SettingSeeder(
@@ -40,7 +46,7 @@ async function seed() {
 
     return
   })
-
+  console.log('\x1b[35m', '[] Remove all existing data...')
   await Promise.all(deleteTablePromises)
 
   await permissionSeeder.seed()
