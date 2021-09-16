@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
-import { AbacusModule } from '@case-app/angular-library'
+import { CaseModule } from '@case-app/angular-library'
 import { environment } from '../environments/environment'
 
 import { AppRoutingModule } from './app-routing.module'
@@ -18,16 +18,16 @@ import { HomeComponent } from './pages/home/home.component'
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    AbacusModule.forRoot({
+    CaseModule.forRoot({
       baseUrl: environment.baseUrl,
       apiBaseUrl: environment.apiBaseUrl,
       storagePath: environment.storagePath,
       appName: environment.appName,
       tokenName: environment.tokenName,
       tokenAllowedDomains: environment.tokenAllowedDomains,
-      production: environment.production,
-    }),
+      production: environment.production
+    })
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

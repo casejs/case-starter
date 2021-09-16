@@ -19,7 +19,7 @@ import {
   AuthGuard,
   Paginator,
   SelectOption,
-  AbacusUser
+  CaseUser
 } from '@case-app/nest-library'
 
 import { CreateUserDto } from './dtos/create-user.dto'
@@ -81,7 +81,7 @@ export class UserController {
 
   @Get('/myself')
   async showMyself(@Req() req: any): Promise<User> {
-    const currentUser: AbacusUser = await this.authService.getUserFromToken(req)
+    const currentUser: CaseUser = await this.authService.getUserFromToken(req)
     return await this.userService.show(currentUser.id)
     return await this.userService.show(1)
   }
