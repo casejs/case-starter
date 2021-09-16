@@ -9,10 +9,10 @@ export const environment = {
   apiBaseUrl: 'http://localhost:3000',
   storagePath: 'http://localhost:3000/storage',
   tokenName: 'McLarenToken',
-  tokenAllowedDomains: ['localhost:3000'],
-  // TODO: integrate bugsnag in Abacus
+  tokenAllowedDomains: ['localhost:3000']
+  // TODO: integrate bugsnag in CASE
   // bugsnagApiKey: 'add API Key here'
-};
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,14 +1,14 @@
 import { Component, HostListener, OnInit } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import {
-  abcConstants,
+  caseConstants,
   AuthService,
   EventService,
   MenuItem,
   MetaService,
   User,
   VersionService,
-  ViewportService,
+  ViewportService
 } from '@case-app/angular-library'
 import { Subscription } from 'rxjs'
 import { menuItems } from './menu-items'
@@ -16,7 +16,7 @@ import { menuItems } from './menu-items'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   isLogin = true
@@ -90,7 +90,7 @@ export class AppComponent implements OnInit {
 
   setIsTouchResolution(): void {
     this.viewportService.isTouchResolution.next(
-      window.innerWidth < abcConstants.TOUCH_BREAKPOINT
+      window.innerWidth < caseConstants.TOUCH_BREAKPOINT
     )
   }
 

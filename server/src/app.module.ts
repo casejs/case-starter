@@ -1,5 +1,5 @@
 import bugsnagPluginExpress from '@bugsnag/plugin-express'
-import { AbacusNestLibraryModule, PermissionGuard } from '@case-app/nest-library'
+import { CaseNestLibraryModule, PermissionGuard } from '@case-app/nest-library'
 import { MiddlewareConsumer, Module } from '@nestjs/common'
 import { APP_GUARD } from '@nestjs/core'
 import { TypeOrmModule } from '@nestjs/typeorm'
@@ -16,10 +16,9 @@ import { UserModule } from './resources/user/user.module'
 import { SearchModule } from './search/search.module'
 import { TaskService } from './services/task/task.service'
 
-
 @Module({
-  imports: [ 
-    AbacusNestLibraryModule.forRoot({
+  imports: [
+    CaseNestLibraryModule.forRoot({
       userEntity: User,
       notificationEntity: Notification,
       permissionEntity: Permission,

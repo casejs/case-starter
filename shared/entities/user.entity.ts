@@ -7,17 +7,17 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
   Unique,
-  UpdateDateColumn,
+  UpdateDateColumn
 } from '../../server/node_modules/typeorm'
 
 import { Notification } from './notification.entity'
 import { Role } from './role.entity'
 
-import { AbacusUser } from '../../server/node_modules/@case-app/nest-library'
+import { CaseUser } from '../../server/node_modules/@case-app/nest-library'
 
 @Entity({ name: 'users' })
 @Unique(['email'])
-export class User implements AbacusUser {
+export class User implements CaseUser {
   @PrimaryGeneratedColumn()
   id: number
 
@@ -69,8 +69,8 @@ export class User implements AbacusUser {
     this.imageObjects = [
       {
         label: this.name,
-        image: this.image,
-      },
+        image: this.image
+      }
     ]
   }
 }

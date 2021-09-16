@@ -5,14 +5,14 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   ManyToMany,
-  JoinTable,
+  JoinTable
 } from '../../server/node_modules/typeorm'
 
 import { Role } from './role.entity'
-import { AbacusPermission } from '../../server/node_modules/@case-app/nest-library'
+import { CasePermission } from '../../server/node_modules/@case-app/nest-library'
 
 @Entity({ name: 'permissions' })
-export class Permission implements AbacusPermission {
+export class Permission implements CasePermission {
   @PrimaryGeneratedColumn()
   id: number
 
