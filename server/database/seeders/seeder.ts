@@ -1,7 +1,3 @@
-import { CatSeeder } from './cat.seeder'
-import { SnakeSeeder } from './snake.seeder'
-import { BoxSeeder } from './box.seeder'
-import { ItemSeeder } from './item.seeder'
 import { Connection, createConnection } from 'typeorm'
 
 import 'dotenv/config'

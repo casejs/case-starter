@@ -5,16 +5,16 @@ import {
   ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
+  UpdateDateColumn
 } from '../../server/node_modules/typeorm'
 
 import { Permission } from './permission.entity'
 import { User } from './user.entity'
 
-import { AbacusRole } from '../../server/node_modules/@case-app/nest-library'
+import { CaseRole } from '../../server/node_modules/@case-app/nest-library'
 
 @Entity({ name: 'roles' })
-export class Role implements AbacusRole {
+export class Role implements CaseRole {
   @PrimaryGeneratedColumn()
   id: number
 
