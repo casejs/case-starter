@@ -22,11 +22,18 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
+            "buildOptimizer": false,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": [],
-            "preserveSymlinks": true
+            "preserveSymlinks": true,
+            "sourceMap": {
+              "vendor": true,
+              "scripts": true,
+              "styles": true,
+              "hidden": true
+            }
           },
           "configurations": {
             "production": {

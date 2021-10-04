@@ -5,7 +5,6 @@ import {
   AuthService,
   EventService,
   MenuItem,
-  MetaService,
   User,
   VersionService,
   ViewportService
@@ -30,7 +29,6 @@ export class AppComponent implements OnInit {
   private subscription = new Subscription()
 
   constructor(
-    private metaService: MetaService,
     private router: Router,
     private eventService: EventService,
     private viewportService: ViewportService,
