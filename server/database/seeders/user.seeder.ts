@@ -42,11 +42,16 @@ export class UserSeeder {
 
     const user: User = this.entityManager.create(User, {
       name: `${firstName} ${lastName}`,
-      email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@case.app`,
+      email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}${faker.datatype.number(
+        {
+          min: 1,
+          max: 999
+        }
+      )}@case.app`,
       password: sha3('azerty').toString(),
       image:
         'users/' +
-        faker.random.number({
+        faker.datatype.number({
           min: 1,
           max: 10
         }),
@@ -63,7 +68,7 @@ export class UserSeeder {
         this.entityManager.create(Notification, {
           description: `Bienvenue dans l'application`,
           date: faker.date.recent(
-            faker.random.number({
+            faker.datatype.number({
               min: 1,
               max: 500
             })
@@ -97,7 +102,7 @@ export class UserSeeder {
       await this.entityManager.save(
         this.entityManager.create(Notification, {
           description: `Bienvenue dans l'application, vous êtes admin`,
-          date: faker.date.recent(faker.random.number({ min: 1, max: 500 }))
+          date: faker.date.recent(faker.datatype.number({ min: 1, max: 500 }))
         })
       )
     ]
