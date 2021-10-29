@@ -1,6 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This README would document whatever steps are necessary to get your application up and running.
+
+If you need more documentation about the project, please check our full documentation at https://case-app.github.io/docs/#/.
+
+CASE is an Open-Source Project, feel free to make as many pull-request as you want to contribute it!
 
 ### Install
 
@@ -24,13 +28,22 @@ npm run install
 
 ### Serve
 
-- Open 2 terminal windows and run `npm run start:client` and `npm run start:server` simultaneously and open your browser on `http://localhost:4200`
-- Important for DEMO : `npm run seed` for dummy data. You can then connect with the user **admin@case.app** with the password **case**
+Open 3 terminal windows and run simultaneously :
 
-## Create a resource
+- `npm run seed` for create data.
+- `npm run start:client`
+- `npm run start:server`
+
+Now you can open your browser on `http://localhost:4200`
+
+IMPORTANT FOR DEMO : You can connect with the user **admin@case.app** with the password **case**
+
+## Resource
+
+CASE allow you to easily build custom web-apps with resources and relations between them.
+
+Create resources with this command and follow the instructions in your terminal:
 
 ```
 npm run case:resource
 ```
-
-Check the full documentation at https://case-app.github.io/docs/#/.
