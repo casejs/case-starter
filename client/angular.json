@@ -36,6 +36,11 @@
             }
           },
           "configurations": {
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -63,7 +68,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -71,6 +77,9 @@
             "browserTarget": "client:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "client:build:development"
+            },
             "production": {
               "browserTarget": "client:build:production"
             }
