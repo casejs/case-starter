@@ -107,9 +107,9 @@ export class UserController {
     @Body() userDto: UpdateUserMyselfDto,
     @Req() req: any
   ): Promise<UpdateResult> {
-    // TODO: Uncomment
-    // const currentUser: User = await this.authService.getUserFromToken(req)
-    const currentUser: User = await this.show('1')
+    const currentUser: User = (await this.authService.getUserFromToken(
+      req
+    )) as User
     return await this.userService.updateMyself(currentUser, userDto)
   }
 
