@@ -22,13 +22,25 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
+            "buildOptimizer": false,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": [],
-            "preserveSymlinks": true
+            "preserveSymlinks": true,
+            "sourceMap": {
+              "vendor": true,
+              "scripts": true,
+              "styles": true,
+              "hidden": true
+            }
           },
           "configurations": {
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -56,7 +68,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -64,6 +77,9 @@
             "browserTarget": "client:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "client:build:development"
+            },
             "production": {
               "browserTarget": "client:build:production"
             }

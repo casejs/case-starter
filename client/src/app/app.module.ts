@@ -9,9 +9,16 @@ import { environment } from '../environments/environment'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HomeComponent } from './pages/home/home.component'
+import { UserCreateEditComponent } from './resources/user/user-create-edit.component'
+import { UserListComponent } from './resources/user/user-list.component'
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    UserListComponent,
+    UserCreateEditComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

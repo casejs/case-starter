@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { caseRoutes, AuthGuard } from '@case-app/angular-library'
 import { HomeComponent } from './pages/home/home.component'
+import { userRoutes } from './resources/user/user.routes'
 
 const routes: Routes = [
   {
@@ -10,6 +11,7 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [AuthGuard]
   },
+  ...userRoutes,
   ...(caseRoutes as Route[])
 ]
 
