@@ -12,5 +12,10 @@ export const userYields: Yield[] = [
   {
     label: 'Rôle',
     property: 'role.displayName'
+  },
+  {
+    label: 'Actif',
+    property: 'isActive',
+    type: YieldType.Check
   }
 ]

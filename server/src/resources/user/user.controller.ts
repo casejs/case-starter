@@ -83,7 +83,6 @@ export class UserController {
   async showMyself(@Req() req: any): Promise<User> {
     const currentUser: CaseUser = await this.authService.getUserFromToken(req)
     return await this.userService.show(currentUser.id)
-    return await this.userService.show(1)
   }
 
   @Get('/:id')
