@@ -7,6 +7,7 @@ import {
   WhereExpression
 } from 'typeorm'
 import { User } from '../../../shared/entities/user.entity'
+import { Role } from '../../../shared/entities/role.entity'
 
 @Injectable()
 export class SearchService {
@@ -33,8 +34,22 @@ export class SearchService {
       searchResults = [...searchResults, ...users]
     }
 
+    if (
+      resources.includes('roles') &&
+      Role.searchableFields &&
+      Role.searchableFields.length
+    ) {
+      const users: SearchResult[] = await this.searchResource(Role, terms)
+      searchResults = [...searchResults, ...users]
+    }
+
     return searchResults
   }
+
+  // TODO: schematics for search.
+  // TODO searchableFields for all entities
+  // TODO: schematics for searchableFields
+  // TODO: What about icons ?
 
   // Get full SearchResult object based on resource Ids. Used to display selection.
   async getSearchResultObjects(query: {
