@@ -25,8 +25,9 @@ export class SearchService {
       return Promise.resolve([])
     }
 
+    // * Search resources (keep comment for schematics).
     if (
-      resources.includes('users') &&
+      resources.includes(User.name) &&
       User.searchableFields &&
       User.searchableFields.length
     ) {
@@ -35,21 +36,20 @@ export class SearchService {
     }
 
     if (
-      resources.includes('roles') &&
+      resources.includes(Role.name) &&
       Role.searchableFields &&
       Role.searchableFields.length
     ) {
-      const users: SearchResult[] = await this.searchResource(Role, terms)
-      searchResults = [...searchResults, ...users]
+      const roles: SearchResult[] = await this.searchResource(Role, terms)
+      searchResults = [...searchResults, ...roles]
     }
 
     return searchResults
   }
 
   // TODO: schematics for search.
-  // TODO searchableFields for all entities
   // TODO: schematics for searchableFields
-  // TODO: What about icons ?
+  // TODO: What about icons ? Not possible with today's version because either MultiSearch or Server-side do not have access to icon per resource.
 
   // Get full SearchResult object based on resource Ids. Used to display selection.
   async getSearchResultObjects(query: {
@@ -69,16 +69,16 @@ export class SearchService {
   }
 
   private async searchResource(
-    resource: any,
+    resourceClass: any,
     terms: string
   ): Promise<SearchResult[]> {
     const query: SelectQueryBuilder<any> = await getConnection()
-      .getRepository(resource)
+      .getRepository(resourceClass)
       .createQueryBuilder('resource')
-
+      // Search through all searchableFields.
       .andWhere(
         new Brackets(qb => {
-          resource.searchableFields.reduce(
+          resourceClass.searchableFields.reduce(
             (qb: WhereExpression, searchableField: string) =>
               qb.orWhere(`resource.${searchableField} like :terms`, {
                 terms: `%${terms}%`
@@ -90,31 +90,27 @@ export class SearchService {
 
     const resources: any[] = await query.getMany()
 
-    // TODO: Remove shortlabel
     return resources.map((resource: any) => ({
       id: resource.id,
-      shortLabel: resource.name,
       label: resource.name,
-      resourceName: 'users'
+      resourceName: resourceClass.name
     }))
   }
 
   private async getSearchResultObjectsForResource(
-    resource: any,
+    resourceClass: any,
     ids: string | string[]
   ): Promise<SearchResult[]> {
     const resources: any[] = await getConnection()
-      .getRepository(resource)
+      .getRepository(resourceClass)
       .createQueryBuilder('resource')
       .whereInIds(ids)
       .getMany()
 
     return resources.map((resource: User) => ({
       id: resource.id,
-      shortLabel: resource.name,
       label: resource.name,
-      // TODO: should be dynamic
-      resourceName: 'users'
+      resourceName: resourceClass.name
     }))
   }
 }
