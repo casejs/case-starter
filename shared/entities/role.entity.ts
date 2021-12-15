@@ -15,6 +15,9 @@ import { CaseRole } from '../../server/node_modules/@case-app/nest-library'
 
 @Entity({ name: 'roles' })
 export class Role implements CaseRole {
+  public static searchableFields: string[] = ['name']
+  public static displayName: string = 'name'
+
   @PrimaryGeneratedColumn()
   id: number
 

@@ -18,6 +18,9 @@ import { CaseUser } from '../../server/node_modules/@case-app/nest-library'
 @Entity({ name: 'users' })
 @Unique(['email'])
 export class User implements CaseUser {
+  public static searchableFields: string[] = ['name', 'email']
+  public static displayName: string = 'name'
+
   @PrimaryGeneratedColumn()
   id: number
 
