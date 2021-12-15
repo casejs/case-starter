@@ -9,7 +9,9 @@ import {
   BreadcrumbService,
   FlashMessageService,
   ResourceService,
-  caseListTemplate
+  caseListTemplate,
+  Filter,
+  InputType
 } from '@case-app/angular-library'
 
 import { userDefinition } from './user.definition'
@@ -21,6 +23,16 @@ import { userYields } from './user.yields'
 export class UserListComponent extends CaseListComponent implements OnInit {
   definition: ResourceDefinition = userDefinition
   yields: Yield[] = userYields
+  filters: Filter[] = [
+    {
+      label: 'Search users',
+      inputType: InputType.MultiSearch,
+      searchResources: ['User'],
+      properties: {
+        userIds: 'userIds'
+      }
+    }
+  ]
 
   constructor(
     router: Router,

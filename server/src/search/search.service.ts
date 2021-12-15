@@ -1,7 +1,13 @@
 import { SearchResult } from '@case-app/nest-library'
 import { Injectable } from '@nestjs/common'
-import { Brackets, getConnection } from 'typeorm'
+import {
+  Brackets,
+  getConnection,
+  SelectQueryBuilder,
+  WhereExpression
+} from 'typeorm'
 import { User } from '../../../shared/entities/user.entity'
+import { Role } from '../../../shared/entities/role.entity'
 
 @Injectable()
 export class SearchService {
@@ -12,7 +18,6 @@ export class SearchService {
   }: {
     terms: string
     resources: string[]
-    currentUser?: User
   }): Promise<SearchResult[]> {
     let searchResults: SearchResult[] = []
 
@@ -20,72 +25,92 @@ export class SearchService {
       return Promise.resolve([])
     }
 
-    if (resources.includes('users')) {
-      const users: SearchResult[] = await this.searchUsers(terms)
+    // * Search resources (keep comment for schematics).
+    if (
+      resources.includes(User.name) &&
+      User.searchableFields &&
+      User.searchableFields.length
+    ) {
+      const users: SearchResult[] = await this.searchResource(User, terms)
+      searchResults = [...searchResults, ...users]
+    }
+
+    if (
+      resources.includes(Role.name) &&
+      Role.searchableFields &&
+      Role.searchableFields.length
+    ) {
+      const roles: SearchResult[] = await this.searchResource(Role, terms)
+      searchResults = [...searchResults, ...roles]
+    }
+
+    return searchResults
+  }
+
+  // TODO: schematics for search.
+  // TODO: schematics for searchableFields
+  // TODO: What about icons ? Not possible with today's version because either MultiSearch or Server-side do not have access to icon per resource.
+
+  // Get full SearchResult object based on resource Ids. Used to display selection.
+  async getSearchResultObjects(query: {
+    [key: string]: string | string[]
+  }): Promise<SearchResult[]> {
+    let searchResults: SearchResult[] = []
+
+    if (query.userIds && query.userIds.length) {
+      const users: SearchResult[] = await this.getSearchResultObjectsForResource(
+        User,
+        query.userIds
+      )
       searchResults = [...searchResults, ...users]
     }
 
     return searchResults
   }
 
-  // Get full SearchResult object based on resource Ids. Useful to retrieve object with label from an id in URL params
-  async getSearchResultObjects({
-    userIds
-  }: {
-    userIds?: string[]
-  }): Promise<SearchResult[]> {
-    let searchResults: SearchResult[] = []
-
-    // Users
-    if (userIds && userIds.length) {
-      const users: User[] = await getConnection()
-        .getRepository(User)
-        .createQueryBuilder('user')
-        .whereInIds(userIds)
-        .getMany()
-
-      if (users.length) {
-        searchResults = [
-          ...searchResults,
-          ...users.map((user: User) => {
-            return {
-              id: user.id,
-              shortLabel: user.name,
-              label: user.name,
-              resourceName: 'users'
-            }
-          })
-        ]
-      }
-    }
-
-    return searchResults
-  }
-
-  async searchUsers(terms: string): Promise<SearchResult[]> {
-    const users: User[] = await getConnection()
-      .getRepository(User)
-      .createQueryBuilder('user')
+  private async searchResource(
+    resourceClass: any,
+    terms: string
+  ): Promise<SearchResult[]> {
+    const query: SelectQueryBuilder<any> = await getConnection()
+      .getRepository(resourceClass)
+      .createQueryBuilder('resource')
+      // Search through all searchableFields.
       .andWhere(
         new Brackets(qb => {
-          qb.where('user.name like :terms', {
-            terms: `%${terms}%`
-          }).orWhere('user.email like :terms', {
-            terms: `%${terms}%`
-          })
+          resourceClass.searchableFields.reduce(
+            (qb: WhereExpression, searchableField: string) =>
+              qb.orWhere(`resource.${searchableField} like :terms`, {
+                terms: `%${terms}%`
+              }),
+            qb
+          )
         })
       )
-      .andWhere('user.isGhost = false')
+
+    const resources: any[] = await query.getMany()
+
+    return resources.map((resource: any) => ({
+      id: resource.id,
+      label: resource.name,
+      resourceName: resourceClass.name
+    }))
+  }
+
+  private async getSearchResultObjectsForResource(
+    resourceClass: any,
+    ids: string | string[]
+  ): Promise<SearchResult[]> {
+    const resources: any[] = await getConnection()
+      .getRepository(resourceClass)
+      .createQueryBuilder('resource')
+      .whereInIds(ids)
       .getMany()
 
-    return users.map(
-      (user: User) =>
-        ({
-          id: user.id,
-          shortLabel: user.name,
-          label: user.name,
-          resourceName: 'users'
-        } as SearchResult)
-    )
+    return resources.map((resource: User) => ({
+      id: resource.id,
+      label: resource.name,
+      resourceName: resourceClass.name
+    }))
   }
 }

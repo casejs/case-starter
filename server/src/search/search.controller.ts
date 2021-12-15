@@ -20,10 +20,8 @@ export class SearchController {
 
   @Get('/get-search-result-objects')
   async getSearchResultObjects(
-    @Query('userIds') userIds?: string[]
+    @Query() resourcesToGet: { [key: string]: string | string[] }
   ): Promise<SearchResult[]> {
-    return await this.searchService.getSearchResultObjects({
-      userIds
-    })
+    return await this.searchService.getSearchResultObjects(resourcesToGet)
   }
 }
