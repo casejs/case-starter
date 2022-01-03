@@ -47,8 +47,6 @@ export class SearchService {
     return searchResults
   }
 
-  // TODO: schematics for search.
-  // TODO: schematics for searchableFields
   // TODO: What about icons ? Not possible with today's version because either MultiSearch or Server-side do not have access to icon per resource.
 
   // Get full SearchResult object based on resource Ids. Used to display selection.
@@ -92,7 +90,7 @@ export class SearchService {
 
     return resources.map((resource: any) => ({
       id: resource.id,
-      label: resource.name,
+      label: resource[resourceClass.displayName],
       resourceName: resourceClass.name
     }))
   }
@@ -109,7 +107,7 @@ export class SearchService {
 
     return resources.map((resource: User) => ({
       id: resource.id,
-      label: resource.name,
+      label: resource[resourceClass.displayName],
       resourceName: resourceClass.name
     }))
   }
