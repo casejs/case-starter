@@ -47,15 +47,7 @@ export class UserCreateEditComponent
       },
       inputType: InputType.Select,
       selectOptions: () =>
-        this.customResourceService
-          .list('roles', { withoutPagination: true })
-          .toPromise()
-          .then((roleRes: Role[]) =>
-            roleRes.map((r) => ({
-              label: r.displayName,
-              value: r.id.toString()
-            }))
-          ),
+        this.customResourceService.listSelectOptions('roles'),
       className: 'is-3',
       required: true
     },

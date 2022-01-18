@@ -55,12 +55,20 @@ export class SearchService {
   }): Promise<SearchResult[]> {
     let searchResults: SearchResult[] = []
 
+    // * Get search result objects (keep comment for schematics).
     if (query.userIds && query.userIds.length) {
       const users: SearchResult[] = await this.getSearchResultObjectsForResource(
         User,
         query.userIds
       )
       searchResults = [...searchResults, ...users]
+    }
+    if (query.roleIds && query.roleIds.length) {
+      const roles: SearchResult[] = await this.getSearchResultObjectsForResource(
+        Role,
+        query.roleIds
+      )
+      searchResults = [...searchResults, ...roles]
     }
 
     return searchResults
