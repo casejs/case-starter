@@ -27,7 +27,7 @@ export class UserListComponent extends CaseListComponent implements OnInit {
     {
       label: 'Search users',
       inputType: InputType.MultiSearch,
-      searchResources: ['User'],
+      searchResources: [userDefinition],
       properties: {
         userIds: 'userIds'
       }
