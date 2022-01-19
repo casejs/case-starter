@@ -143,7 +143,7 @@ export class UserCreateEditComponent
     await this.getItem('myself')
     this.item.id = 'myself'
 
-    this.form = this.generateForm(this.fields)
+    this.form = await this.generateForm(this.fields)
 
     this.form.valueChanges.subscribe((newValue: { email: string }) => {
       if (newValue.email !== this.item.email) {
