@@ -4,6 +4,8 @@ export const userDefinition: ResourceDefinition = {
   title: 'Collaborateurs',
   nameSingular: 'collaborateur',
   namePlural: 'collaborateurs',
+  className: 'User',
+  icon: 'icon-user',
   gender: Gender.Masculine,
   mainIdentifier: 'name',
   slug: 'users',
