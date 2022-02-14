@@ -1,4 +1,9 @@
-import { Gender, LinkType, ResourceDefinition } from '@case-app/angular-library'
+import {
+  ActionType,
+  Gender,
+  LinkType,
+  ResourceDefinition
+} from '@case-app/angular-library'
 
 export const userDefinition: ResourceDefinition = {
   title: 'Collaborateurs',
@@ -17,12 +22,25 @@ export const userDefinition: ResourceDefinition = {
   childrenThatPreventDelete: [],
   dropdownLinks: [
     {
-      type: LinkType.EDIT,
-      permission: 'editUsers'
+      label: 'Editer collaborateur',
+      permission: 'editUsers',
+      action: (user) => ({
+        type: ActionType.Link,
+        link: {
+          path: `${userDefinition.path}/${user.id}/edit`
+        }
+      })
     },
     {
-      type: LinkType.DELETE,
-      permission: 'deleteUsers'
+      label: 'Effacer collaborateur',
+      permission: 'deleteUsers',
+      action: (user) => ({
+        type: ActionType.Delete,
+        delete: {
+          itemToDelete: user,
+          definition: userDefinition
+        }
+      })
     }
   ]
 }
