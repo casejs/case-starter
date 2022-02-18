@@ -1,4 +1,4 @@
-import { YieldType, Yield } from '@case-app/angular-library'
+import { ActionType, User, Yield, YieldType } from '@case-app/angular-library'
 
 export const userYields: Yield[] = [
   {
@@ -11,11 +11,25 @@ export const userYields: Yield[] = [
   },
   {
     label: 'Rôle',
-    property: 'role.displayName'
+    property: 'role.displayName',
+    secondProperty: 'role.name'
+  },
+  {
+    label: 'Addresse',
+    type: YieldType.Address,
+    property: 'address'
   },
   {
     label: 'Actif',
     property: 'isActive',
-    type: YieldType.Check
+    type: YieldType.Switch,
+    action: (user: User) => ({
+      type: ActionType.Patch,
+      patch: {
+        path: `/users/${user.id}/toggle-active`,
+        successMessage: 'User status has been changed',
+        errorMessage: 'Error : could not change user status'
+      }
+    })
   }
 ]

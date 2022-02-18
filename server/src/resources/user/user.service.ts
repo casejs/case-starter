@@ -34,7 +34,6 @@ export class UserService {
   async index({
     page,
     roleName,
-    includeNotActive,
     userIds,
     orderBy,
     orderByDesc,
@@ -43,7 +42,6 @@ export class UserService {
   }: {
     page?: number
     roleName?: string
-    includeNotActive?: string
     userIds?: string[]
     orderBy?: string
     orderByDesc?: string
@@ -71,10 +69,6 @@ export class UserService {
 
     if (toXLS === 'true') {
       return await this.export(query)
-    }
-
-    if (includeNotActive !== 'true') {
-      query.andWhere('user.isActive = 1')
     }
 
     if (withoutPagination === 'true') {
@@ -121,7 +115,7 @@ export class UserService {
     user.token = faker.random.alphaNumeric(20)
     user.role = await this.entityManager.findOneOrFail(Role, userDto.roleId)
 
-    // TODO: null values are not boolean (ABC)
+    // TODO: null values are not boolean.
     user.isActive = !!userDto.isActive
 
     return this.repository.save(user)

@@ -1,6 +1,7 @@
 <ng-container *ngIf="!isLogin">
   <case-top-menu
     [ngClass]="{ 'is-collapsed': isCollapsed }"
+    [links]="topMenuLinks"
     *ngIf="!isTouchResolution"
   ></case-top-menu>
   <case-touch-menu

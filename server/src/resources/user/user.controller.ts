@@ -41,7 +41,6 @@ export class UserController {
     @Query('userIds') userIds?: string[],
     @Query('roleName') roleName?: string,
     @Query('withoutPagination') withoutPagination?: string,
-    @Query('includeNotActive') includeNotActive?: string,
     @Query('page') page?: string,
     @Query('toXLS') toXLS?: string,
     @Query('orderBy') orderBy?: string,
@@ -52,7 +51,6 @@ export class UserController {
       userIds,
       roleName,
       withoutPagination,
-      includeNotActive,
       orderBy,
       orderByDesc,
       toXLS
