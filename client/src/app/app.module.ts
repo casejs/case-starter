@@ -32,7 +32,8 @@ import { UserListComponent } from './resources/user/user-list.component'
       appName: environment.appName,
       tokenName: environment.tokenName,
       tokenAllowedDomains: environment.tokenAllowedDomains,
-      production: environment.production
+      production: environment.production,
+      googlePlacesAPIKey: 'myGoogleAPIKey'
     })
   ],
   bootstrap: [AppComponent]
