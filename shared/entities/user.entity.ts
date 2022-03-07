@@ -42,6 +42,9 @@ export class User implements CaseUser {
   @Column({ select: false })
   token: string
 
+  @Column({ nullable: true })
+  address: string
+
   @Column('timestamp', { nullable: true, select: false })
   lastNotificationCheck: Date
 

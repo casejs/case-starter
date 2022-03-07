@@ -7,7 +7,8 @@ import {
   MenuItem,
   User,
   VersionService,
-  ViewportService
+  ViewportService,
+  TopMenuLink
 } from '@case-app/angular-library'
 import { Subscription } from 'rxjs'
 import { menuItems } from './menu-items'
@@ -23,6 +24,15 @@ export class AppComponent implements OnInit {
   isCollapsed = false
   path: string
   menuItems: MenuItem[] = menuItems
+
+  topMenuLinks: TopMenuLink[] = [
+    {
+      label: 'Go to user list',
+      icon: 'icon-user',
+      routePath: '/users',
+      permissionsOr: ['browseUsers']
+    }
+  ]
 
   private currentUser: any
   private eventSubscriptions = new Subscription()

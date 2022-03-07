@@ -18,7 +18,7 @@ export const userDefinition: ResourceDefinition = {
   hasDetailPage: false,
   hasListPage: true,
   buttons: [LinkType.CREATE],
-  defaultLink: LinkType.DETAIL,
+  defaultLink: LinkType.EDIT,
   childrenThatPreventDelete: [],
   dropdownLinks: [
     {
