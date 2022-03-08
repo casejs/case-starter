@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core'
-import { NavigationEnd, Router } from '@angular/router'
+import { NavigationEnd, Router, Scroll } from '@angular/router'
 import {
   caseConstants,
   AuthService,
@@ -35,8 +35,6 @@ export class AppComponent implements OnInit {
   ]
 
   private currentUser: any
-  private eventSubscriptions = new Subscription()
-  private subscription = new Subscription()
 
   constructor(
     private router: Router,
@@ -45,13 +43,18 @@ export class AppComponent implements OnInit {
     private authService: AuthService,
     private versionService: VersionService
   ) {
-    this.eventSubscriptions.add(
-      this.router.events.subscribe((event) => {
-        if (event instanceof NavigationEnd) {
-          this.eventService.routeChanged.next({ url: event.url })
-        }
-      })
-    )
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.eventService.routeChanged.next({ url: event.url })
+      } else if (event instanceof Scroll && event.anchor) {
+        setTimeout(() => {
+          const element: HTMLElement = document.getElementById(event.anchor)
+          if (element) {
+            element.scrollIntoView()
+          }
+        }, 100)
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -65,28 +68,22 @@ export class AppComponent implements OnInit {
 
     this.setIsTouchResolution()
 
-    this.subscription.add(
-      this.eventService.routeChanged.subscribe((routeChanged) => {
-        // Scroll top
-        window.scrollTo(0, 0)
+    this.eventService.routeChanged.subscribe((routeChanged) => {
+      // Scroll top
+      window.scrollTo(0, 0)
 
-        this.path = routeChanged.url.includes('?')
-          ? routeChanged.url.substring(0, routeChanged.url.indexOf('?'))
-          : routeChanged.url
-        this.isLogin =
-          this.path.includes('/login') ||
-          this.path.includes('forgot-password') ||
-          this.path.includes('reset-password')
+      this.path = routeChanged.url.includes('?')
+        ? routeChanged.url.substring(0, routeChanged.url.indexOf('?'))
+        : routeChanged.url
+      this.isLogin =
+        this.path.includes('/login') ||
+        this.path.includes('forgot-password') ||
+        this.path.includes('reset-password')
 
-        if (
-          !this.isLogin &&
-          this.authService.isLoggedIn() &&
-          !this.currentUser
-        ) {
-          this.getCurrentUser()
-        }
-      })
-    )
+      if (!this.isLogin && this.authService.isLoggedIn() && !this.currentUser) {
+        this.getCurrentUser()
+      }
+    })
 
     this.versionService.checkForNewVersions()
   }
