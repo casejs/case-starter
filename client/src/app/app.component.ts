@@ -1,16 +1,16 @@
 import { Component, HostListener, OnInit } from '@angular/core'
 import { NavigationEnd, Router, Scroll } from '@angular/router'
 import {
-  caseConstants,
   AuthService,
+  caseConstants,
   EventService,
   MenuItem,
+  TopMenuLink,
   User,
   VersionService,
-  ViewportService,
-  TopMenuLink
+  ViewportService
 } from '@case-app/angular-library'
-import { Subscription } from 'rxjs'
+
 import { menuItems } from './menu-items'
 
 @Component({
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       label: 'Go to user list',
       icon: 'icon-user',
       routePath: '/users',
-      permissionsOr: ['browseUsers']
+      permission: 'browseUsers'
     }
   ]
 

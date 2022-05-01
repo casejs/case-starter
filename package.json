@@ -4,7 +4,7 @@
   "description": "CASE Framework for custom web apps",
   "scripts": {
     "install": "npm run install:client && npm run install:server",
-    "install:client": "cd client && npm i --force",
+    "install:client": "cd client && npm i",
     "install:server": "cd server && npm i --force && cp .env.example .env",
     "start:client": "cd client && ng serve",
     "start:server": "cd server && npm run start:dev",

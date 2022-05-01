@@ -73,7 +73,7 @@ export class UserController {
 
     return users.map((u: User) => ({
       label: u.name,
-      value: u.id.toString()
+      value: u.id
     }))
   }
 

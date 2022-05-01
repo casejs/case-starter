@@ -11,7 +11,8 @@ import {
   ResourceService,
   caseListTemplate,
   Filter,
-  InputType
+  InputType,
+  AuthService
 } from '@case-app/angular-library'
 
 import { userDefinition } from './user.definition'
@@ -40,6 +41,7 @@ export class UserListComponent extends CaseListComponent implements OnInit {
     breadcrumbService: BreadcrumbService,
     resourceService: ResourceService,
     flashMessageService: FlashMessageService,
+    authService: AuthService,
     @Inject('CASE_CONFIG_TOKEN') config: CaseConfig
   ) {
     super(
@@ -48,6 +50,7 @@ export class UserListComponent extends CaseListComponent implements OnInit {
       breadcrumbService,
       resourceService,
       flashMessageService,
+      authService,
       config
     )
   }
