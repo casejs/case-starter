@@ -14,7 +14,7 @@ import { User } from '../../shared/entities/user.entity'
 import { appConnectionOptions } from './app.connection.options'
 import { UserModule } from './resources/user/user.module'
 import { SearchModule } from './search/search.module'
-import { TaskService } from './services/task/task.service'
+import { TaskModule } from './task/task.module'
 
 @Module({
   imports: [
@@ -39,14 +39,14 @@ import { TaskService } from './services/task/task.service'
     TypeOrmModule.forRoot(appConnectionOptions),
     UserModule,
     ScheduleModule.register(),
-    SearchModule
+    SearchModule,
+    TaskModule
   ],
   providers: [
     {
       provide: APP_GUARD,
       useClass: PermissionGuard
-    },
-    TaskService
+    }
   ]
 })
 export class AppModule {
