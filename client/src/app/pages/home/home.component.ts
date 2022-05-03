@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core'
-import { FlashMessageService } from '@case-app/angular-library'
+import {
+  BreadcrumbService,
+  FlashMessageService
+} from '@case-app/angular-library'
 
 @Component({
   selector: 'app-home',
@@ -7,10 +10,19 @@ import { FlashMessageService } from '@case-app/angular-library'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private flashMessageService: FlashMessageService) {}
+  constructor(
+    private flashMessageService: FlashMessageService,
+    private breadcrumbService: BreadcrumbService
+  ) {}
 
   ngOnInit(): void {
     // Info message.
     this.flashMessageService.info('Welcome to CASE.')
+
+    this.breadcrumbService.breadcrumbLinks.next([
+      {
+        label: `Accueil`
+      }
+    ])
   }
 }
