@@ -9,13 +9,13 @@ export const menuItems: MenuItem[] = [
       {
         label: 'Collaborateurs',
         permissionsOr: ['browseUsers'],
-        routePath: '/users',
+        routePath: '/users'
       },
       {
-        label: 'Roles',
+        label: 'Rôles',
         permissionsOr: ['browseRoles'],
-        routePath: '/roles',
-      },
-    ],
-  },
+        routePath: '/roles'
+      }
+    ]
+  }
 ]
