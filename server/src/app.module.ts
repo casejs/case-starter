@@ -1,6 +1,6 @@
 import bugsnagPluginExpress from '@bugsnag/plugin-express'
 import { CaseNestLibraryModule, PermissionGuard } from '@case-app/nest-library'
-import { MiddlewareConsumer, Module } from '@nestjs/common'
+import { DynamicModule, MiddlewareConsumer, Module } from '@nestjs/common'
 import { APP_GUARD } from '@nestjs/core'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { BugsnagModule } from '@nkaurelien/nest-bugsnag'
@@ -14,7 +14,7 @@ import { User } from '../../shared/entities/user.entity'
 import { appConnectionOptions } from './app.connection.options'
 import { UserModule } from './resources/user/user.module'
 import { SearchModule } from './search/search.module'
-import { TaskService } from './services/task/task.service'
+import { TaskModule } from './task/task.module'
 
 @Module({
   imports: [
@@ -24,7 +24,7 @@ import { TaskService } from './services/task/task.service'
       permissionEntity: Permission,
       roleEntity: Role,
       connectionOptions: appConnectionOptions
-    }),
+    }) as DynamicModule,
     BugsnagModule.forRoot({
       releaseStage: process.env.BUGSNAG_RELEASE_STAGE || 'development',
       apiKey: process.env.BUGSNAG_API_KEY,
@@ -39,14 +39,14 @@ import { TaskService } from './services/task/task.service'
     TypeOrmModule.forRoot(appConnectionOptions),
     UserModule,
     ScheduleModule.register(),
-    SearchModule
+    SearchModule,
+    TaskModule
   ],
   providers: [
     {
       provide: APP_GUARD,
       useClass: PermissionGuard
-    },
-    TaskService
+    }
   ]
 })
 export class AppModule {

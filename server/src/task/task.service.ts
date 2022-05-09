@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common'
-
 import { Cron, NestSchedule } from 'nest-schedule'
 
 // Add all your CRON Tasks here.

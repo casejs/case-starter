@@ -1,4 +1,3 @@
-import { Route } from '@angular/compiler/src/core'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { caseRoutes, AuthGuard } from '@case-app/angular-library'
@@ -12,7 +11,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   ...userRoutes,
-  ...(caseRoutes as Route[])
+  ...(caseRoutes as Routes)
 ]
 
 @NgModule({
