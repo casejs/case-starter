@@ -22,7 +22,7 @@ export const userDefinition: ResourceDefinition = {
   childrenThatPreventDelete: [],
   dropdownLinks: [
     {
-      label: 'Editer collaborateur',
+      label: 'Editer',
       permission: 'editUsers',
       action: (user) => ({
         type: ActionType.Link,
@@ -32,7 +32,7 @@ export const userDefinition: ResourceDefinition = {
       })
     },
     {
-      label: 'Effacer collaborateur',
+      label: 'Effacer',
       permission: 'deleteUsers',
       action: (user) => ({
         type: ActionType.Delete,

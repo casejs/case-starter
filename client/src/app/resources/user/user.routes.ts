@@ -1,5 +1,9 @@
 import { Route } from '@angular/router'
-import { AuthGuard, PermissionGuard } from '@case-app/angular-library'
+import {
+  AuthGuard,
+  PermissionGuard,
+  ResourceMode
+} from '@case-app/angular-library'
 
 import { UserCreateEditComponent } from './user-create-edit.component'
 import { UserListComponent } from './user-list.component'
@@ -17,7 +21,7 @@ export const userRoutes: Route[] = [
     canActivate: [AuthGuard, PermissionGuard],
     data: {
       permission: 'addUsers',
-      mode: 'create'
+      mode: ResourceMode.Create
     }
   },
   {
@@ -25,7 +29,7 @@ export const userRoutes: Route[] = [
     component: UserCreateEditComponent,
     canActivate: [AuthGuard, PermissionGuard],
     data: {
-      mode: 'edit',
+      mode: ResourceMode.Edit,
       permission: 'readOwnUsers',
       editMyself: true
     }
@@ -35,7 +39,7 @@ export const userRoutes: Route[] = [
     component: UserCreateEditComponent,
     canActivate: [AuthGuard, PermissionGuard],
     data: {
-      mode: 'edit',
+      mode: ResourceMode.Edit,
       permission: 'editUsers'
     }
   }

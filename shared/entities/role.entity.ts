@@ -27,6 +27,9 @@ export class Role implements CaseRole {
   @Column()
   displayName: string
 
+  @Column({ nullable: true })
+  homepagePath: string
+
   @ManyToMany((type) => Permission, (p) => p.roles)
   permissions: Permission[]
 

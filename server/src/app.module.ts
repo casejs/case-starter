@@ -1,6 +1,6 @@
 import bugsnagPluginExpress from '@bugsnag/plugin-express'
 import { CaseNestLibraryModule, PermissionGuard } from '@case-app/nest-library'
-import { MiddlewareConsumer, Module } from '@nestjs/common'
+import { DynamicModule, MiddlewareConsumer, Module } from '@nestjs/common'
 import { APP_GUARD } from '@nestjs/core'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { BugsnagModule } from '@nkaurelien/nest-bugsnag'
@@ -24,7 +24,7 @@ import { TaskModule } from './task/task.module'
       permissionEntity: Permission,
       roleEntity: Role,
       connectionOptions: appConnectionOptions
-    }),
+    }) as DynamicModule,
     BugsnagModule.forRoot({
       releaseStage: process.env.BUGSNAG_RELEASE_STAGE || 'development',
       apiKey: process.env.BUGSNAG_API_KEY,
