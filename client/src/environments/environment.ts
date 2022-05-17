@@ -9,13 +9,14 @@ export const environment = {
   apiBaseUrl: 'http://localhost:3000',
   storagePath: 'http://localhost:3000/storage',
   tokenName: 'MyCaseAppToken',
-  tokenAllowedDomains: ['localhost:3000']
+  tokenAllowedDomains: ['localhost:3000'],
+  bugsnagApiKey: 'Insert API Key Here'
 }
 
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
+ *1
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
