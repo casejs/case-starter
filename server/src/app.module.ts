@@ -14,8 +14,11 @@ import { UserModule } from './resources/user/user.module'
 import { SearchModule } from './search/search.module'
 import { TaskModule } from './task/task.module'
 
-var Bugsnag = require('@bugsnag/js')
-Bugsnag.start({ apiKey: process.env.BUGSNAG_API_KEY })
+import Bugsnag from '@bugsnag/js'
+Bugsnag.start({
+  apiKey: process.env.BUGSNAG_API_KEY,
+  releaseStage: process.env.BUGSNAG_RELEASE_STAGE
+})
 
 @Module({
   imports: [

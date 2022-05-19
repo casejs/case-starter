@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import Bugsnag from '@bugsnag/browser'
 import {
   BreadcrumbService,
   FlashMessageService

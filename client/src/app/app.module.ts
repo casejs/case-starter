@@ -15,10 +15,12 @@ import { UserListComponent } from './resources/user/user-list.component'
 import Bugsnag from '@bugsnag/js'
 import { BugsnagErrorHandler } from '@bugsnag/plugin-angular'
 
-Bugsnag.start({
-  apiKey: environment.bugsnagApiKey,
-  releaseStage: environment.production ? 'production' : 'development'
-})
+if (environment.enableBugsnag) {
+  Bugsnag.start({
+    apiKey: environment.bugsnagApiKey,
+    releaseStage: environment.envName
+  })
+}
 
 // create a factory which will return the Bugsnag error handler
 export function errorHandlerFactory() {
