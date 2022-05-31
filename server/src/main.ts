@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+import { BugsnagLoggerService } from '@case-app/nest-library'
 import { Logger, ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import * as compression from 'compression'
@@ -7,12 +8,11 @@ import * as express from 'express'
 import { useContainer } from 'typeorm'
 
 import { AppModule } from './app.module'
-import { BugsnagLoggerService } from '@case-app/nest-library'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger:
-      process.env.NODE_ENV === 'production'
+      process.env.ENABLE_BUGSNAG === 'true'
         ? new BugsnagLoggerService()
         : new Logger()
   })
