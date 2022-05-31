@@ -1,4 +1,6 @@
-# README
+# [CASE](https://case-app.github.io/docs/#/)
+
+<a href="https://case-app.github.io/docs/#/"><img src="https://case-app.github.io/docs/assets/images/brand/logo-case-framework.svg" alt="CASE framework" style="max-width:100%;" width="600"></a>
 
 This README would document whatever steps are necessary to get your application up and running.
 

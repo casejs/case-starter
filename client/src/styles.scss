@@ -1,9 +1,9 @@
 @use 'sass:math';
+
 /* You can add global styles to this file, and also import other style files */
 /* insert custom variables here to override existing ones or create new ones */
 
-// TODO: Not compiling.
-@import '@case-app/angular-library/styles/main';
+@import 'node_modules/@case-app/angular-library/styles/main';
 // @import 'https://neorhea.showroom.buddyweb.fr/styles.css';
 
 /* Import custom style here */
