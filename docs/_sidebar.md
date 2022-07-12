@@ -1,0 +1,57 @@
+- Getting started
+
+  - [Install](getting-started/install.md)
+  - [Structure](getting-started/structure.md)
+
+- Resources
+
+  - [Create a resource](resources/create-a-resource.md)
+  - [Entity file](resources/entity-file.md)
+  - [Resource definitions](resources/resource-definitions.md)
+  - [Database seeder](resources/database-seeder)
+  - [Relations](resources/relations.md)
+
+- List view
+
+  - [List view](list/list.md)
+  - [Filters](list/filters.md)
+  - [Yields](list/yields.md)
+  - [Yield types](list/yield-types.md)
+  - [Key numbers](list/key-numbers.md)
+  - [Action buttons](list/action-buttons.md)
+  - [Dropdown links](list/dropdown-links.md)
+  - [Calculated columns](list/calculated-columns.md)
+  - [Pagination\*]()
+
+- Create-Edit view
+
+  - [Create-edit view](create-edit/create-edit.md)
+  - [Field types](create-edit/field-types.md)
+
+- Detail view
+
+  - [Detail view](detail/detail.md)
+
+- Elements
+
+  - [Top menu quick links](elements/quick-links.md)
+  - [Breadcrumbs\*]()
+
+- Features
+
+  - [Authentication](features/authentication.md)
+  - [Roles and permissions](features/roles-and-permissions.md)
+  - [Search](features/search.md)
+  - [Monitoring](features/monitoring.md)
+
+  - [File upload\*](features/file-upload.md)
+  - [Actions](features/actions.md)
+
+  - [Flash messages](features/flash-messages.md)
+  - [Pipes\*]()
+  - [Task scheduling\*]()
+  - [Notifications\*]()
+  - [Generate an Excel/Word/PDF file\*]()
+
+- Theme
+  - [Customize](theme/customize.md)
