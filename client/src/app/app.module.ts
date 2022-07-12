@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { NgModule } from '@angular/core'
+import { ErrorHandler, NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
@@ -11,6 +11,21 @@ import { AppComponent } from './app.component'
 import { HomeComponent } from './pages/home/home.component'
 import { UserCreateEditComponent } from './resources/user/user-create-edit.component'
 import { UserListComponent } from './resources/user/user-list.component'
+
+import Bugsnag from '@bugsnag/js'
+import { BugsnagErrorHandler } from '@bugsnag/plugin-angular'
+
+if (environment.enableBugsnag) {
+  Bugsnag.start({
+    apiKey: environment.bugsnagApiKey,
+    releaseStage: environment.envName
+  })
+}
+
+// create a factory which will return the Bugsnag error handler
+export function errorHandlerFactory() {
+  return new BugsnagErrorHandler()
+}
 
 @NgModule({
   declarations: [
@@ -36,6 +51,7 @@ import { UserListComponent } from './resources/user/user-list.component'
       googlePlacesAPIKey: 'myGoogleAPIKey'
     })
   ],
+  providers: [{ provide: ErrorHandler, useFactory: errorHandlerFactory }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

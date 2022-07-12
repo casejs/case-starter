@@ -1,9 +1,7 @@
-import bugsnagPluginExpress from '@bugsnag/plugin-express'
 import { CaseNestLibraryModule, PermissionGuard } from '@case-app/nest-library'
 import { DynamicModule, MiddlewareConsumer, Module } from '@nestjs/common'
 import { APP_GUARD } from '@nestjs/core'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { BugsnagModule } from '@nkaurelien/nest-bugsnag'
 import { ScheduleModule } from 'nest-schedule'
 import { Connection } from 'typeorm'
 
@@ -16,6 +14,12 @@ import { UserModule } from './resources/user/user.module'
 import { SearchModule } from './search/search.module'
 import { TaskModule } from './task/task.module'
 
+import Bugsnag from '@bugsnag/js'
+Bugsnag.start({
+  apiKey: process.env.BUGSNAG_API_KEY,
+  releaseStage: process.env.BUGSNAG_RELEASE_STAGE
+})
+
 @Module({
   imports: [
     CaseNestLibraryModule.forRoot({
@@ -25,17 +29,6 @@ import { TaskModule } from './task/task.module'
       roleEntity: Role,
       connectionOptions: appConnectionOptions
     }) as DynamicModule,
-    BugsnagModule.forRoot({
-      releaseStage: process.env.BUGSNAG_RELEASE_STAGE || 'development',
-      apiKey: process.env.BUGSNAG_API_KEY,
-      autoDetectErrors: true,
-      enabledErrorTypes: {
-        unhandledExceptions: true,
-        unhandledRejections: true
-      },
-      enabledReleaseStages: ['production', 'staging'],
-      plugins: [bugsnagPluginExpress]
-    }),
     TypeOrmModule.forRoot(appConnectionOptions),
     UserModule,
     ScheduleModule.register(),
