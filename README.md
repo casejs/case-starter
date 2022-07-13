@@ -17,7 +17,13 @@ sudo npm i -g @case-app/schematics
 
 _Note for development :_ Always make sure that you have the latest version of those 2 dependencies with `@latest` as the versions evolve very fast.
 
-At the moment there is no CLI to crate a new project in one command so you have to clone or download the [CASE source code](https://github.com/case-app/case) and then open your terminal in the CASE root folder for the following steps.
+To run the docs you need to install docsify globally:
+
+```bash
+npm install docsify-cli --global
+```
+
+As of today, there is no CLI to crate a new project in one command so you have to clone or download the [CASE source code](https://github.com/case-app/case) and then open your terminal in the CASE root folder for the following steps.
 
 ```
 npm run install
