@@ -10,6 +10,7 @@ import {
   VersionService,
   ViewportService
 } from '@case-app/angular-library'
+import { environment } from '../environments/environment'
 
 import { menuItems } from './menu-items'
 
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit {
   isTouchResolution: boolean
   isCollapsed = false
   path: string
+  isStaging: boolean = !environment.production
   menuItems: MenuItem[] = menuItems
 
   topMenuLinks: TopMenuLink[] = [
