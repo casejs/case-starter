@@ -25,7 +25,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@case-app/angular-library": "^0.5.9",
     "http-status-codes": "^2.1.4",
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "ngx-google-places-autocomplete": "^2.0.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
