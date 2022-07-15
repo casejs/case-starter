@@ -8,6 +8,7 @@
     "install:server": "cd server && npm i --force && cp .env.example .env",
     "start:client": "cd client && ng serve",
     "start:server": "cd server && npm run start:dev",
+    "start:docs": "cd docs && docsify serve -p 2000",
     "seed": "cd server && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1",
     "case:resource": "cd client && npm run case:resourceFront && cd ../server && npm run case:resourceBack"
