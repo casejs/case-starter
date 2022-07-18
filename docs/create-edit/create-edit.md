@@ -213,7 +213,7 @@ You'll also have to allow the link of the related resource to the current resour
       User,
       customerDto.accountManagerId
     );
-    return await this.repository.save(customer);
+    return this.repository.save(customer);
   }
 
   async update(
@@ -225,7 +225,7 @@ You'll also have to allow the link of the related resource to the current resour
       User,
       customerDto.accountManagerId
     );
-    return await this.repository.update(id, customer);
+    return this.repository.update(id, customer);
   }
 ```
 
@@ -352,7 +352,7 @@ You can also pass an async function for initial value. Below we are making an HT
 @Get('/suggest-next-number')
 @Permission('readInvoices')
 async suggestNextNumber(): Promise<{ suggestedNumber: string }> {
-  return await this.invoiceService.suggestNextNumber()
+  return this.invoiceService.suggestNextNumber()
 }
 ```
 

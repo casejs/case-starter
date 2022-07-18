@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  ParseIntPipe,
   Patch,
   Post,
   Put,
@@ -46,7 +47,7 @@ export class UserController {
     @Query('orderBy') orderBy?: string,
     @Query('orderByDesc') orderByDesc?: string
   ): Promise<Paginator<User> | User[] | string> {
-    return await this.userService.index({
+    return this.userService.index({
       page: parseInt(page, 10),
       userIds,
       roleName,
@@ -80,13 +81,13 @@ export class UserController {
   @Get('/myself')
   async showMyself(@Req() req: any): Promise<User> {
     const currentUser: CaseUser = await this.authService.getUserFromToken(req)
-    return await this.userService.show(currentUser.id)
+    return this.userService.show(currentUser.id)
   }
 
   @Get('/:id')
   @Permission('readUsers')
-  public async show(@Param('id') id: string): Promise<User> {
-    return await this.userService.show(id)
+  public async show(@Param('id', ParseIntPipe) id: number): Promise<User> {
+    return this.userService.show(id)
   }
 
   @Post()
@@ -95,7 +96,7 @@ export class UserController {
     @Body()
     userDto: CreateUserDto
   ): Promise<User> {
-    return await this.userService.store(userDto)
+    return this.userService.store(userDto)
   }
 
   // Each user can update his or her user, but without changing his or her role.
@@ -107,27 +108,29 @@ export class UserController {
     const currentUser: User = (await this.authService.getUserFromToken(
       req
     )) as User
-    return await this.userService.updateMyself(currentUser, userDto)
+    return this.userService.updateMyself(currentUser, userDto)
   }
 
   @Put('/:id')
   @Permission('editUsers')
   async update(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body() userDto: UpdateUserDto
   ): Promise<UpdateResult> {
-    return await this.userService.update(id, userDto)
+    return this.userService.update(id, userDto)
   }
 
   @Patch('/:id/toggle-active')
   @Permission('editUsers')
-  async toggleActive(@Param('id') id: string): Promise<UpdateResult> {
-    return await this.userService.toggleActive(id)
+  async toggleActive(
+    @Param('id', ParseIntPipe) id: number
+  ): Promise<UpdateResult> {
+    return this.userService.toggleActive(id)
   }
 
   @Delete('/:id')
   @Permission('deleteUsers')
-  async delete(@Param('id') id: string): Promise<DeleteResult> {
-    return await this.userService.destroy(id)
+  async delete(@Param('id', ParseIntPipe) id: number): Promise<DeleteResult> {
+    return this.userService.destroy(id)
   }
 }

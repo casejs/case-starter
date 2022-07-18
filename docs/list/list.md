@@ -56,7 +56,7 @@ Clicking on the export button will trigger an HTTP GET query with a `?toXLS=true
 
 ```js
 {
-  filePath: "relative-file-path.xls";
+  filePath: 'relative-file-path.xls'
 }
 ```
 
@@ -73,7 +73,7 @@ function takes 3 parameters, an array with the column headings, and array of arr
  // The export function should be called if the toXLS param equals to "true".
   async export(query: SelectQueryBuilder<User>) {
     const users = await query.getMany()
-    return await this.excelService.export(
+    return this.excelService.export(
       ['Nom et prénom', 'E-mail', 'Hourly rate'],
       users.map((u: User) => [
         u.name,
