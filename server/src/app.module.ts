@@ -29,7 +29,7 @@ Bugsnag.start({
       roleEntity: Role,
       connectionOptions: appConnectionOptions,
       reflector: new Reflector()
-    }) as DynamicModule,
+    }),
     ScheduleModule.forRoot(),
     UserModule,
     SearchModule,

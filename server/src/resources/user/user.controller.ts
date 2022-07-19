@@ -10,6 +10,7 @@ import {
   Put,
   Query,
   Req,
+  Res,
   UseGuards
 } from '@nestjs/common'
 import { DeleteResult, UpdateResult } from 'typeorm'
@@ -28,6 +29,7 @@ import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto'
 import { UpdateUserDto } from './dtos/update-user.dto'
 import { User } from '../../../../shared/entities/user.entity'
 import { UserService } from './user.service'
+import { Request, Response } from 'express'
 
 @Controller('users')
 export class UserController {
@@ -79,8 +81,11 @@ export class UserController {
   }
 
   @Get('/myself')
-  async showMyself(@Req() req: any): Promise<User> {
-    const currentUser: CaseUser = await this.authService.getUserFromToken(req)
+  async showMyself(@Req() req: Request, @Res() res: Response): Promise<User> {
+    const currentUser: CaseUser = await this.authService.getUserFromToken(
+      req,
+      res
+    )
     return this.userService.show(currentUser.id)
   }
 
@@ -103,10 +108,12 @@ export class UserController {
   @Put('/myself')
   async updateMyself(
     @Body() userDto: UpdateUserMyselfDto,
-    @Req() req: any
+    @Req() req: Request,
+    @Res() res: Response
   ): Promise<UpdateResult> {
     const currentUser: User = (await this.authService.getUserFromToken(
-      req
+      req,
+      res
     )) as User
     return this.userService.updateMyself(currentUser, userDto)
   }
