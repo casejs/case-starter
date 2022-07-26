@@ -1,4 +1,12 @@
 import {
+  AuthGuard,
+  AuthService,
+  CaseUser,
+  Paginator,
+  Permission,
+  SelectOption
+} from '@case-app/nest-library'
+import {
   Body,
   Controller,
   Delete,
@@ -10,26 +18,16 @@ import {
   Put,
   Query,
   Req,
-  Res,
   UseGuards
 } from '@nestjs/common'
+import { Request } from 'express'
 import { DeleteResult, UpdateResult } from 'typeorm'
 
-import {
-  AuthService,
-  Permission,
-  AuthGuard,
-  Paginator,
-  SelectOption,
-  CaseUser
-} from '@case-app/nest-library'
-
+import { User } from '../../../../shared/entities/user.entity'
 import { CreateUserDto } from './dtos/create-user.dto'
 import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto'
 import { UpdateUserDto } from './dtos/update-user.dto'
-import { User } from '../../../../shared/entities/user.entity'
 import { UserService } from './user.service'
-import { Request, Response } from 'express'
 
 @Controller('users')
 export class UserController {
@@ -81,11 +79,8 @@ export class UserController {
   }
 
   @Get('/myself')
-  async showMyself(@Req() req: Request, @Res() res: Response): Promise<User> {
-    const currentUser: CaseUser = await this.authService.getUserFromToken(
-      req,
-      res
-    )
+  async showMyself(@Req() req: Request): Promise<User> {
+    const currentUser: CaseUser = await this.authService.getUserFromToken(req)
     return this.userService.show(currentUser.id)
   }
 
@@ -108,12 +103,10 @@ export class UserController {
   @Put('/myself')
   async updateMyself(
     @Body() userDto: UpdateUserMyselfDto,
-    @Req() req: Request,
-    @Res() res: Response
+    @Req() req: Request
   ): Promise<UpdateResult> {
     const currentUser: User = (await this.authService.getUserFromToken(
-      req,
-      res
+      req
     )) as User
     return this.userService.updateMyself(currentUser, userDto)
   }
