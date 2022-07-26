@@ -1,20 +1,19 @@
+import Bugsnag from '@bugsnag/js'
 import { CaseNestLibraryModule, PermissionGuard } from '@case-app/nest-library'
-import { DynamicModule, MiddlewareConsumer, Module } from '@nestjs/common'
-import { APP_GUARD } from '@nestjs/core'
+import { MiddlewareConsumer, Module } from '@nestjs/common'
+import { APP_GUARD, Reflector } from '@nestjs/core'
+import { ScheduleModule } from '@nestjs/schedule'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { ScheduleModule } from 'nest-schedule'
-import { Connection } from 'typeorm'
 
 import { Notification } from '../../shared/entities/notification.entity'
 import { Permission } from '../../shared/entities/permission.entity'
 import { Role } from '../../shared/entities/role.entity'
 import { User } from '../../shared/entities/user.entity'
-import { appConnectionOptions } from './app.connection.options'
+import { appConnectionOptions } from '../database/app.connection.options'
 import { UserModule } from './resources/user/user.module'
 import { SearchModule } from './search/search.module'
 import { TaskModule } from './task/task.module'
 
-import Bugsnag from '@bugsnag/js'
 Bugsnag.start({
   apiKey: process.env.BUGSNAG_API_KEY,
   releaseStage: process.env.BUGSNAG_RELEASE_STAGE
@@ -22,16 +21,17 @@ Bugsnag.start({
 
 @Module({
   imports: [
+    TypeOrmModule.forRoot(appConnectionOptions),
     CaseNestLibraryModule.forRoot({
       userEntity: User,
       notificationEntity: Notification,
       permissionEntity: Permission,
       roleEntity: Role,
-      connectionOptions: appConnectionOptions
-    }) as DynamicModule,
-    TypeOrmModule.forRoot(appConnectionOptions),
+      connectionOptions: appConnectionOptions,
+      reflector: new Reflector()
+    }),
+    ScheduleModule.forRoot(),
     UserModule,
-    ScheduleModule.register(),
     SearchModule,
     TaskModule
   ],
@@ -43,6 +43,5 @@ Bugsnag.start({
   ]
 })
 export class AppModule {
-  constructor(private readonly connection: Connection) {}
   configure(consumer: MiddlewareConsumer): void {}
 }

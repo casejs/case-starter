@@ -12,7 +12,7 @@ export class SearchController {
     @Query('terms') terms: string,
     @Query('resources') resources: string[]
   ): Promise<SearchResult[]> {
-    return await this.searchService.search({
+    return this.searchService.search({
       terms,
       resources
     })
@@ -22,6 +22,6 @@ export class SearchController {
   async getSearchResultObjects(
     @Query() resourcesToGet: { [key: string]: string | string[] }
   ): Promise<SearchResult[]> {
-    return await this.searchService.getSearchResultObjects(resourcesToGet)
+    return this.searchService.getSearchResultObjects(resourcesToGet)
   }
 }
