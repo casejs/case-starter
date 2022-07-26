@@ -1,10 +1,11 @@
+import 'dotenv/config'
+
 import { Connection, createConnection } from 'typeorm'
 
-import 'dotenv/config'
+import { appConnectionOptions } from '../app.connection.options'
 import { PermissionSeeder } from './permission.seeder'
-import { appConnectionOptions } from '../../src/app.connection.options'
-import { SettingSeeder } from './setting.seeder'
 import { RoleSeeder } from './role.seeder'
+import { SettingSeeder } from './setting.seeder'
 import { UserSeeder } from './user.seeder'
 
 seed()

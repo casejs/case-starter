@@ -1,6 +1,6 @@
 import Bugsnag from '@bugsnag/js'
 import { CaseNestLibraryModule, PermissionGuard } from '@case-app/nest-library'
-import { DynamicModule, MiddlewareConsumer, Module } from '@nestjs/common'
+import { MiddlewareConsumer, Module } from '@nestjs/common'
 import { APP_GUARD, Reflector } from '@nestjs/core'
 import { ScheduleModule } from '@nestjs/schedule'
 import { TypeOrmModule } from '@nestjs/typeorm'

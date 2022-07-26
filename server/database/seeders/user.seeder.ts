@@ -27,14 +27,16 @@ export class UserSeeder {
       }
     )
 
-    return Promise.all(saveUserPromises).then(res => {
+    return Promise.all(saveUserPromises).then((res) => {
       return res
     })
   }
 
   private async getUser(): Promise<User> {
     const teamMemberRole: Role = await this.entityManager.findOneOrFail(Role, {
-      name: 'teamMember'
+      where: {
+        name: 'teamMember'
+      }
     })
 
     const firstName: string = faker.name.firstName()
@@ -82,7 +84,9 @@ export class UserSeeder {
 
   private async getAdminUser(): Promise<User> {
     const adminRole: Role = await this.entityManager.findOneOrFail(Role, {
-      name: 'admin'
+      where: {
+        name: 'admin'
+      }
     })
 
     const user: User = this.entityManager.create(User, {
