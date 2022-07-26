@@ -1,6 +1,6 @@
 {
   "name": "case",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "CASE Framework for custom web apps",
   "scripts": {
     "install": "npm run install:client && npm run install:server",
