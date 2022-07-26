@@ -1,11 +1,13 @@
 import {
   IsNotEmpty,
   IsString,
+  IsNumber,
   IsEmail,
   Validate,
   IsOptional
 } from 'class-validator'
-import { IsUserAlreadyExist } from '@case-app/nest-library'
+import { IsUserAlreadyExist, toNumber } from '@case-app/nest-library'
+import { Transform } from 'class-transformer'
 
 export class CreateUserDto {
   @IsNotEmpty()
@@ -21,8 +23,10 @@ export class CreateUserDto {
   @IsString()
   readonly password: string
 
+  @Transform(({ value }) => toNumber(value))
   @IsNotEmpty()
-  readonly roleId: number | string
+  @IsNumber()
+  readonly roleId: number
 
   @IsOptional()
   readonly isActive: boolean

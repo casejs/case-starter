@@ -16,14 +16,14 @@ You can restrict a route only to users that have permission with the `Permission
 ```js
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: HomeComponent,
     canActivate: [AuthGuard, PermissionGuard],
     data: {
-      permission: "myCustomPermission",
-    },
-  },
-];
+      permission: 'myCustomPermission'
+    }
+  }
+]
 ```
 
 ### Custom display
@@ -61,7 +61,7 @@ To restrict an endpoint to users that have a permission, simply use the `Permiss
     @Body()
     userDto: CreateUserDto
   ): Promise<User> {
-    return await this.userService.store(userDto)
+    return this.userService.store(userDto)
   }
 ```
 
@@ -91,13 +91,13 @@ export const allPermissions: string[] = [].concat(
         permissionType +
         resourceName.charAt(0).toUpperCase() +
         resourceName.slice(1)
-    );
+    )
   }),
   // * Extra permissions.
-  "canLogin",
-  "browseAnalytics",
-  "myCustomPermission"
-);
+  'canLogin',
+  'browseAnalytics',
+  'myCustomPermission'
+)
 ```
 
 and then seed to take effect (resets all data, only for development) :

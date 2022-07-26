@@ -1,4 +1,12 @@
-import { IsNotEmpty, IsString, IsEmail, IsOptional } from 'class-validator'
+import { toNumber } from '@case-app/nest-library'
+import { Transform } from 'class-transformer'
+import {
+  IsNotEmpty,
+  IsString,
+  IsNumber,
+  IsEmail,
+  IsOptional
+} from 'class-validator'
 
 export class UpdateUserDto {
   @IsNotEmpty()
@@ -13,8 +21,10 @@ export class UpdateUserDto {
   @IsString()
   readonly password: string
 
+  @Transform(({ value }) => toNumber(value))
   @IsNotEmpty()
-  readonly roleId: number | string
+  @IsNumber()
+  readonly roleId: number
 
   @IsOptional()
   @IsString()

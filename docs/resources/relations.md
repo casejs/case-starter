@@ -10,31 +10,31 @@ Let's take the following example : We have customers that belong to corporate gr
 
 ```js
 // customer.entity.ts (server)
-@Entity({ name: "customers" })
+@Entity({ name: 'customers' })
 export class Customer {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column()
-  name: string;
+  name: string
 
   @ManyToOne(() => CorporateGroup, (corporateGroup) => corporateGroup.customers)
-  corporateGroup: CorporateGroup;
+  corporateGroup: CorporateGroup
 }
 ```
 
 ```js
 // corporate-group.entity.ts (server)
-@Entity({ name: "corporateGroups" })
+@Entity({ name: 'corporateGroups' })
 export class CorporateGroup {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column()
-  name: string;
+  name: string
 
   @OneToMany(() => Customer, (customer) => customer.corporateGroup)
-  customers: Customer[];
+  customers: Customer[]
 }
 ```
 
@@ -159,9 +159,9 @@ It works the same way for relations with several levels:
 ```js
 // customer.service.ts (server)
 const query = this.repository
-  .createQueryBuilder("leaf")
-  .leftJoinAndSelect("leaf.tree", "tree")
-  .leftJoinAndSelect("tree.forest", "forest");
+  .createQueryBuilder('leaf')
+  .leftJoinAndSelect('leaf.tree', 'tree')
+  .leftJoinAndSelect('tree.forest', 'forest')
 ```
 
 ```js
@@ -241,7 +241,7 @@ To finish, we need to go to the `customer.service.ts` and update the `store()` a
       customerDto.corporateGroupId
     )
 
-    return await this.repository.save(customer)
+    return this.repository.save(customer)
   }
 
   async update(
@@ -255,7 +255,7 @@ To finish, we need to go to the `customer.service.ts` and update the `store()` a
       customerDto.corporateGroupId
     )
 
-    return await this.repository.update(id, customer)
+    return this.repository.update(id, customer)
   }
 ```
 

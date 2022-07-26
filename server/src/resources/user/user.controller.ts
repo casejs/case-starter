@@ -1,9 +1,18 @@
 import {
+  AuthGuard,
+  AuthService,
+  CaseUser,
+  Paginator,
+  Permission,
+  SelectOption
+} from '@case-app/nest-library'
+import {
   Body,
   Controller,
   Delete,
   Get,
   Param,
+  ParseIntPipe,
   Patch,
   Post,
   Put,
@@ -11,21 +20,13 @@ import {
   Req,
   UseGuards
 } from '@nestjs/common'
+import { Request } from 'express'
 import { DeleteResult, UpdateResult } from 'typeorm'
 
-import {
-  AuthService,
-  Permission,
-  AuthGuard,
-  Paginator,
-  SelectOption,
-  CaseUser
-} from '@case-app/nest-library'
-
+import { User } from '../../../../shared/entities/user.entity'
 import { CreateUserDto } from './dtos/create-user.dto'
 import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto'
 import { UpdateUserDto } from './dtos/update-user.dto'
-import { User } from '../../../../shared/entities/user.entity'
 import { UserService } from './user.service'
 
 @Controller('users')
@@ -46,7 +47,7 @@ export class UserController {
     @Query('orderBy') orderBy?: string,
     @Query('orderByDesc') orderByDesc?: string
   ): Promise<Paginator<User> | User[] | string> {
-    return await this.userService.index({
+    return this.userService.index({
       page: parseInt(page, 10),
       userIds,
       roleName,
@@ -78,15 +79,15 @@ export class UserController {
   }
 
   @Get('/myself')
-  async showMyself(@Req() req: any): Promise<User> {
+  async showMyself(@Req() req: Request): Promise<User> {
     const currentUser: CaseUser = await this.authService.getUserFromToken(req)
-    return await this.userService.show(currentUser.id)
+    return this.userService.show(currentUser.id)
   }
 
   @Get('/:id')
   @Permission('readUsers')
-  public async show(@Param('id') id: string): Promise<User> {
-    return await this.userService.show(id)
+  public async show(@Param('id', ParseIntPipe) id: number): Promise<User> {
+    return this.userService.show(id)
   }
 
   @Post()
@@ -95,39 +96,41 @@ export class UserController {
     @Body()
     userDto: CreateUserDto
   ): Promise<User> {
-    return await this.userService.store(userDto)
+    return this.userService.store(userDto)
   }
 
   // Each user can update his or her user, but without changing his or her role.
   @Put('/myself')
   async updateMyself(
     @Body() userDto: UpdateUserMyselfDto,
-    @Req() req: any
+    @Req() req: Request
   ): Promise<UpdateResult> {
     const currentUser: User = (await this.authService.getUserFromToken(
       req
     )) as User
-    return await this.userService.updateMyself(currentUser, userDto)
+    return this.userService.updateMyself(currentUser, userDto)
   }
 
   @Put('/:id')
   @Permission('editUsers')
   async update(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body() userDto: UpdateUserDto
   ): Promise<UpdateResult> {
-    return await this.userService.update(id, userDto)
+    return this.userService.update(id, userDto)
   }
 
   @Patch('/:id/toggle-active')
   @Permission('editUsers')
-  async toggleActive(@Param('id') id: string): Promise<UpdateResult> {
-    return await this.userService.toggleActive(id)
+  async toggleActive(
+    @Param('id', ParseIntPipe) id: number
+  ): Promise<UpdateResult> {
+    return this.userService.toggleActive(id)
   }
 
   @Delete('/:id')
   @Permission('deleteUsers')
-  async delete(@Param('id') id: string): Promise<DeleteResult> {
-    return await this.userService.destroy(id)
+  async delete(@Param('id', ParseIntPipe) id: number): Promise<DeleteResult> {
+    return this.userService.destroy(id)
   }
 }

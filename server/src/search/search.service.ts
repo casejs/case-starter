@@ -47,8 +47,6 @@ export class SearchService {
     return searchResults
   }
 
-  // TODO: What about icons ? Not possible with today's version because either MultiSearch or Server-side do not have access to icon per resource.
-
   // Get full SearchResult object based on resource Ids. Used to display selection.
   async getSearchResultObjects(query: {
     [key: string]: string | string[]
@@ -57,17 +55,13 @@ export class SearchService {
 
     // * Get search result objects (keep comment for schematics).
     if (query.userIds && query.userIds.length) {
-      const users: SearchResult[] = await this.getSearchResultObjectsForResource(
-        User,
-        query.userIds
-      )
+      const users: SearchResult[] =
+        await this.getSearchResultObjectsForResource(User, query.userIds)
       searchResults = [...searchResults, ...users]
     }
     if (query.roleIds && query.roleIds.length) {
-      const roles: SearchResult[] = await this.getSearchResultObjectsForResource(
-        Role,
-        query.roleIds
-      )
+      const roles: SearchResult[] =
+        await this.getSearchResultObjectsForResource(Role, query.roleIds)
       searchResults = [...searchResults, ...roles]
     }
 
@@ -83,7 +77,7 @@ export class SearchService {
       .createQueryBuilder('resource')
       // Search through all searchableFields.
       .andWhere(
-        new Brackets(qb => {
+        new Brackets((qb) => {
           resourceClass.searchableFields.reduce(
             (qb: WhereExpression, searchableField: string) =>
               qb.orWhere(`resource.${searchableField} like :terms`, {
@@ -94,7 +88,7 @@ export class SearchService {
         })
       )
 
-    const resources: any[] = await query.getMany()
+    const resources: any[] = await query.limit(50).getMany()
 
     return resources.map((resource: any) => ({
       id: resource.id,

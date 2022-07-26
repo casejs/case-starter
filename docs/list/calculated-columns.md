@@ -66,7 +66,7 @@ projectRepository
 .leftJoinAndSelect('project.leadDeveloper', 'leadDeveloper')
 [...]
 
-return await this.paginationService.paginate({
+return this.paginationService.paginate({
   query,
   currentPage: page ? parseInt(page, 10) : 1,
   transformResult: (p: Project) => {
