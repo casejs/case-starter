@@ -35,8 +35,14 @@ dropdownLinks: [
       }
     }),
     disabled: (user: User) => user.projects.length || user.isActive,
-    tooltip:
-      'Vous ne pouvez pas effacer un collaborateur actif ou ayant des projets.'
+    tooltip: (user: User) => {
+      if (user.projects.length) {
+        return 'Vous ne pouvez supprimer un collaborateur relié à des projets.'
+      }
+      if (user.isActive) {
+        return 'Vous ne pouvez supprimer un collaborateur relié actuellement en activité.'
+      }
+    }
   }
 ]
 ```
