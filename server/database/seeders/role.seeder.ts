@@ -1,13 +1,13 @@
-import { Connection, EntityManager } from 'typeorm'
+import { DataSource, EntityManager } from 'typeorm'
 
-import { Permission } from '../../../shared/entities/permission.entity'
-import { Role } from '../../../shared/entities/role.entity'
+import { Permission } from '../../src/resources/case/permission.entity'
+import { Role } from '../../src/resources/case/role.entity'
 
 export class RoleSeeder {
   entityManager: EntityManager
 
-  constructor(connection: Connection) {
-    this.entityManager = connection.createEntityManager()
+  constructor(dataSource: DataSource) {
+    this.entityManager = dataSource.manager
   }
 
   async seed(): Promise<Role[]> {
@@ -18,7 +18,7 @@ export class RoleSeeder {
       this.entityManager.save(await this.getTeamMemberRole())
     ]
 
-    return Promise.all(saveRolePromises).then(res => {
+    return Promise.all(saveRolePromises).then((res) => {
       return res
     })
   }

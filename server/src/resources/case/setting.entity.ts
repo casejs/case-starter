@@ -2,8 +2,8 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from '../../server/node_modules/typeorm'
+  UpdateDateColumn
+} from 'typeorm'
 
 @Entity({ name: 'settings' })
 export class Setting {

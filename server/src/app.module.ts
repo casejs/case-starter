@@ -5,11 +5,11 @@ import { APP_GUARD, Reflector } from '@nestjs/core'
 import { ScheduleModule } from '@nestjs/schedule'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { Notification } from '../../shared/entities/notification.entity'
-import { Permission } from '../../shared/entities/permission.entity'
-import { Role } from '../../shared/entities/role.entity'
-import { User } from '../../shared/entities/user.entity'
 import { appConnectionOptions } from '../database/app.connection.options'
+import { Notification } from './resources/case/notification.entity'
+import { Permission } from './resources/case/permission.entity'
+import { Role } from './resources/case/role.entity'
+import { UserLite } from './resources/case/user-lite.entity'
 import { UserModule } from './resources/user/user.module'
 import { SearchModule } from './search/search.module'
 import { TaskModule } from './task/task.module'
@@ -23,7 +23,7 @@ Bugsnag.start({
   imports: [
     TypeOrmModule.forRoot(appConnectionOptions),
     CaseNestLibraryModule.forRoot({
-      userEntity: User,
+      userEntity: UserLite,
       notificationEntity: Notification,
       permissionEntity: Permission,
       roleEntity: Role,

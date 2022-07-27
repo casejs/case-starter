@@ -89,11 +89,6 @@ export class UserCreateEditComponent
       className: 'is-6',
       inputType: InputType.ColorPicker,
       required: true
-    },
-    {
-      label: 'Adresse',
-      property: 'address',
-      inputType: InputType.Address
     }
   ]
 

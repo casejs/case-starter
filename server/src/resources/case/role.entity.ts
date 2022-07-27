@@ -6,12 +6,13 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn
-} from '../../server/node_modules/typeorm'
+} from 'typeorm'
 
 import { Permission } from './permission.entity'
-import { User } from './user.entity'
+import { User } from '../user/user.entity'
 
-import { CaseRole } from '../../server/node_modules/@case-app/nest-library'
+import { CaseRole } from '@case-app/nest-library'
+import { UserLite } from './user-lite.entity'
 
 @Entity({ name: 'roles' })
 export class Role implements CaseRole {
@@ -33,7 +34,7 @@ export class Role implements CaseRole {
   @ManyToMany((type) => Permission, (p) => p.roles)
   permissions: Permission[]
 
-  @OneToMany((type) => User, (u) => u.role)
+  @OneToMany((type) => UserLite, (u) => u.role)
   users: User[]
 
   @CreateDateColumn({ select: false })

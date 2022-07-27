@@ -1,14 +1,14 @@
-import { Connection, EntityManager } from 'typeorm'
-import { Permission } from '../../../shared/entities/permission.entity'
+import { DataSource, EntityManager } from 'typeorm'
+
+import { Permission } from '../../src/resources/case/permission.entity'
 import { allPermissions } from './content/permissions.content'
 
 export class PermissionSeeder {
   entityManager: EntityManager
 
-  constructor(connection: Connection) {
-    this.entityManager = connection.createEntityManager()
+  constructor(dataSource: DataSource) {
+    this.entityManager = dataSource.manager
   }
-
   async seed(): Promise<Permission[]> {
     console.log('\x1b[35m', '[] Seeding permissions...')
 

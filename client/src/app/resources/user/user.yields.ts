@@ -15,11 +15,6 @@ export const userYields: Yield[] = [
     secondProperty: 'role.name'
   },
   {
-    label: 'Addresse',
-    type: YieldType.Address,
-    property: 'address'
-  },
-  {
     label: 'Actif',
     property: 'isActive',
     type: YieldType.Switch,

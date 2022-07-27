@@ -1,5 +1,5 @@
+import { CaseUser, DecimalColumnTransformer } from '@case-app/nest-library'
 import {
-  AfterLoad,
   Column,
   CreateDateColumn,
   Entity,
@@ -8,19 +8,15 @@ import {
   PrimaryGeneratedColumn,
   Unique,
   UpdateDateColumn
-} from '../../server/node_modules/typeorm'
-
-import { Notification } from './notification.entity'
+} from 'typeorm'
 import { Role } from './role.entity'
+import { Notification } from './notification.entity'
 
-import { CaseUser } from '../../server/node_modules/@case-app/nest-library'
-
+// * UserLite is an abstraction of a User removing its custom relations (but keeping CASE relations like Role or Notification).
+// * This is needed in order to pass this entity to the NestLibrary without having to send the whole DB.
 @Entity({ name: 'users' })
 @Unique(['email'])
-export class User implements CaseUser {
-  public static searchableFields: string[] = ['name', 'email']
-  public static displayName: string = 'name'
-
+export class UserLite implements CaseUser {
   @PrimaryGeneratedColumn()
   id: number
 
@@ -41,9 +37,6 @@ export class User implements CaseUser {
 
   @Column({ select: false })
   token: string
-
-  @Column({ nullable: true })
-  address: string
 
   @Column('timestamp', { nullable: true, select: false })
   lastNotificationCheck: Date
@@ -67,16 +60,4 @@ export class User implements CaseUser {
 
   @UpdateDateColumn({ select: false })
   updatedAt: Date
-
-  imageObjects: { label?: string; link?: string; image?: string }[]
-
-  @AfterLoad()
-  public async afterLoad() {
-    this.imageObjects = [
-      {
-        label: this.name,
-        image: this.image
-      }
-    ]
-  }
 }

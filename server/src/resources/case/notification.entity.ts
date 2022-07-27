@@ -4,10 +4,11 @@ import {
   Entity,
   ManyToOne,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from '../../server/node_modules/typeorm'
+  UpdateDateColumn
+} from 'typeorm'
 
-import { User } from './user.entity'
+import { User } from '../user/user.entity'
+import { UserLite } from './user-lite.entity'
 
 @Entity({ name: 'notifications' })
 export class Notification {
@@ -23,9 +24,9 @@ export class Notification {
   @Column({ type: 'timestamp' })
   date: Date
 
-  @ManyToOne((type) => User, (user) => user.notifications, {
+  @ManyToOne((type) => UserLite, (user) => user.notifications, {
     onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
+    onUpdate: 'CASCADE'
   })
   user: User
 

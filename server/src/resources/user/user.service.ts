@@ -10,11 +10,11 @@ import {
   UpdateResult
 } from 'typeorm'
 
-import { Role } from '../../../../shared/entities/role.entity'
-import { User } from '../../../../shared/entities/user.entity'
+import { Role } from '../case/role.entity'
 import { CreateUserDto } from './dtos/create-user.dto'
 import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto'
 import { UpdateUserDto } from './dtos/update-user.dto'
+import { User } from './user.entity'
 
 @Injectable()
 export class UserService {
