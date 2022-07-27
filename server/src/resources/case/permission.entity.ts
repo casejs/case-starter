@@ -6,10 +6,10 @@ import {
   UpdateDateColumn,
   ManyToMany,
   JoinTable
-} from '../../server/node_modules/typeorm'
+} from 'typeorm'
 
 import { Role } from './role.entity'
-import { CasePermission } from '../../server/node_modules/@case-app/nest-library'
+import { CasePermission } from '@case-app/nest-library'
 
 @Entity({ name: 'permissions' })
 export class Permission implements CasePermission {

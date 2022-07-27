@@ -1,6 +1,6 @@
 import 'dotenv/config'
 
-import { Connection, createConnection } from 'typeorm'
+import { DataSource } from 'typeorm'
 
 import { appConnectionOptions } from '../app.connection.options'
 import { PermissionSeeder } from './permission.seeder'
@@ -17,17 +17,18 @@ async function seed() {
   const userCount = 40
 
   // Create connection.
-  const connection: Connection = await createConnection(appConnectionOptions)
+  const dataSource: DataSource = new DataSource(appConnectionOptions)
+  await dataSource.initialize()
 
   const settingSeeder: SettingSeeder = new SettingSeeder(
-    connection,
+    dataSource,
     settingCount
   )
-  const permissionSeeder: PermissionSeeder = new PermissionSeeder(connection)
-  const roleSeeder: RoleSeeder = new RoleSeeder(connection)
-  const userSeeder: UserSeeder = new UserSeeder(connection, userCount)
+  const permissionSeeder: PermissionSeeder = new PermissionSeeder(dataSource)
+  const roleSeeder: RoleSeeder = new RoleSeeder(dataSource)
+  const userSeeder: UserSeeder = new UserSeeder(dataSource, userCount)
 
-  const queryRunner = connection.createQueryRunner()
+  const queryRunner = dataSource.createQueryRunner()
 
   const deleteTablePromises: Promise<void>[] = [
     // * Table names (keep comment for schematics).
@@ -51,5 +52,5 @@ async function seed() {
   await roleSeeder.seed()
   await userSeeder.seed()
 
-  await connection.close()
+  await dataSource.destroy()
 }

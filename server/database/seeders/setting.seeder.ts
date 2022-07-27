@@ -1,12 +1,13 @@
-import { Connection, EntityManager } from 'typeorm'
-import { Setting } from '../../../shared/entities/setting.entity'
+import { DataSource, EntityManager } from 'typeorm'
+
+import { Setting } from '../../src/resources/case/setting.entity'
 
 export class SettingSeeder {
   entityManager: EntityManager
   count: number
 
-  constructor(connection: Connection, count: number) {
-    this.entityManager = connection.createEntityManager()
+  constructor(dataSource: DataSource, count: number) {
+    this.entityManager = dataSource.manager
     this.count = count
   }
 
@@ -22,7 +23,7 @@ export class SettingSeeder {
       return this.entityManager.save(this.getSetting())
     })
 
-    return Promise.all(saveSettingPromises).then(res => {
+    return Promise.all(saveSettingPromises).then((res) => {
       return res
     })
   }

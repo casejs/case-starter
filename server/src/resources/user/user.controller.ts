@@ -23,10 +23,10 @@ import {
 import { Request } from 'express'
 import { DeleteResult, UpdateResult } from 'typeorm'
 
-import { User } from '../../../../shared/entities/user.entity'
 import { CreateUserDto } from './dtos/create-user.dto'
 import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto'
 import { UpdateUserDto } from './dtos/update-user.dto'
+import { User } from './user.entity'
 import { UserService } from './user.service'
 
 @Controller('users')
