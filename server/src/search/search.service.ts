@@ -2,15 +2,18 @@ import { SearchResult } from '@case-app/nest-library'
 import { Injectable } from '@nestjs/common'
 import {
   Brackets,
-  getConnection,
+  DataSource,
   SelectQueryBuilder,
-  WhereExpression
+  WhereExpressionBuilder
 } from 'typeorm'
-import { User } from '../../../shared/entities/user.entity'
-import { Role } from '../../../shared/entities/role.entity'
+
+import { Role } from '../resources/case/role.entity'
+import { User } from '../resources/user/user.entity'
 
 @Injectable()
 export class SearchService {
+  constructor(private dataSource: DataSource) {}
+
   // Main search function : searches terms on several pre-defined fields of several resources.
   async search({
     terms,
@@ -72,14 +75,14 @@ export class SearchService {
     resourceClass: any,
     terms: string
   ): Promise<SearchResult[]> {
-    const query: SelectQueryBuilder<any> = await getConnection()
+    const query: SelectQueryBuilder<any> = this.dataSource
       .getRepository(resourceClass)
       .createQueryBuilder('resource')
       // Search through all searchableFields.
       .andWhere(
         new Brackets((qb) => {
           resourceClass.searchableFields.reduce(
-            (qb: WhereExpression, searchableField: string) =>
+            (qb: WhereExpressionBuilder, searchableField: string) =>
               qb.orWhere(`resource.${searchableField} like :terms`, {
                 terms: `%${terms}%`
               }),
@@ -101,7 +104,7 @@ export class SearchService {
     resourceClass: any,
     ids: string | string[]
   ): Promise<SearchResult[]> {
-    const resources: any[] = await getConnection()
+    const resources: any[] = await this.dataSource
       .getRepository(resourceClass)
       .createQueryBuilder('resource')
       .whereInIds(ids)

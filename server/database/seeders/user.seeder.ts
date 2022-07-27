@@ -1,18 +1,18 @@
 import * as sha3 from 'crypto-js/sha3'
 import * as faker from 'faker/locale/fr'
-import { Connection, EntityManager } from 'typeorm'
-import { Notification } from '../../../shared/entities/notification.entity'
+import { DataSource, EntityManager } from 'typeorm'
 
-import { Role } from '../../../shared/entities/role.entity'
-import { User } from '../../../shared/entities/user.entity'
+import { Notification } from '../../src/resources/case/notification.entity'
+import { Role } from '../../src/resources/case/role.entity'
+import { User } from '../../src/resources/user/user.entity'
 import { colors } from './content/colors.content'
 
 export class UserSeeder {
   entityManager: EntityManager
   count: number
 
-  constructor(connection: Connection, count: number) {
-    this.entityManager = connection.createEntityManager()
+  constructor(dataSource: DataSource, count: number) {
+    this.entityManager = dataSource.manager
     this.count = count
   }
 

@@ -16,7 +16,6 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @IsEmail()
-  @Validate(IsUserAlreadyExist)
   readonly email: string
 
   @IsNotEmpty()
