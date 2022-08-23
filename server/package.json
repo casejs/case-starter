@@ -2,7 +2,7 @@
   "name": "case-server",
   "version": "0.0.0",
   "description": "description",
-  "author": "Buddyweb",
+  "author": "CASE",
   "license": "MIT",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@bugsnag/js": "^7.17.0",
-    "@case-app/nest-library": "^0.2.0",
+    "@case-app/nest-library": "^0.3.0",
     "@nestjs/common": "^9.0.3",
     "@nestjs/core": "^9.0.3",
     "@nestjs/platform-express": "^9.0.3",
