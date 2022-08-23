@@ -34,7 +34,7 @@ Check out the [full list of inputs](elements/inputs.md) to find the appropriate 
 
 ## Readonly filters
 
-By default, users can change filters to set them to their value. They also can be set in readonly mode to prevent changing the forced value.
+By default, users can change filters to set them to their value. They also can be set in readonly mode to prevent changing the forced value. Check out the [list of filters than can accept the readonly mode](elements/inputs.md)
 
 ```js
   filters: Filter[] = [
