@@ -43,11 +43,10 @@
   - [Roles and permissions](features/roles-and-permissions.md)
   - [Search](features/search.md)
   - [Monitoring](features/monitoring.md)
-
   - [File upload\*](features/file-upload.md)
   - [Actions](features/actions.md)
-
   - [Flash messages](features/flash-messages.md)
+  - [Send emails](features/send-emails.md)
   - [Pipes\*]()
   - [Task scheduling\*]()
   - [Notifications\*]()
