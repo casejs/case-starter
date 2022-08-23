@@ -32,6 +32,38 @@ This will add query parameters to your `GET /$resources$` request. You have then
 
 Check out the [full list of inputs](elements/inputs.md) to find the appropriate input for your filter.
 
+## Readonly filters
+
+By default, users can change filters to set them to their value. They also can be set in readonly mode to prevent changing the forced value.
+
+```js
+  filters: Filter[] = [
+  {
+      label: 'Project status',
+      inputType: InputType.Select,
+      property: 'status',
+      readonly: true, // Readonly mode: The user cannot change the value.
+      selectOptions: [
+        {
+          label: 'Pending',
+          value: 1
+        },
+        {
+          label: 'In progress',
+          value: 2
+        },
+        {
+          label: 'Finished',
+          value: 3
+        }
+      ],
+      initialValue: {
+        value: 1
+      }
+    }
+  ]
+```
+
 ## Persistent filters
 
 Persistent filters enable to automatically retain your filter settings. This feature can be enabled on your project globally with the `enablePersistentFilters` property.
