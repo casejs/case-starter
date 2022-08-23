@@ -48,7 +48,7 @@
   - [Flash messages](features/flash-messages.md)
   - [Send emails](features/send-emails.md)
   - [Pipes\*]()
-  - [Task scheduling\*]()
+  - [Task scheduling\*](features/task-scheduling.md)
   - [Notifications\*]()
   - [Generate an Excel/Word/PDF file\*]()
 
