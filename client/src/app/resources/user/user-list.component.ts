@@ -8,6 +8,7 @@ import {
   Yield,
   BreadcrumbService,
   FlashMessageService,
+  FilterService,
   ResourceService,
   caseListTemplate,
   Filter,
@@ -42,6 +43,7 @@ export class UserListComponent extends CaseListComponent implements OnInit {
     resourceService: ResourceService,
     flashMessageService: FlashMessageService,
     authService: AuthService,
+    filterService: FilterService,
     @Inject('CASE_CONFIG_TOKEN') config: CaseConfig
   ) {
     super(
@@ -51,6 +53,7 @@ export class UserListComponent extends CaseListComponent implements OnInit {
       resourceService,
       flashMessageService,
       authService,
+      filterService,
       config
     )
   }

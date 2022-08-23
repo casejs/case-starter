@@ -11,6 +11,12 @@
   - [Database seeder](resources/database-seeder)
   - [Relations](resources/relations.md)
 
+- Elements
+
+  - [Inputs](elements/inputs.md)
+  - [Top menu quick links](elements/quick-links.md)
+  - [Breadcrumbs\*]()
+
 - List view
 
   - [List view](list/list.md)
@@ -32,24 +38,18 @@
 
   - [Detail view](detail/detail.md)
 
-- Elements
-
-  - [Top menu quick links](elements/quick-links.md)
-  - [Breadcrumbs\*]()
-
 - Features
 
   - [Authentication](features/authentication.md)
   - [Roles and permissions](features/roles-and-permissions.md)
   - [Search](features/search.md)
   - [Monitoring](features/monitoring.md)
-
   - [File upload\*](features/file-upload.md)
   - [Actions](features/actions.md)
-
   - [Flash messages](features/flash-messages.md)
+  - [Send emails](features/send-emails.md)
   - [Pipes\*]()
-  - [Task scheduling\*]()
+  - [Task scheduling\*](features/task-scheduling.md)
   - [Notifications\*]()
   - [Generate an Excel/Word/PDF file\*]()
 
