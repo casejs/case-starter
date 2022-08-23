@@ -1,15 +1,20 @@
-import { ExcelService, PaginationService } from '@case-app/nest-library';
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { SHA3 } from 'crypto-js';
-import * as faker from 'faker';
-import { DeleteResult, Repository, SelectQueryBuilder, UpdateResult } from 'typeorm';
+import { ExcelService, PaginationService } from '@case-app/nest-library'
+import { Inject, Injectable, NotFoundException } from '@nestjs/common'
+import { InjectRepository } from '@nestjs/typeorm'
+import { SHA3 } from 'crypto-js'
+import * as faker from 'faker'
+import {
+  DeleteResult,
+  Repository,
+  SelectQueryBuilder,
+  UpdateResult
+} from 'typeorm'
 
-import { Role } from '../case/role.entity';
-import { CreateUserDto } from './dtos/create-user.dto';
-import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto';
-import { UpdateUserDto } from './dtos/update-user.dto';
-import { User } from './user.entity';
+import { Role } from '../case/role.entity'
+import { CreateUserDto } from './dtos/create-user.dto'
+import { UpdateUserMyselfDto } from './dtos/update-user-myself.dto'
+import { UpdateUserDto } from './dtos/update-user.dto'
+import { User } from './user.entity'
 
 @Injectable()
 export class UserService {
