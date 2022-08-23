@@ -30,4 +30,17 @@ Those filters can be set form the `filters` property the the component class of 
 
 This will add query parameters to your `GET /$resources$` request. You have then to make sure in the back-end that those query parameters are considered and return a filtered value.
 
-There is a bunch of diferent inputs that you can use as filters like the [multi search](../features/multi-search.md).
+Check out the [full list of inputs](elements/inputs.md) to find the appropriate input for your filter.
+
+## Persistent filters
+
+Persistent filters enable to automatically retain your filter settings. This feature can be enabled on your project globally with the `enablePersistentFilters` property.
+
+```js
+    // client/src/app/app.module.ts
+    CaseModule.forRoot({
+      baseUrl: environment.baseUrl,
+      [...],
+      enablePersistentFilters: true
+    })
+```
