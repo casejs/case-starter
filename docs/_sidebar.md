@@ -11,6 +11,12 @@
   - [Database seeder](resources/database-seeder)
   - [Relations](resources/relations.md)
 
+- Elements
+
+  - [Inputs](elements/inputs.md)
+  - [Top menu quick links](elements/quick-links.md)
+  - [Breadcrumbs\*]()
+
 - List view
 
   - [List view](list/list.md)
@@ -31,11 +37,6 @@
 - Detail view
 
   - [Detail view](detail/detail.md)
-
-- Elements
-
-  - [Top menu quick links](elements/quick-links.md)
-  - [Breadcrumbs\*]()
 
 - Features
 
