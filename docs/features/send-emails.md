@@ -39,3 +39,14 @@ If nothing is specified, the emails are sent naturally to their recipients. Howe
 
 - redirect all emails to **a single mailbox** (debug)
 - to **not send email at all** (console). Those modes are useful when dealing with non-production environments like _local_ or _staging_
+
+All you have to do is to set the mode in your `.env` file.
+
+```
+EMAIL_MODE=CONSOLE
+```
+
+```
+EMAIL_MODE=DEBUG
+DEBUG_MAIL_TO=example@domain.fr
+```
