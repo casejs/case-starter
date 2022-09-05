@@ -4,7 +4,7 @@ The Create Edit view is the view that contains the form to create a new resource
 
 You can see the **dropdownLinks** in the **viewList** of your resource being displayed as follow
 
-![DropDownLinks](../assets/images/create-edit/dropdown-links-action-button-display.png ":size=100%")
+![DropDownLinks](../assets/images/create-edit/dropdown-links-action-button-display.png ':size=100%')
 
 If you want to modify the drop down links you can go on the resource.definition.ts :
 
@@ -12,30 +12,30 @@ If you want to modify the drop down links you can go on the resource.definition.
 //customer.definition.ts
 dropdownLinks: [
   {
-    label: "Modifier",
-    permission: "editCustomers",
+    label: 'Modifier',
+    permission: 'editCustomers',
     action: (customer) => ({
       type: ActionType.Link,
       link: {
-        path: `${customerDefinition.path}/${customer.id}/edit`,
-      },
-    }),
+        path: `${customerDefinition.path}/${customer.id}/edit`
+      }
+    })
   },
   {
-    label: "Supprimer",
-    permission: "deleteCustomers",
+    label: 'Supprimer',
+    permission: 'deleteCustomers',
     action: (customer) => ({
       type: ActionType.Delete,
       delete: {
         itemToDelete: customer,
-        definition: customerDefinition,
-      },
-    }),
-  },
-];
+        definition: customerDefinition
+      }
+    })
+  }
+]
 ```
 
-![DropDownLinks](../assets/images/create-edit/update-resource.png ":size=100%")
+![DropDownLinks](../assets/images/create-edit/update-resource.png ':size=100%')
 
 You can modify the fields that appears on the create-edit views on the resource-create-edit.component.ts
 
@@ -243,7 +243,7 @@ You can choose what properties is display on the related resource controller
   ): Promise<SelectOption[]> {
     const users: User[] = (await this.userService.index({
       roleName,
-      withoutPagination: 'true',
+      withoutPagination: true,
       orderBy,
       orderByDesc
     })) as User[]
@@ -382,12 +382,12 @@ Let's take an example where you want to add an invoice for an existing project. 
 //
 createInvoiceForCurrentProjectSpecialRules = JSON.stringify([
   {
-    fieldId: "projectId",
+    fieldId: 'projectId',
     forcedValue: {
-      value: this.project.id,
-    },
-  },
-]);
+      value: this.project.id
+    }
+  }
+])
 ```
 
 And then pass it to the link:
