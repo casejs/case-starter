@@ -7,7 +7,8 @@ A detail view of a resource is a page (or component) dedicated to the display of
 Let's imagine that you created a **Customer** resource beforehand. Create the detail view component with Angular CLI :
 
 ```bash
-ng g c client/src/resources/customer/customer-detail
+cd client
+ng generate component resources/customer/customer-detail
 ```
 
 Add the route to the customer.route.ts :
@@ -27,15 +28,15 @@ And then extend the `CaseDetailComponent` and initialize the detail view :
 
 ```js
 @Component({
-  selector: "app-customer-detail",
-  templateUrl: "./customer-detail.component.html",
-  styleUrls: ["./customer-detail.component.scss"],
+  selector: 'app-customer-detail',
+  templateUrl: './customer-detail.component.html',
+  styleUrls: ['./customer-detail.component.scss']
 })
 export class CustomerDetailComponent
   extends CaseDetailComponent
   implements OnInit
 {
-  definition: ResourceDefinition = customerDefinition;
+  definition: ResourceDefinition = customerDefinition
 
   constructor(
     breadcrumbService: BreadcrumbService,
@@ -48,11 +49,11 @@ export class CustomerDetailComponent
       resourceService,
       flashMessageService,
       activatedRoute
-    );
+    )
   }
 
   ngOnInit(): void {
-    this.initDetailView();
+    this.initDetailView()
   }
 }
 ```
