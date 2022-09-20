@@ -57,9 +57,7 @@ By default, users can change filters to set them to their value. They also can b
           value: 3
         }
       ],
-      initialValue: {
-        value: 1
-      }
+      initialValue: 1
     }
   ]
 ```

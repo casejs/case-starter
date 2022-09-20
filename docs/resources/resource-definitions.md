@@ -9,27 +9,43 @@ The values ​​of the resource will be displayed the way you set it here.
 `client/src/app/resources/customer/customer.definition.ts`
 
 ```js
-import {
-  Gender,
-  LinkType,
-  ResourceDefinition,
-} from "@case-app/angular-library";
-
-export const customerDefinition: ResourceDefinition = {
-  title: "Clients",
-  nameSingular: "client",
-  namePlural: "clients",
-  gender: Gender.Masculine,
-  mainIdentifier: "id",
-  slug: "customers",
-  path: "clients",
+export const itemDefinition: ResourceDefinition = {
+  title: 'Items',
+  nameSingular: 'item',
+  namePlural: 'items',
+  className: 'Item',
+  mainIdentifier: 'id',
+  slug: 'items',
+  path: 'items',
+  icon: 'icon-grid',
+  gender: Gender.Feminine,
   hasDetailPage: false,
   hasListPage: true,
   buttons: [LinkType.CREATE],
   defaultLink: LinkType.EDIT,
   childrenThatPreventDelete: [],
   dropdownLinks: [
-   {...}
-  ],
-};
+    {
+      label: 'Modifier',
+      permission: 'editItems',
+      action: (item) => ({
+        type: ActionType.Link,
+        link: {
+          path: `${itemDefinition.path}/${item.id}/edit`
+        }
+      })
+    },
+    {
+      label: 'Supprimer',
+      permission: 'deleteItems',
+      action: (item) => ({
+        type: ActionType.Delete,
+        delete: {
+          itemToDelete: item,
+          definition: itemDefinition
+        }
+      })
+    }
+  ]
+}
 ```
