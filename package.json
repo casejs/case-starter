@@ -3,14 +3,14 @@
   "version": "0.5.0",
   "description": "CASE Framework for custom web apps",
   "scripts": {
-    "install": "npm run install:client && npm run install:server",
+    "case:install": "npm install && npm run install:client && npm run install:server",
     "install:client": "cd client && npm i",
     "install:server": "cd server && npm i --force && cp .env.example .env",
     "start:client": "cd client && ng serve",
     "start:server": "cd server && npm run start:dev",
     "start:docs": "cd docs && docsify serve -p 2000",
     "seed": "cd server && npm run seed",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cd server && npm run test",
     "case:resource": "cd client && npm run case:resourceFront && cd ../server && npm run case:resourceBack"
   },
   "repository": {
@@ -19,5 +19,8 @@
   },
   "author": "CASE",
   "license": "MIT",
-  "homepage": "https://case.app"
+  "homepage": "https://case.app",
+  "dependencies": {
+    "@types/jest": "^29.0.0"
+  }
 }
