@@ -9,7 +9,7 @@ import {
   mergeWith,
   url,
   Source,
-  SchematicsException,
+  SchematicsException
 } from '@angular-devkit/schematics'
 import * as ts from 'typescript'
 
@@ -19,24 +19,24 @@ import { InsertChange } from '@schematics/angular/utility/change'
 import {
   camelize,
   classify,
-  dasherize,
+  dasherize
 } from '@angular-devkit/core/src/utils/strings'
 
 export function createResource(options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     const sourceTemplates: Source = url('./files')
 
-    const appModulePath = './src/app/app.module.ts'
-    const appRoutingModulePath = './src/app/app-routing.module.ts'
-    const resourceFolderPath = './src/app/resources'
-    const menuItemsPath = './src/app/menu-items.ts'
+    const appModulePath = './client/src/app/app.module.ts'
+    const appRoutingModulePath = './client/src/app/app-routing.module.ts'
+    const resourceFolderPath = './client/src/app/resources'
+    const menuItemsPath = './client/src/app/menu-items.ts'
 
     const sourceParametrizedTemplates: Source = apply(sourceTemplates, [
       template({
         ...options,
-        ...strings,
+        ...strings
       }),
-      move(resourceFolderPath),
+      move(resourceFolderPath)
     ])
 
     // Modify appModule.
@@ -58,7 +58,7 @@ export function createResource(options: any): Rule {
         `./resources/${dasherize(options.name)}/${dasherize(
           options.name
         )}-list/${dasherize(options.name)}-list.component`
-      ),
+      )
     ]
 
     const declarationRecorder = tree.beginUpdate(appModulePath)
@@ -111,11 +111,11 @@ export function createResource(options: any): Rule {
         label: `${classify(options.displayName)}s`,
         permissionsOr: [
           `browse${classify(options.name)}s`,
-          `browseOwn${classify(options.name)}s`,
+          `browseOwn${classify(options.name)}s`
         ],
         routePath: `/${dasherize(options.displayName)}s`,
         icon: 'icon-grid',
-        items: [],
+        items: []
       }) +
       ',\n' +
       menuItemsString.substring(arrayOpeningPosition)
