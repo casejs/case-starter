@@ -47,7 +47,7 @@ export class UserCreateEditComponent
       },
       inputType: InputType.Select,
       selectOptions: () =>
-        this.componentResourceService.listSelectOptions('roles'),
+        this.customResourceService.listSelectOptions('roles'),
       className: 'is-3',
       required: true
     },
@@ -103,7 +103,7 @@ export class UserCreateEditComponent
     private customFlashMessageService: FlashMessageService,
     private customRouter: Router,
     private customActivatedRoute: ActivatedRoute,
-    private componentResourceService: ResourceService
+    private customResourceService: ResourceService
   ) {
     super(
       formBuilder,
@@ -140,8 +140,8 @@ export class UserCreateEditComponent
 
     this.resolvedFields = await this.resolveFields(this.fields)
 
-    this.item = await this.componentResourceService
-      .show(this.definition.slug, this.customActivatedRoute.snapshot.params.id)
+    this.item = await this.customResourceService
+      .show(this.definition.slug, 'myself')
       .then((itemRes) => itemRes)
     this.item.id = 'myself'
 
