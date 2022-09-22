@@ -1,5 +1,5 @@
 import Bugsnag from '@bugsnag/js'
-import { CaseNestLibraryModule, PermissionGuard } from '@case-app/nest-library'
+import { CaseCoreModule, PermissionGuard } from 'case'
 import { MiddlewareConsumer, Module } from '@nestjs/common'
 import { APP_GUARD, Reflector } from '@nestjs/core'
 import { ScheduleModule } from '@nestjs/schedule'
@@ -24,7 +24,7 @@ if (process.env.ENABLE_BUGSNAG === 'true') {
 @Module({
   imports: [
     TypeOrmModule.forRoot(appConnectionOptions),
-    CaseNestLibraryModule.forRoot({
+    CaseCoreModule.forRoot({
       userEntity: UserLite,
       notificationEntity: Notification,
       permissionEntity: Permission,

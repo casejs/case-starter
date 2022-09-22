@@ -9,13 +9,13 @@ import {
   mergeWith,
   url,
   Source,
-  chain,
+  chain
 } from '@angular-devkit/schematics'
 
 import {
   camelize,
   classify,
-  dasherize,
+  dasherize
 } from '@angular-devkit/core/src/utils/strings'
 
 export function createResource(options: any): Rule {
@@ -28,9 +28,9 @@ export function createResource(options: any): Rule {
     const sourceParametrizedTemplates: Source = apply(sourceTemplates, [
       template({
         ...options,
-        ...strings,
+        ...strings
       }),
-      move(resourceFolderPath),
+      move(resourceFolderPath)
     ])
 
     // Import new module in appModule.
@@ -45,7 +45,7 @@ export function createResource(options: any): Rule {
 
     // Push resource routes to array.
     const importPosition: number = appModuleString.indexOf(
-      'CaseNestLibraryModule.forRoot'
+      'CaseCoreModule.forRoot'
     )
 
     appModuleString =
@@ -66,9 +66,9 @@ export function createResource(options: any): Rule {
     const seedParametrizedTemplates: Source = apply(seedTemplates, [
       template({
         ...options,
-        ...strings,
+        ...strings
       }),
-      move(seederFolderPath),
+      move(seederFolderPath)
     ])
 
     // Call resource seeder from main seeder.
@@ -178,7 +178,7 @@ export function createResource(options: any): Rule {
 
     return chain([
       mergeWith(seedParametrizedTemplates),
-      mergeWith(sourceParametrizedTemplates),
+      mergeWith(sourceParametrizedTemplates)
     ])
   }
 }

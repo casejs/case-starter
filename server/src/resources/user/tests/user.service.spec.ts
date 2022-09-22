@@ -1,8 +1,4 @@
-import {
-  ExcelService,
-  PaginationService,
-  Paginator
-} from '@case-app/nest-library'
+import { ExcelService, PaginationService, Paginator } from 'case'
 import { Test, TestingModule } from '@nestjs/testing'
 import { getRepositoryToken } from '@nestjs/typeorm'
 import { Repository, UpdateResult } from 'typeorm'

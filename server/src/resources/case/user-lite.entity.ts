@@ -1,4 +1,4 @@
-import { CaseUser, DecimalColumnTransformer } from '@case-app/nest-library'
+import { CaseUser } from 'case'
 import {
   Column,
   CreateDateColumn,
@@ -9,8 +9,9 @@ import {
   Unique,
   UpdateDateColumn
 } from 'typeorm'
-import { Role } from './role.entity'
+
 import { Notification } from './notification.entity'
+import { Role } from './role.entity'
 
 // * UserLite is an abstraction of a User removing its custom relations (but keeping CASE relations like Role or Notification).
 // * This is needed in order to pass this entity to the NestLibrary without having to send the whole DB.
