@@ -2,7 +2,7 @@
 
 - Download the [last version of CASE framework](https://github.com/case-app/case) : Following the previous link, click on the green "Code" button and the download ZIP.
 
-![CASE App](../assets/images/introduction/how-to-download-case-on-github.png ":size=40%")
+![CASE App](../assets/images/introduction/how-to-download-case-on-github.png ':size=40%')
 
 - Extract folder and follow install procedure on the README.md file in the new repo
 
@@ -22,7 +22,7 @@ At the moment there is no CLI.
 To create a new project in one command so you have to **clone** or **download** the CASE source code on the [github repository of the project ](https://github.com/case-app/case),
 then open your terminal in the CASE root folder for the following steps :
 
-- `npm run install`
+- `npm run case:install`
 
 - Create a new DB, you can name it "case" for example
 - Eventually change DB name into /server/.env

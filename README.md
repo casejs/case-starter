@@ -26,7 +26,7 @@ npm install docsify-cli --global
 As of today, there is no CLI to crate a new project in one command so you have to clone or download the [CASE source code](https://github.com/case-app/case) and then open your terminal in the CASE root folder for the following steps.
 
 ```
-npm run install
+npm run case:install
 ```
 
 - Create a new DB, you can name it "case" for example
