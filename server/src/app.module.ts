@@ -14,10 +14,12 @@ import { UserModule } from './resources/user/user.module'
 import { SearchModule } from './search/search.module'
 import { TaskModule } from './task/task.module'
 
-Bugsnag.start({
-  apiKey: process.env.BUGSNAG_API_KEY,
-  releaseStage: process.env.BUGSNAG_RELEASE_STAGE
-})
+if (process.env.ENABLE_BUGSNAG === 'true') {
+  Bugsnag.start({
+    apiKey: process.env.BUGSNAG_API_KEY,
+    releaseStage: process.env.BUGSNAG_RELEASE_STAGE
+  })
+}
 
 @Module({
   imports: [
