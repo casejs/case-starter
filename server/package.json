@@ -18,8 +18,7 @@
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "webpack": "webpack --config webpack.config.js",
-    "seed": "ts-node database/seeders/seeder.ts && cp -R assets/dummy/* public/storage/",
-    "case:resourceBack": "schematics @case-app/schematics/collection.json:createResourceServer && npm run seed"
+    "seed": "ts-node database/seeders/seeder.ts && cp -R assets/dummy/* public/storage/"
   },
   "dependencies": {
     "@bugsnag/js": "^7.17.0",

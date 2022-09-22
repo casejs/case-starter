@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "case:resourceFront": "schematics @case-app/schematics/collection.json:createResourceClient"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
