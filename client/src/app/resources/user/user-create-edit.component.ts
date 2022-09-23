@@ -1,18 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
-
 import {
-  CaseCreateEditComponent,
-  InputType,
-  Field,
-  ResourceDefinition,
-  Role,
   BreadcrumbService,
+  CaseCreateEditComponent,
+  caseCreateEditTemplate,
+  Field,
   FlashMessageService,
-  ResourceService,
-  caseCreateEditTemplate
-} from '@case-app/angular-library'
+  InputType,
+  ResourceDefinition,
+  ResourceService
+} from 'case'
+
 import { userDefinition } from './user.definition'
 
 @Component({

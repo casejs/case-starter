@@ -1,4 +1,4 @@
-import { Yield } from '@case-app/angular-library'
+import { Yield } from 'case'
 
 export const <%= camelize(name) %>Yields: Yield[] = [
     {

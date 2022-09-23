@@ -1,4 +1,4 @@
-import { MenuItem } from '@case-app/angular-library'
+import { MenuItem } from 'case'
 
 export const menuItems: MenuItem[] = [
   {

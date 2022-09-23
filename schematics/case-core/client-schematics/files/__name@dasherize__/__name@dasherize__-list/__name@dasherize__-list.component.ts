@@ -12,7 +12,7 @@ import {
   ResourceDefinition,
   ResourceService,
   Yield
-} from '@case-app/angular-library'
+} from 'case'
 
 import { <%= camelize(name) %>Definition } from '../<%= dasherize(name) %>.definition'
 import { <%= camelize(name) %>Yields } from '../<%= dasherize(name) %>.yields'

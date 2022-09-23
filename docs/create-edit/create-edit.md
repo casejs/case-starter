@@ -56,7 +56,7 @@ import {
   FlashMessageService,
   ResourceService,
   caseCreateEditTemplate,
-} from '@case-app/angular-library';
+} from 'case';
 
 import { customerDefinition } from '../customer.definition';
 
@@ -263,7 +263,7 @@ You can add them in the `fields` property of your create-edit component :
 
 ```js
 //customer-create-edit.component.ts
-import { InputType } from '@case-app/angular-library'
+import { InputType } from 'case'
 
 // Generates a text field with label "Contact name".
 fields: Field[] = [
