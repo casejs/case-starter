@@ -17,9 +17,9 @@
     "paths": {
       "~shared/*": ["../../shared/*"],
       "~server/*": ["../../server/*"],
-      "case": ["./src/case-core"]
+      "case": ["./case-core"]
     },
-    "rootDirs": ["./src", "../shared", "../server"]
+    "rootDirs": ["./src", "../shared", "../server", "./case-core"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
