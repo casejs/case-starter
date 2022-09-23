@@ -21,8 +21,8 @@ import {
 export function createResource(options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     const sourceTemplates: Source = url('./files')
-    const resourceFolderPath = './src/resources'
-    const appModulePath = './src/app.module.ts'
+    const resourceFolderPath = './server/src/resources'
+    const appModulePath = './server/src/app.module.ts'
 
     // Add "files" to resource folder.
     const sourceParametrizedTemplates: Source = apply(sourceTemplates, [
@@ -57,10 +57,10 @@ export function createResource(options: any): Rule {
 
     // * Add seeder.
     const seedTemplates: Source = url('./seeder-files')
-    const seederFolderPath = './database/seeders'
-    const mainSeederPath = './database/seeders/seeder.ts'
+    const seederFolderPath = './server/database/seeders'
+    const mainSeederPath = './server/database/seeders/seeder.ts'
     const permissionContentPath =
-      './database/seeders/content/permissions.content.ts'
+      './server/database/seeders/content/permissions.content.ts'
 
     // Add "seeder-files" to seeder folder.
     const seedParametrizedTemplates: Source = apply(seedTemplates, [
@@ -127,7 +127,7 @@ export function createResource(options: any): Rule {
     tree.overwrite(permissionContentPath, permissionContentString)
 
     // * Make resource searchable.
-    const searchServicePath = './src/search/search.service.ts'
+    const searchServicePath = './server/src/search/search.service.ts'
     let searchServiceBuffer: Buffer = tree.read(searchServicePath) as Buffer
     let searchServiceString: string = searchServiceBuffer.toString()
 

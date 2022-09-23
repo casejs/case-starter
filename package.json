@@ -12,7 +12,7 @@
     "start:docs": "cd docs && docsify serve -p 2000",
     "seed": "cd server && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "case:resource": "schematics ./schematics/dist/collection.json:createResourceClient --dry-run=false && schematics ./schematics/dist/collection.json:createResourceServer --dry-run=false"
+    "case:resource": "schematics ./schematics/dist/collection.json:createResourceClient --dry-run=false && schematics ./schematics/dist/collection.json:createResourceServer --dry-run=false && npm run seed"
   },
   "repository": {
     "type": "git",
