@@ -1,4 +1,4 @@
-import { ExcelService, PaginationService } from '@case-app/nest-library'
+import { ExcelService, PaginationService, Paginator } from 'case'
 import { Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { SHA3 } from 'crypto-js'
@@ -43,8 +43,8 @@ export class UserService {
     orderBy?: string
     orderByDesc?: string
     toXLS?: string
-    withoutPagination: string
-  }) {
+    withoutPagination?: string
+  }): Promise<Paginator<User> | User[] | string> {
     const query = this.repository
       .createQueryBuilder('user')
       .leftJoinAndSelect('user.role', 'role')

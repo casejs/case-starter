@@ -1,18 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
-
 import {
-  CaseCreateEditComponent,
-  InputType,
-  Field,
-  ResourceDefinition,
-  Role,
   BreadcrumbService,
+  CaseCreateEditComponent,
+  caseCreateEditTemplate,
+  Field,
   FlashMessageService,
-  ResourceService,
-  caseCreateEditTemplate
-} from '@case-app/angular-library'
+  InputType,
+  ResourceDefinition,
+  ResourceService
+} from 'case'
+
 import { userDefinition } from './user.definition'
 
 @Component({
@@ -140,7 +139,9 @@ export class UserCreateEditComponent
 
     this.resolvedFields = await this.resolveFields(this.fields)
 
-    await this.getItem('myself')
+    this.item = await this.customResourceService
+      .show(this.definition.slug, 'myself')
+      .then((itemRes) => itemRes)
     this.item.id = 'myself'
 
     this.form = await this.generateForm(this.fields)

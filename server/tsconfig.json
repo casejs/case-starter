@@ -13,9 +13,10 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
-      "~shared/*": ["../../shared/*"]
+      "~shared/*": ["../../shared/*"],
+      "case": ["../case-core"]
     },
-    "rootDirs": ["./src", "../shared"]
+    "rootDirs": ["./src", "../shared", "../case-core"]
   },
   "include": ["src/**/*", "shared/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]

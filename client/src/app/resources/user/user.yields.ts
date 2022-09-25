@@ -1,4 +1,4 @@
-import { ActionType, User, Yield, YieldType } from '@case-app/angular-library'
+import { ActionType, User, Yield, YieldType } from 'case'
 
 export const userYields: Yield[] = [
   {

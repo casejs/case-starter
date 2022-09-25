@@ -6,7 +6,7 @@ import {
   Validate,
   IsOptional
 } from 'class-validator'
-import { IsUserAlreadyExist, toNumber } from '@case-app/nest-library'
+import { IsUserAlreadyExist, toNumber } from 'case'
 import { Transform } from 'class-transformer'
 
 export class CreateUserDto {

@@ -1,4 +1,4 @@
-import { toNumber } from '@case-app/nest-library'
+import { toNumber } from 'case'
 import { Transform } from 'class-transformer'
 import {
   IsNotEmpty,

@@ -1,6 +1,10 @@
 {
   "watch": ["src", "../shared"],
   "ext": "ts",
-  "ignore": ["src/**/*.spec.ts"],
+  "ignore": [
+    "src/**/*.spec.ts",
+    "../schematics/src/*/files/**/*",
+    "../schematics/src/*/seeder-files/**/*"
+  ],
   "exec": "ts-node -r tsconfig-paths/register src/main.ts"
 }

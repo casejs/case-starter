@@ -7,12 +7,12 @@ A flash message is a brief message that appears over the content to pass an impo
 In the desired view of the front-end, import the `FlashMessageService` into your Angular component :
 
 ```js
-import { FlashMessageService } from '@case-app/angular-library'
+import { FlashMessageService } from 'case'
 ```
 
 And then use it to display **info**, **success** or **error** messages. The background of the flash message will be adapted in function of your theme :
 
-``` js
+```js
 export class HomeComponent implements OnInit {
   constructor(private flashMessageService: FlashMessageService) {}
 
