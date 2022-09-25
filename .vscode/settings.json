@@ -1,0 +1,34 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#d3c5c0",
+    "activityBar.activeBorder": "#699675",
+    "activityBar.background": "#d3c5c0",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#699675",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBar.background": "#bea9a2",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#a98d84",
+    "titleBar.activeBackground": "#bea9a2",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#bea9a299",
+    "titleBar.inactiveForeground": "#15202b99",
+    "sash.hoverBorder": "#d3c5c0",
+    "statusBarItem.remoteBackground": "#bea9a2",
+    "statusBarItem.remoteForeground": "#15202b",
+    "commandCenter.border": "#15202b99"
+  },
+  "peacock.color": "#bea9a2",
+  "cSpell.words": ["bugsnag", "nestjs", "typeorm", "dtos"],
+  "material-icon-theme.files.associations": {
+    "**.controller.ts": "nest-controller"
+  },
+  "material-icon-theme.folders.associations": {
+    "dtos": "interface",
+    "task": "tasks",
+    "search": "utils",
+    "schematics": "batch",
+    "case-core": "error"
+  }
+}
