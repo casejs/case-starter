@@ -9,7 +9,7 @@ import {
   User,
   VersionService,
   ViewportService
-} from '@case-app/angular-library'
+} from 'case'
 import { environment } from '../environments/environment'
 
 import { menuItems } from './menu-items'

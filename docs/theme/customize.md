@@ -30,7 +30,7 @@ To go further, you can create your own scss files and overwrite our components o
 /* insert custom variables here to override existing ones or create new ones */
 
 @import 'styles/variables/your-custome-variables';
-@import '@case-app/angular-library/styles/main';
+@import 'case/styles/main';
 
 /* Import custom style here */
 .logo {
@@ -59,7 +59,7 @@ To set your custom variables, create a file `_derived-variables.scss` and add ne
 
 ```css
 // First import CASE derived variables
-@import '../../../node_modules/@case-app/angular-library/styles/variables/derived-variables';
+@import 'case/styles/variables/derived-variables';
 
 // 5. Add new color variables to the color map.
 $addColors: (

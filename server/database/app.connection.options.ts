@@ -10,7 +10,7 @@ export const appConnectionOptions: MysqlConnectionOptions = {
   bigNumberStrings: false,
   entities: [
     `${
-      process.env.NODE_ENV === 'production' ? 'dist' : '../'
+      process.env.NODE_ENV === 'production' ? 'dist' : '.'
     }/**/**.entity{.ts,.js}`
   ],
   synchronize: true,

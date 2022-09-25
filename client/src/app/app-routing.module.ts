@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { caseRoutes, AuthGuard } from '@case-app/angular-library'
+import { caseRoutes, AuthGuard } from 'case'
 import { HomeComponent } from './pages/home/home.component'
 import { userRoutes } from './resources/user/user.routes'
 

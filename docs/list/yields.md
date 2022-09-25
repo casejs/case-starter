@@ -9,26 +9,26 @@ On [list views](./list.md), it is possible chose the information to display on t
 On creating a resource, a `$resource$.yields.ts` is created and contains the list of the yields for the resource. You can add your own **Yields** based on your resources properties. Make sure that each property is returned by the API.
 
 ```js
-import { Yield, YieldType } from "@case-app/angular-library";
+import { Yield, YieldType } from 'case'
 
 export const catYields: Yield[] = [
   {
-    label: "name",
-    property: "name",
+    label: 'name',
+    property: 'name'
   },
   {
-    label: "amount",
-    property: "amount",
-    type: YieldType.Currency,
+    label: 'amount',
+    property: 'amount',
+    type: YieldType.Currency
   },
   {
-    label: "status",
-    property: "status",
-    secondProperty: "maxStatus",
-    thirdProperty: "statusInString",
-    type: YieldType.ProgressBar,
-  },
-];
+    label: 'status',
+    property: 'status',
+    secondProperty: 'maxStatus',
+    thirdProperty: 'statusInString',
+    type: YieldType.ProgressBar
+  }
+]
 ```
 
 ## Yield extra options

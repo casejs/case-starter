@@ -18,12 +18,10 @@
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "webpack": "webpack --config webpack.config.js",
-    "seed": "ts-node database/seeders/seeder.ts && cp -R assets/dummy/* public/storage/",
-    "case:resourceBack": "schematics @case-app/schematics/collection.json:createResourceServer && npm run seed"
+    "seed": "ts-node database/seeders/seeder.ts && cp -R assets/dummy/* public/storage/"
   },
   "dependencies": {
     "@bugsnag/js": "^7.17.0",
-    "@case-app/nest-library": "^0.3.0",
     "@nestjs/common": "^9.0.3",
     "@nestjs/core": "^9.0.3",
     "@nestjs/platform-express": "^9.0.3",
@@ -37,11 +35,13 @@
     "docxtemplater": "^3.31.2",
     "exceljs": "^4.3.0",
     "express": "^4.18.1",
+    "form-data": "^4.0.0",
     "handlebars": "^4.7.7",
     "http-status-codes": "^2.2.0",
     "i": "^0.3.7",
     "jsonwebtoken": "^8.5.1",
-    "mailgun-js": "^0.22.0",
+    "mailgun.js": "^7.0.4",
+    "moment": "^2.29.4",
     "moment-business-days": "^1.2.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
@@ -57,12 +57,12 @@
     "uniqid": "^5.4.0"
   },
   "devDependencies": {
-    "@nestjs/testing": "9.0.3",
+    "@nestjs/testing": "^9.0.3",
     "@types/cron": "^2.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
     "@types/faker": "^6.6.8",
-    "@types/jest": "^28.1.6",
+    "@types/jest": "^28.1.8",
     "@types/mailgun-js": "^0.22.12",
     "@types/node": "^18.0.6",
     "@types/supertest": "^2.0.12",

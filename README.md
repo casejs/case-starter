@@ -12,7 +12,6 @@ Install schematics cli and CASE schematics globally :
 
 ```bash
 sudo npm i -g @angular-devkit/schematics-cli
-sudo npm i -g @case-app/schematics
 ```
 
 _Note for development :_ Always make sure that you have the latest version of those 2 dependencies with `@latest` as the versions evolve very fast.
@@ -26,7 +25,7 @@ npm install docsify-cli --global
 As of today, there is no CLI to crate a new project in one command so you have to clone or download the [CASE source code](https://github.com/case-app/case) and then open your terminal in the CASE root folder for the following steps.
 
 ```
-npm run install
+npm run case:install
 ```
 
 - Create a new DB, you can name it "case" for example

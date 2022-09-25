@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -14,10 +15,11 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "~shared/*": ["../shared/*"],
-      "~server/*": ["../server/*"]
+      "~shared/*": ["../../shared/*"],
+      "~server/*": ["../../server/*"],
+      "case": ["./case-core"]
     },
-    "rootDirs": ["./src", "../shared", "../server"]
+    "rootDirs": ["./src", "../shared", "../server", "./case-core"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

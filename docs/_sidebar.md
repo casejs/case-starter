@@ -2,6 +2,7 @@
 
   - [Install](getting-started/install.md)
   - [Structure](getting-started/structure.md)
+  - [Testing](getting-started/testing.md)
 
 - Resources
 

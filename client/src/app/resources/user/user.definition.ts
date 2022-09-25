@@ -1,9 +1,4 @@
-import {
-  ActionType,
-  Gender,
-  LinkType,
-  ResourceDefinition
-} from '@case-app/angular-library'
+import { ActionType, Gender, LinkType, ResourceDefinition } from 'case'
 
 export const userDefinition: ResourceDefinition = {
   title: 'Collaborateurs',
