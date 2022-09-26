@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { DeleteResult, Repository, UpdateResult } from 'typeorm'
 
-import { Paginator, PaginationService } from 'case'
+import { Paginator, PaginationService } from 'case-server-core'
 import { <%= classify(name) %> } from './<%= dasherize(name) %>.entity'
 import { CreateUpdate<%= classify(name) %>Dto } from './dtos/create-update-<%= dasherize(name) %>.dto'
 

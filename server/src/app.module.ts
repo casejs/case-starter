@@ -1,5 +1,5 @@
 import Bugsnag from '@bugsnag/js'
-import { CaseCoreModule, PermissionGuard } from 'case'
+import { CaseCoreModule, PermissionGuard } from 'case-server-core'
 import { MiddlewareConsumer, Module } from '@nestjs/common'
 import { APP_GUARD, Reflector } from '@nestjs/core'
 import { ScheduleModule } from '@nestjs/schedule'

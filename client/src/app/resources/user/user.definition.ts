@@ -1,4 +1,9 @@
-import { ActionType, Gender, LinkType, ResourceDefinition } from 'case'
+import {
+  ActionType,
+  Gender,
+  LinkType,
+  ResourceDefinition
+} from 'case-client-core'
 
 export const userDefinition: ResourceDefinition = {
   title: 'Collaborateurs',

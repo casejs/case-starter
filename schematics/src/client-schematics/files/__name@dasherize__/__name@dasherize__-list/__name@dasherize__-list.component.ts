@@ -12,7 +12,7 @@ import {
   ResourceDefinition,
   ResourceService,
   Yield
-} from 'case'
+} from 'case-client-core'
 
 import { <%= camelize(name) %>Definition } from '../<%= dasherize(name) %>.definition'
 import { <%= camelize(name) %>Yields } from '../<%= dasherize(name) %>.yields'

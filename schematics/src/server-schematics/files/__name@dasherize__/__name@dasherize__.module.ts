@@ -1,9 +1,9 @@
-import { Module } from "@nestjs/common"
+import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { PaginationService } from "case"
+import { PaginationService } from 'case-server-core'
 
-import { <%= classify(name) %>Controller } from "./<%= dasherize(name) %>.controller"
-import { <%= classify(name) %>Service } from "./<%= dasherize(name) %>.service"
+import { <%= classify(name) %>Controller } from './<%= dasherize(name) %>.controller'
+import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service'
 import { <%= classify(name) %> } from './<%= dasherize(name) %>.entity'
 
 @Module({

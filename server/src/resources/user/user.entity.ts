@@ -1,4 +1,4 @@
-import { CaseUser } from 'case'
+import { CaseUser } from 'case-server-core'
 import {
   AfterLoad,
   Column,

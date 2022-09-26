@@ -10,7 +10,7 @@ import {
   InputType,
   ResourceDefinition,
   ResourceService
-} from 'case'
+} from 'case-client-core'
 
 import { userDefinition } from './user.definition'
 

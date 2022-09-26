@@ -14,7 +14,7 @@ import {
   Filter,
   InputType,
   AuthService
-} from 'case'
+} from 'case-client-core'
 
 import { userDefinition } from './user.definition'
 import { userYields } from './user.yields'

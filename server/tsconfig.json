@@ -14,10 +14,10 @@
     "baseUrl": "./src",
     "paths": {
       "~shared/*": ["../../shared/*"],
-      "case": ["../case-core"]
+      "case-server-core": ["../case-core"]
     },
     "rootDirs": ["./src", "../shared", "../case-core"]
   },
-  "include": ["src/**/*", "shared/**/*"],
+  "include": ["src/**/*", "shared/**/*", "database"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
