@@ -5,7 +5,7 @@ import {
   Paginator,
   Permission,
   SelectOption
-} from 'case'
+} from 'case-server-core'
 import {
   Body,
   Controller,

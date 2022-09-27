@@ -1,4 +1,4 @@
-import { toNumber } from 'case'
+import { toNumber } from 'case-server-core'
 import { Transform } from 'class-transformer'
 import {
   IsEmail,

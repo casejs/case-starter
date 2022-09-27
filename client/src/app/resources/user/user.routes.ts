@@ -1,5 +1,5 @@
 import { Route } from '@angular/router'
-import { AuthGuard, PermissionGuard, ResourceMode } from 'case'
+import { AuthGuard, PermissionGuard, ResourceMode } from 'case-client-core'
 
 import { UserCreateEditComponent } from './user-create-edit.component'
 import { UserListComponent } from './user-list.component'

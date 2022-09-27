@@ -17,7 +17,8 @@
     "paths": {
       "~shared/*": ["../../shared/*"],
       "~server/*": ["../../server/*"],
-      "case": ["./case-core"]
+      "case-client-core": ["./case-core"],
+      "case-server-core": ["../server/case-core"]
     },
     "rootDirs": ["./src", "../shared", "../server", "./case-core"]
   },

@@ -1,4 +1,4 @@
-import { SearchResult } from 'case'
+import { SearchResult } from 'case-server-core'
 import { Controller, Get, Query } from '@nestjs/common'
 
 import { SearchService } from './search.service'

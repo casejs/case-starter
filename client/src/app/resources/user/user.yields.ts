@@ -1,4 +1,4 @@
-import { ActionType, User, Yield, YieldType } from 'case'
+import { ActionType, User, Yield, YieldType } from 'case-client-core'
 
 export const userYields: Yield[] = [
   {

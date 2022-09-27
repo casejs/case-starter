@@ -1,4 +1,4 @@
-import { Gender, LinkType, ResourceDefinition, ActionType } from 'case'
+import { Gender, LinkType, ResourceDefinition, ActionType } from 'case-client-core'
 
 export const <%= camelize(name) %>Definition: ResourceDefinition = {
   title: '<%= classify(displayName) %>s',
