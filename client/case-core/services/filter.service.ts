@@ -37,7 +37,7 @@ export class FilterService {
 
     // Override with persistent filters and then queryParams (in that order).
     Object.assign(filterForm, persistentFilters)
-    Object.assign(filterForm, this.formatQueryParams(queryParams))
+    Object.assign(filterForm, FilterService.formatQueryParams(queryParams))
 
     return filterForm
   }
@@ -84,25 +84,31 @@ export class FilterService {
   }
 
   // Format queryParams object considering that everything is a string in a URL.
-  formatQueryParams(queryParams: { [key: string]: string }): {
+  static formatQueryParams(queryParams: { [key: string]: string }): {
     [key: string]: any
   } {
     return Object.keys(queryParams).reduce((output, key) => {
-      if (queryParams[key].includes(',')) {
-        output[key] = queryParams[key].split(',')
-      } else if (queryParams[key] === 'null') {
-        output[key] = null
-      } else if (queryParams[key] === 'true') {
-        output[key] = true
-      } else if (queryParams[key] === 'false') {
-        output[key] = false
-      } else if (new RegExp('^[0-9]+$').test(queryParams[key])) {
-        output[key] = parseInt(queryParams[key], 10)
-      } else {
-        output[key] = queryParams[key]
-      }
+      output[key] = FilterService.formatQueryParam(queryParams[key])
       return output
     }, {})
+  }
+
+  static formatQueryParam(
+    queryParam: string
+  ): string | string[] | number | boolean | null {
+    if (queryParam.includes(',')) {
+      return queryParam.split(',')
+    } else if (queryParam === 'null') {
+      return null
+    } else if (queryParam === 'true') {
+      return true
+    } else if (queryParam === 'false') {
+      return false
+    } else if (new RegExp('^[0-9]+$').test(queryParam)) {
+      return parseInt(queryParam, 10)
+    } else {
+      return queryParam
+    }
   }
 
   getPersistentFiltersStorageItem(): object {
