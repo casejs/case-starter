@@ -1,4 +1,4 @@
-import { CaseUser } from 'case-server-core'
+import { CaseUser } from '@case-app/nest-library'
 import {
   Column,
   CreateDateColumn,

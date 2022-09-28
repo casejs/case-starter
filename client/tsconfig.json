@@ -16,11 +16,9 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "~shared/*": ["../../shared/*"],
-      "~server/*": ["../../server/*"],
-      "case-client-core": ["./case-core"],
-      "case-server-core": ["../server/case-core"]
+      "~server/*": ["../../server/*"]
     },
-    "rootDirs": ["./src", "../shared", "../server", "./case-core"]
+    "rootDirs": ["./src", "../shared", "../server"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

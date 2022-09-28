@@ -13,8 +13,7 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
-      "~shared/*": ["../../shared/*"],
-      "case-server-core": ["../case-core"]
+      "~shared/*": ["../../shared/*"]
     },
     "rootDirs": ["./src", "../shared", "../case-core"]
   },

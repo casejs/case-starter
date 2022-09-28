@@ -1,4 +1,4 @@
-import { SearchResult } from 'case-server-core'
+import { SearchResult } from '@case-app/nest-library'
 import { Injectable } from '@nestjs/common'
 import {
   Brackets,

@@ -1,4 +1,4 @@
-import { AuthService, SelectOption } from 'case-server-core'
+import { AuthService, SelectOption } from '@case-app/nest-library'
 import { Test, TestingModule } from '@nestjs/testing'
 import { UpdateResult } from 'typeorm'
 

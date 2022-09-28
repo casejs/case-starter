@@ -5,7 +5,7 @@ import {
   Paginator,
   Permission,
   SelectOption
-} from 'case-server-core'
+} from '@case-app/nest-library'
 import {
   Body,
   Controller,

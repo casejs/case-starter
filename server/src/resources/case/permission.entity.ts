@@ -9,7 +9,7 @@ import {
 } from 'typeorm'
 
 import { Role } from './role.entity'
-import { CasePermission } from 'case-server-core'
+import { CasePermission } from '@case-app/nest-library'
 
 @Entity({ name: 'permissions' })
 export class Permission implements CasePermission {
