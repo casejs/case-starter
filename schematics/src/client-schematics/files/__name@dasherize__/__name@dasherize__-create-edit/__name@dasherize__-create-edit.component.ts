@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { FormBuilder } from '@angular/forms'
 
-import { CaseCreateEditComponent, ResourceDefinition, Field, Filter, InputType, BreadcrumbService, FlashMessageService, ResourceService, caseCreateEditTemplate } from 'case-client-core'
+import { CaseCreateEditComponent, ResourceDefinition, Field, Filter, InputType, BreadcrumbService, FlashMessageService, ResourceService, caseCreateEditTemplate } from '@case-app/nest-library'
 
 import { <%= camelize(name) %>Definition } from '../<%= dasherize(name) %>.definition'
 

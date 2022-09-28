@@ -1,4 +1,4 @@
-import { MenuItem } from 'case-client-core'
+import { MenuItem } from '@case-app/angular-library'
 
 export const menuItems: MenuItem[] = [
   {

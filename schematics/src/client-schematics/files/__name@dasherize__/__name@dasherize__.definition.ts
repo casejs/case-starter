@@ -1,4 +1,4 @@
-import { Gender, LinkType, ResourceDefinition, ActionType } from 'case-client-core'
+import { Gender, LinkType, ResourceDefinition, ActionType } from '@case-app/nest-library'
 
 export const <%= camelize(name) %>Definition: ResourceDefinition = {
   title: '<%= classify(displayName) %>s',

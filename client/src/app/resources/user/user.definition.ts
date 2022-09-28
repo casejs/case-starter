@@ -3,7 +3,7 @@ import {
   Gender,
   LinkType,
   ResourceDefinition
-} from 'case-client-core'
+} from '@case-app/angular-library'
 
 export const userDefinition: ResourceDefinition = {
   title: 'Collaborateurs',

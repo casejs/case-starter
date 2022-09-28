@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core'
-import { BreadcrumbService, FlashMessageService } from 'case-client-core'
+import {
+  BreadcrumbService,
+  FlashMessageService
+} from '@case-app/angular-library'
 
 @Component({
   selector: 'app-home',

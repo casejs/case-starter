@@ -1,4 +1,4 @@
-import { Yield } from 'case-client-core'
+import { Yield } from '@case-app/nest-library'
 
 export const <%= camelize(name) %>Yields: Yield[] = [
     {
