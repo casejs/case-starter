@@ -1,4 +1,8 @@
-import { ExcelService, PaginationService, Paginator } from 'case-server-core'
+import {
+  ExcelService,
+  PaginationService,
+  Paginator
+} from '@case-app/nest-library'
 import { Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { SHA3 } from 'crypto-js'
