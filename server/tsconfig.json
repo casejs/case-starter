@@ -15,7 +15,7 @@
     "paths": {
       "~shared/*": ["../../shared/*"]
     },
-    "rootDirs": ["./src", "../shared", "../case-core"]
+    "rootDirs": ["./src", "../shared"]
   },
   "include": ["src/**/*", "shared/**/*", "database"],
   "exclude": ["node_modules", "**/*.spec.ts"]
