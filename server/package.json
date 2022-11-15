@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "webpack": "webpack --config webpack.config.js",
-    "seed": "ts-node -r tsconfig-paths/register database/seeders/seeder.ts && cp -R assets/dummy/* public/storage/"
+    "seed": "ts-node -r tsconfig-paths/register src/database/seeders/seeder.ts && cp -R assets/dummy/* public/storage/"
   },
   "dependencies": {
     "@bugsnag/js": "^7.17.0",

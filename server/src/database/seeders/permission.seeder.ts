@@ -1,6 +1,6 @@
 import { DataSource, EntityManager } from 'typeorm'
 
-import { Permission } from '../../src/resources/case/permission.entity'
+import { Permission } from '../../resources/case/permission.entity'
 import { allPermissions } from './content/permissions.content'
 
 export class PermissionSeeder {
