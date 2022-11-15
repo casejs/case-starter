@@ -30,7 +30,7 @@ export class UserCreateEditComponent
   fields: Field[] = [
     {
       id: 'name',
-      label: 'Nom',
+      label: 'Name',
       property: 'name',
       className: 'is-3',
       inputType: InputType.Text,
@@ -38,8 +38,7 @@ export class UserCreateEditComponent
     },
     {
       id: 'roleId',
-      label: `Rôle`,
-      placeholder: `Choisir le rôle du collaborateur...`,
+      label: `Role`,
       property: 'roleId',
       retrievedItemProperties: {
         roleId: 'role.id'
@@ -60,7 +59,7 @@ export class UserCreateEditComponent
       validators: [Validators.email]
     },
     {
-      label: 'Mot de passe',
+      label: 'Password',
       property: 'password',
       className: 'is-3',
       inputType: InputType.Password,
@@ -75,15 +74,15 @@ export class UserCreateEditComponent
       inputType: InputType.Image
     },
     {
-      label: 'Actif',
-      helpText: `Seul les utilisateurs actifs peuvent se connecter à l'application`,
+      label: 'Active',
+      helpText: `Only active users can log in.`,
       property: 'isActive',
       initialValue: { value: false },
       className: 'is-3',
       inputType: InputType.Checkbox
     },
     {
-      label: 'Couleur',
+      label: 'Color',
       property: 'color',
       className: 'is-6',
       inputType: InputType.ColorPicker,

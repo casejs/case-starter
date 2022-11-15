@@ -6,6 +6,7 @@ import { ScheduleModule } from '@nestjs/schedule'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
 import { appConnectionOptions } from '../database/app.connection.options'
+import { appImageSizes } from './app.image-sizes'
 import { Notification } from './resources/case/notification.entity'
 import { Permission } from './resources/case/permission.entity'
 import { Role } from './resources/case/role.entity'
@@ -30,7 +31,8 @@ if (process.env.ENABLE_BUGSNAG === 'true') {
       permissionEntity: Permission,
       roleEntity: Role,
       connectionOptions: appConnectionOptions,
-      reflector: new Reflector()
+      reflector: new Reflector(),
+      imageSizes: appImageSizes
     }),
     ScheduleModule.forRoot(),
     UserModule,

@@ -21,7 +21,7 @@
   "license": "MIT",
   "homepage": "https://case.app",
   "dependencies": {
-    "@case-app/schematics": "^0.4.4",
+    "@case-app/schematics": "^0.4.5",
     "@types/jest": "^29.0.0"
   }
 }
