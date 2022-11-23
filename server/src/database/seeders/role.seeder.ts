@@ -1,7 +1,7 @@
 import { DataSource, EntityManager } from 'typeorm'
 
-import { Permission } from '../../src/resources/case/permission.entity'
-import { Role } from '../../src/resources/case/role.entity'
+import { Permission } from '../../resources/case/permission.entity'
+import { Role } from '../../resources/case/role.entity'
 
 export class RoleSeeder {
   entityManager: EntityManager
@@ -27,7 +27,7 @@ export class RoleSeeder {
   private async getAdminRole(): Promise<Role> {
     const role: Role = this.entityManager.create(Role, {
       name: 'admin',
-      displayName: 'Administrateur'
+      displayName: 'Admin'
     })
 
     role.permissions = await this.entityManager.find(Permission)
@@ -39,7 +39,7 @@ export class RoleSeeder {
   private async getTeamMemberRole(): Promise<Role> {
     const role: Role = this.entityManager.create(Role, {
       name: 'teamMember',
-      displayName: 'Collaborateur'
+      displayName: 'Team Member'
     })
 
     const allPermissions: Permission[] = await this.entityManager.find(

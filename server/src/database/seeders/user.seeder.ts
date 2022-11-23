@@ -2,9 +2,9 @@ import * as sha3 from 'crypto-js/sha3'
 import * as faker from 'faker/locale/fr'
 import { DataSource, EntityManager } from 'typeorm'
 
-import { Notification } from '../../src/resources/case/notification.entity'
-import { Role } from '../../src/resources/case/role.entity'
-import { User } from '../../src/resources/user/user.entity'
+import { Notification } from '../../resources/case/notification.entity'
+import { Role } from '../../resources/case/role.entity'
+import { User } from '../../resources/user/user.entity'
 import { colors } from './content/colors.content'
 
 export class UserSeeder {
