@@ -1,6 +1,6 @@
 import { DataSource, EntityManager } from 'typeorm'
 
-import { Setting } from '../../src/resources/case/setting.entity'
+import { Setting } from '../../resources/case/setting.entity'
 
 export class SettingSeeder {
   entityManager: EntityManager

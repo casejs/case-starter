@@ -6,22 +6,23 @@
     "case:install": "npm install && npm run install:client && npm run install:server",
     "install:client": "cd client && npm i",
     "install:server": "cd server && npm i --force && cp .env.example .env",
-    "start:client": "cd client && ng serve",
+    "start:client": "cd client && ./node_modules/@angular/cli/bin/ng.js serve",
     "start:server": "cd server && npm run start:dev",
     "start:docs": "cd docs && docsify serve -p 2000",
     "seed": "cd server && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "case:resource": "schematics ./node_modules/@case-app/schematics/collection.json:createResourceClient --debug=false && schematics ./node_modules/@case-app/schematics/collection.json:createResourceServer --debug=false && npm run seed"
+    "case:resource": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@case-app/schematics/collection.json:createResource --debug=false"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/case-app/case.git"
+    "url": "https://github.com/case-app/case-starter"
   },
   "author": "CASE",
   "license": "MIT",
   "homepage": "https://case.app",
   "dependencies": {
-    "@case-app/schematics": "^0.4.5",
+    "@angular-devkit/schematics-cli": "^15.0.0",
+    "@case-app/schematics": "^0.4.7",
     "@types/jest": "^29.0.0"
   }
 }

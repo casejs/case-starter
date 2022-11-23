@@ -2,7 +2,7 @@ import { ActionType, User, Yield, YieldType } from '@case-app/angular-library'
 
 export const userYields: Yield[] = [
   {
-    label: 'Collaborateur',
+    label: 'Name',
     property: 'imageObjects',
     secondProperty: 'name',
     orderByProperty: 'name',
@@ -10,12 +10,12 @@ export const userYields: Yield[] = [
     className: 'is-narrow'
   },
   {
-    label: 'Rôle',
+    label: 'Role',
     property: 'role.displayName',
     secondProperty: 'role.name'
   },
   {
-    label: 'Actif',
+    label: 'Active',
     property: 'isActive',
     type: YieldType.Switch,
     action: (user: User) => ({
