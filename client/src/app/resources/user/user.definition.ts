@@ -6,9 +6,9 @@ import {
 } from '@case-app/angular-library'
 
 export const userDefinition: ResourceDefinition = {
-  title: 'Collaborateurs',
-  nameSingular: 'collaborateur',
-  namePlural: 'collaborateurs',
+  title: 'Users',
+  nameSingular: 'user',
+  namePlural: 'users',
   className: 'User',
   icon: 'icon-user',
   gender: Gender.Masculine,
@@ -22,7 +22,7 @@ export const userDefinition: ResourceDefinition = {
   childrenThatPreventDelete: [],
   dropdownLinks: [
     {
-      label: 'Editer',
+      label: 'Edit',
       permission: 'editUsers',
       action: (user) => ({
         type: ActionType.Link,
@@ -32,7 +32,7 @@ export const userDefinition: ResourceDefinition = {
       })
     },
     {
-      label: 'Effacer',
+      label: 'Delete',
       permission: 'deleteUsers',
       action: (user) => ({
         type: ActionType.Delete,
