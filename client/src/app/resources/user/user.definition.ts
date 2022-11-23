@@ -1,6 +1,5 @@
 import {
   ActionType,
-  Gender,
   LinkType,
   ResourceDefinition
 } from '@case-app/angular-library'
@@ -11,7 +10,6 @@ export const userDefinition: ResourceDefinition = {
   namePlural: 'users',
   className: 'User',
   icon: 'icon-user',
-  gender: Gender.Masculine,
   mainIdentifier: 'name',
   slug: 'users',
   path: 'users',
