@@ -78,6 +78,11 @@ export class UserController {
     }))
   }
 
+  @Get('/is-empty')
+  async isEmpty(): Promise<boolean> {
+    return this.userService.isDatabaseEmpty()
+  }
+
   @Get('/myself')
   async showMyself(@Req() req: Request): Promise<User> {
     const currentUser: CaseUser = await this.authService.getUserFromToken(req)

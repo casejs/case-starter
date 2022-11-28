@@ -163,7 +163,7 @@ export class UserService {
       }
     })
 
-    // TODO: null values are not boolean (ABC)
+    // TODO: null values are not boolean
     user.isActive = !!userDto.isActive
 
     return this.repository.update(id, user)
@@ -191,5 +191,10 @@ export class UserService {
     const user: User = await this.show(id)
 
     return this.repository.delete(user.id)
+  }
+
+  async isDatabaseEmpty(): Promise<boolean> {
+    const count = await this.repository.count()
+    return count === 0
   }
 }
