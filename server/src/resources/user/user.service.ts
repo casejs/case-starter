@@ -46,8 +46,8 @@ export class UserService {
     userIds?: string[]
     orderBy?: string
     orderByDesc?: string
-    toXLS?: string
-    withoutPagination?: string
+    toXLS?: boolean
+    withoutPagination?: boolean
   }): Promise<Paginator<User> | User[] | string> {
     const query = this.repository
       .createQueryBuilder('user')
@@ -68,11 +68,11 @@ export class UserService {
       query.andWhere('role.name = :roleName', { roleName })
     }
 
-    if (toXLS === 'true') {
+    if (toXLS) {
       return this.export(query)
     }
 
-    if (withoutPagination === 'true') {
+    if (withoutPagination) {
       return query.getMany()
     }
 
@@ -92,7 +92,7 @@ export class UserService {
   async export(query: SelectQueryBuilder<User>) {
     const users = await query.getMany()
     return this.excelService.export(
-      ['Nom', 'E-mail'],
+      ['Name', 'Email'],
       users.map((u: User) => [u.name, u.email]),
       'users'
     )

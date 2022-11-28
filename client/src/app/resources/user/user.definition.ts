@@ -15,7 +15,7 @@ export const userDefinition: ResourceDefinition = {
   path: 'users',
   hasDetailPage: false,
   hasListPage: true,
-  buttons: [LinkType.CREATE],
+  buttons: [LinkType.CREATE, LinkType.EXPORT],
   defaultLink: LinkType.EDIT,
   childrenThatPreventDelete: [],
   dropdownLinks: [

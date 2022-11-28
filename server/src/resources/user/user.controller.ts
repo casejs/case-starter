@@ -12,6 +12,7 @@ import {
   Delete,
   Get,
   Param,
+  ParseBoolPipe,
   ParseIntPipe,
   Patch,
   Post,
@@ -41,9 +42,9 @@ export class UserController {
   async index(
     @Query('userIds') userIds?: string[],
     @Query('roleName') roleName?: string,
-    @Query('withoutPagination') withoutPagination?: string,
+    @Query('withoutPagination', ParseBoolPipe) withoutPagination?: boolean,
+    @Query('toXLS', ParseBoolPipe) toXLS?: boolean,
     @Query('page') page?: string,
-    @Query('toXLS') toXLS?: string,
     @Query('orderBy') orderBy?: string,
     @Query('orderByDesc') orderByDesc?: string
   ): Promise<Paginator<User> | User[] | string> {
@@ -67,7 +68,7 @@ export class UserController {
   ): Promise<SelectOption[]> {
     const users: User[] = (await this.userService.index({
       roleName,
-      withoutPagination: 'true',
+      withoutPagination: true,
       orderBy,
       orderByDesc
     })) as User[]
