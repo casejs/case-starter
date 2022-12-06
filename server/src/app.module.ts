@@ -5,7 +5,10 @@ import { APP_GUARD, Reflector } from '@nestjs/core'
 import { ScheduleModule } from '@nestjs/schedule'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { appConnectionOptions } from '../src/database/app.connection.options'
+import {
+  appConnectionOptions,
+  sqliteConnectionOptions
+} from '../src/database/app.connection.options'
 import { appImageSizes } from './app.image-sizes'
 import { Notification } from './resources/case/notification.entity'
 import { Permission } from './resources/case/permission.entity'
@@ -24,7 +27,7 @@ if (process.env.ENABLE_BUGSNAG === 'true') {
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(appConnectionOptions),
+    TypeOrmModule.forRoot(sqliteConnectionOptions),
     CaseCoreModule.forRoot({
       userEntity: UserLite,
       notificationEntity: Notification,

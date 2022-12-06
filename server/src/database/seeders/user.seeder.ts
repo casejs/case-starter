@@ -105,7 +105,7 @@ export class UserSeeder {
     user.notifications = [
       await this.entityManager.save(
         this.entityManager.create(Notification, {
-          description: `Welcome to the application, you are an administator`,
+          description: `Welcome to the application, you are an administrator`,
           date: faker.date.recent(faker.datatype.number({ min: 1, max: 500 }))
         })
       )

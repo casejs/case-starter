@@ -21,7 +21,7 @@ export class Notification {
   @Column({ nullable: true })
   linkPath: string
 
-  @Column({ type: 'timestamp' })
+  @Column('datetime')
   date: Date
 
   @ManyToOne((type) => UserLite, (user) => user.notifications, {

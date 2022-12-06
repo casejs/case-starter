@@ -41,7 +41,7 @@ export class User implements CaseUser {
   @Column({ select: false })
   token: string
 
-  @Column('timestamp', { nullable: true, select: false })
+  @Column('datetime', { nullable: true, select: false })
   lastNotificationCheck: Date
 
   @Column('tinyint', { default: true })

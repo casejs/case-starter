@@ -1,4 +1,5 @@
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'
+import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionOptions'
 
 export const appConnectionOptions: MysqlConnectionOptions = {
   type: 'mysql',
@@ -15,4 +16,15 @@ export const appConnectionOptions: MysqlConnectionOptions = {
   ],
   synchronize: true,
   extra: { insecureAuth: true }
+}
+
+export const sqliteConnectionOptions: SqliteConnectionOptions = {
+  type: 'sqlite',
+  database: 'test.sqlite',
+  entities: [
+    `${
+      process.env.NODE_ENV === 'production' ? 'dist' : '.'
+    }/**/**.entity{.ts,.js}`
+  ],
+  synchronize: true
 }

@@ -2,7 +2,10 @@ import 'dotenv/config'
 
 import { DataSource } from 'typeorm'
 
-import { appConnectionOptions } from '../app.connection.options'
+import {
+  appConnectionOptions,
+  sqliteConnectionOptions
+} from '../app.connection.options'
 import { PermissionSeeder } from './permission.seeder'
 import { RoleSeeder } from './role.seeder'
 import { SettingSeeder } from './setting.seeder'
@@ -17,7 +20,7 @@ async function seed() {
   const userCount = 40
 
   // Create connection.
-  const dataSource: DataSource = new DataSource(appConnectionOptions)
+  const dataSource: DataSource = new DataSource(sqliteConnectionOptions)
   await dataSource.initialize()
 
   const settingSeeder: SettingSeeder = new SettingSeeder(
@@ -40,7 +43,10 @@ async function seed() {
     'settings'
   ].map(async (tableName: string) => {
     await queryRunner.query(`DELETE FROM ${tableName}`)
-    await queryRunner.query(`ALTER TABLE ${tableName} AUTO_INCREMENT = 1`)
+
+    // TODO: Seeder fails one time out of 3 with this line.
+    // NOTE: This is not working with SQLite (no autoincrement) but we have to check if works afterwards.
+    // await queryRunner.query(`ALTER TABLE ${tableName} AUTO_INCREMENT = 1`)
 
     return
   })
