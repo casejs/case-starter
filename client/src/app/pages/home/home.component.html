@@ -1,23 +1,60 @@
-<h1 class="title is-1">Welcome to CASE</h1>
+<div class="columns">
+  <div class="column is-12 is-8-fullhd is-offset-2-fullhd">
+    <div class="card p-8">
+      <h1 class="title is-1">Welcome on board 👋</h1>
+      <p class="is-size-5 mb-4">
+        ✅ Congrats! You are logged as the first administrator.
+      </p>
 
-<!-- TODO: Home Onboarding -->
-<div class="columns" style="background-color: hotpink">
-  <div class="column">
-    <br /><br />
-    <p>Welcome to CASE.</p>
-    <p>CASE is a framework to create custom web apps quickly !</p>
-    <p>
-      You can remove this message in the home template (%%write path) and
-      replace it by your own custom home page for your users.
-    </p>
-    <h2 class="title is-2">What to do from here ?</h2>
-    <ul>
-      <li>
-        Create a new resource (%% doc link): What do you want to manage ? A
-        project, customer or a cat ?
-      </li>
-      <li>Add your own logo (%% doc link)</li>
-      <li>Set up user permissions</li>
-    </ul>
+      <p class="is-size-5 mb-4">
+        To go ahead and discover the powerful features provided by CASE, we
+        recommend you to create your first new resource.
+      </p>
+
+      <div class="columns">
+        <div class="column is-12-tablet is-6-desktop mb-4">
+          <div class="card has-border is-shadowless">
+            <a
+              href="https://docs.case.app/#/resources/create-a-resource"
+              target="_blank"
+            >
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure
+                      class="image is-48x48 is-flex is-align-items-center is-justify-content-center"
+                      style="background-color: #353398; color: #1fedd9"
+                    >
+                      <i class="icon icon-plus-square is-size-3"></i>
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-5">
+                      <a
+                        href="https://docs.case.app/#/resources/create-a-resource"
+                        target="_blank"
+                        class="is-inline-flex is-align-items-center is-justify-content-flex-start"
+                      >
+                        <i class="icon icon-arrow-right mr-2"></i>
+                        <span>Create a new resource</span>
+                      </a>
+                    </p>
+                    <p class="subtitle is-5">
+                      What do you want to manage ? Projects, customers, cats...
+                      ?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="message is-warning p-3 has-text-dark is-size-5">
+        ℹ️ To remove or replace the content of this page, go to the
+        <code>home.component.html</code> template in your project and replace
+        this code section by your own one.
+      </p>
+    </div>
   </div>
 </div>
