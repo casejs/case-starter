@@ -1,5 +1,5 @@
 import * as sha3 from 'crypto-js/sha3'
-import * as faker from 'faker/locale/fr'
+import * as faker from 'faker'
 import { DataSource, EntityManager } from 'typeorm'
 
 import { Notification } from '../../resources/case/notification.entity'

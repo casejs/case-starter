@@ -89,7 +89,7 @@ export class UserService {
     })
   }
 
-  async export(query: SelectQueryBuilder<User>) {
+  async export(query: SelectQueryBuilder<User>): Promise<string> {
     const users = await query.getMany()
     return this.excelService.export(
       ['Name', 'Email'],
