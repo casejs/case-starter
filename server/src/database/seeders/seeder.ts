@@ -53,4 +53,9 @@ async function seed() {
   await userSeeder.seed()
 
   await dataSource.destroy()
+
+  console.log(
+    '\x1b[33m',
+    '[] Seed complete ! Please refresh your browser to see the new data.'
+  )
 }
