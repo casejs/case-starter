@@ -48,6 +48,7 @@ export function errorHandlerFactory() {
       tokenName: environment.tokenName,
       tokenAllowedDomains: environment.tokenAllowedDomains,
       production: environment.production,
+      isOnboarding: environment.isOnboarding,
       googlePlacesAPIKey: 'myGoogleAPIKey'
     })
   ],
