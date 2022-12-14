@@ -8,5 +8,6 @@ export const environment = {
   tokenName: 'MyCaseAppToken',
   tokenAllowedDomains: ['localhost:3000'],
   enableBugsnag: false,
-  bugsnagApiKey: 'Insert API Key Here'
+  bugsnagApiKey: 'Insert API Key Here',
+  isOnboarding: false
 }

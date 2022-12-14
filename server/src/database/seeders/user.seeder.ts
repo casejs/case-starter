@@ -1,5 +1,5 @@
+import { faker } from '@faker-js/faker'
 import * as sha3 from 'crypto-js/sha3'
-import * as faker from 'faker'
 import { DataSource, EntityManager } from 'typeorm'
 
 import { Notification } from '../../resources/case/notification.entity'
@@ -60,7 +60,7 @@ export class UserSeeder {
       token: faker.random.alphaNumeric(20),
       isGhost: false,
       isActive: true,
-      color: faker.random.arrayElement(colors),
+      color: faker.helpers.arrayElement(colors),
       role: teamMemberRole
     })
 
@@ -97,7 +97,7 @@ export class UserSeeder {
       token: faker.random.alphaNumeric(20),
       isGhost: false,
       isActive: true,
-      color: faker.random.arrayElement(colors),
+      color: faker.helpers.arrayElement(colors),
       role: adminRole
     })
 

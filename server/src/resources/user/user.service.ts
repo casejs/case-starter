@@ -3,10 +3,10 @@ import {
   PaginationService,
   Paginator
 } from '@case-app/nest-library'
+import { faker } from '@faker-js/faker'
 import { Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { SHA3 } from 'crypto-js'
-import * as faker from 'faker'
 import {
   DeleteResult,
   Repository,

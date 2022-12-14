@@ -22,7 +22,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@bugsnag/js": "^7.16.2",
     "@bugsnag/plugin-angular": "^7.16.2",
-    "@case-app/angular-library": "^0.7.2",
+    "@case-app/angular-library": "^0.7.3",
     "http-status-codes": "^2.1.4",
     "moment": "^2.29.4",
     "ngx-google-places-autocomplete": "^2.0.5",
