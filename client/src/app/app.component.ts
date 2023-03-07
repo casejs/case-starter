@@ -93,7 +93,7 @@ export class AppComponent implements OnInit {
 
   setIsTouchResolution(): void {
     this.viewportService.isTouchResolution.next(
-      window.innerWidth < caseConstants.TOUCH_BREAKPOINT
+      window.innerWidth < caseConstants.touchBreakpoint
     )
   }
 
