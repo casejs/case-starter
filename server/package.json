@@ -25,7 +25,7 @@
     "@case-app/nest-library": "^0.3.3",
     "@faker-js/faker": "^7.6.0",
     "@nestjs/common": "^9.0.3",
-    "@nestjs/core": "^9.0.3",
+    "@nestjs/core": "^9.0.5",
     "@nestjs/platform-express": "^9.0.3",
     "@nestjs/schedule": "^2.1.0",
     "@nestjs/typeorm": "^9.0.0",
