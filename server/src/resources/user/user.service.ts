@@ -2,7 +2,7 @@ import {
   ExcelService,
   PaginationService,
   Paginator
-} from '@case-app/nest-library'
+} from '@casejs/nest-library'
 import { faker } from '@faker-js/faker'
 import { Inject, Injectable, NotFoundException } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'

@@ -14,7 +14,7 @@ import {
   Filter,
   InputType,
   AuthService
-} from '@case-app/angular-library'
+} from '@casejs/angular-library'
 
 import { userDefinition } from './user.definition'
 import { userYields } from './user.yields'

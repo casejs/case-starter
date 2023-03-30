@@ -13,7 +13,7 @@ import { UserListComponent } from './resources/user/user-list.component'
 
 import Bugsnag from '@bugsnag/js'
 import { BugsnagErrorHandler } from '@bugsnag/plugin-angular'
-import { CaseModule } from '@case-app/angular-library'
+import { CaseModule } from '@casejs/angular-library'
 
 if (environment.enableBugsnag) {
   Bugsnag.start({

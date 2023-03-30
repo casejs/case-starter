@@ -1,4 +1,4 @@
-import { toNumber } from '@case-app/nest-library'
+import { toNumber } from '@casejs/nest-library'
 import { Transform } from 'class-transformer'
 import {
   IsEmail,

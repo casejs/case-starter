@@ -11,36 +11,35 @@ This starter allows you to create an application or an ERP using CASE. CASE is f
 
 # Getting started
 
-1. **Install and serve**
+**Install and serve**
 
-   Copy the environment file and set your environment variables:
+CASE uses **MySQL** for the database. You will need to create a new database and add the name to the _DB_NAME_ property of your `.env` file. The default name for the database is **case**. Once done you can install dependencies:
 
-   ```sh
-   cp server/.env.example server/.env
-   ```
+```sh
+npm run case:install
+```
 
-   CASE uses **MySQL** for the database. You will need to create a new database and add the name to the _DB_NAME_ property of your `.env` file. The default name for the database is **case**. Once done you can install dependencies:
+Then you can serve the app:
 
-   ```sh
-   npm run case:install
+```sh
+  npm run start:client
 
-   npm run start:client
+  # Simultaneously open a 2nd terminal window and run :
+  npm run start:server
 
-   # Simultaneously open a 2nd terminal window and run :
-   npm run start:server
+```
 
-   ```
+**Seed dummy data**
 
-2. **Seed dummy data**
+```sh
+npm run seed
+```
 
-   ```sh
-   npm run seed
-   ```
+**Go to http://localhost:4200/**
 
-3. **Got http://localhost:4200/**
-   And Use your CASE admin’s user credentials to log in.
+And Use your CASE admin’s user credentials to log in.
 
-   > You can use the email `admin@case.app` and password `case` to log in.
+> You can use the email `admin@case.app` and password `case` to log in.
 
 # Deploying to production
 
