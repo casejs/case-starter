@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-import { BugsnagLoggerService } from '@case-app/nest-library'
+import { BugsnagLoggerService } from '@casejs/nest-library'
 import { Logger, ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import * as compression from 'compression'

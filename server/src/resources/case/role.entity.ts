@@ -11,7 +11,7 @@ import {
 import { Permission } from './permission.entity'
 import { User } from '../user/user.entity'
 
-import { CaseRole } from '@case-app/nest-library'
+import { CaseRole } from '@casejs/nest-library'
 import { UserLite } from './user-lite.entity'
 
 @Entity({ name: 'roles' })

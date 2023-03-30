@@ -7,9 +7,8 @@ import {
   MenuItem,
   TopMenuLink,
   User,
-  VersionService,
   ViewportService
-} from '@case-app/angular-library'
+} from '@casejs/angular-library'
 import { environment } from '../environments/environment'
 
 import { menuItems } from './menu-items'
@@ -42,8 +41,7 @@ export class AppComponent implements OnInit {
     private router: Router,
     private eventService: EventService,
     private viewportService: ViewportService,
-    private authService: AuthService,
-    private versionService: VersionService
+    private authService: AuthService
   ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -86,8 +84,6 @@ export class AppComponent implements OnInit {
         this.getCurrentUser()
       }
     })
-
-    this.versionService.checkForNewVersions()
   }
 
   @HostListener('window:resize')
@@ -97,7 +93,7 @@ export class AppComponent implements OnInit {
 
   setIsTouchResolution(): void {
     this.viewportService.isTouchResolution.next(
-      window.innerWidth < caseConstants.TOUCH_BREAKPOINT
+      window.innerWidth < caseConstants.touchBreakpoint
     )
   }
 

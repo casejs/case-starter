@@ -5,7 +5,7 @@ import {
   Paginator,
   Permission,
   SelectOption
-} from '@case-app/nest-library'
+} from '@casejs/nest-library'
 import {
   Body,
   Controller,
@@ -86,7 +86,9 @@ export class UserController {
 
   @Get('/myself')
   async showMyself(@Req() req: Request): Promise<User> {
-    const currentUser: CaseUser = await this.authService.getUserFromToken(req)
+    const currentUser: CaseUser = await this.authService.getUserFromToken(
+      req.headers?.authorization
+    )
     return this.userService.show(currentUser.id)
   }
 
@@ -112,7 +114,7 @@ export class UserController {
     @Req() req: Request
   ): Promise<UpdateResult> {
     const currentUser: User = (await this.authService.getUserFromToken(
-      req
+      req.headers?.authorization
     )) as User
     return this.userService.updateMyself(currentUser, userDto)
   }

@@ -1,4 +1,4 @@
-import { CaseUser } from '@case-app/nest-library'
+import { CaseUser } from '@casejs/nest-library'
 import {
   AfterLoad,
   Column,

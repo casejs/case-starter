@@ -2,7 +2,7 @@ import {
   ActionType,
   LinkType,
   ResourceDefinition
-} from '@case-app/angular-library'
+} from '@casejs/angular-library'
 
 export const userDefinition: ResourceDefinition = {
   title: 'Users',

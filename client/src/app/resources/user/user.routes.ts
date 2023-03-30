@@ -3,7 +3,7 @@ import {
   AuthGuard,
   PermissionGuard,
   ResourceMode
-} from '@case-app/angular-library'
+} from '@casejs/angular-library'
 
 import { UserCreateEditComponent } from './user-create-edit.component'
 import { UserListComponent } from './user-list.component'
