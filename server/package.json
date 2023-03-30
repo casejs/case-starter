@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@bugsnag/js": "^7.17.0",
-    "@case-app/nest-library": "^0.3.3",
+    "@casejs/nest-library": "^1.0.0",
     "@faker-js/faker": "^7.6.0",
     "@nestjs/common": "^9.0.3",
     "@nestjs/core": "^9.0.5",
