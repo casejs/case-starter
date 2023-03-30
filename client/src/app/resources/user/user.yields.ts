@@ -3,7 +3,7 @@ import { ActionType, User, Yield, YieldType } from '@casejs/angular-library'
 export const userYields: Yield[] = [
   {
     label: 'Name',
-    property: 'imageObjects',
+    property: 'image',
     secondProperty: 'name',
     orderByProperty: 'name',
     type: YieldType.Image,
