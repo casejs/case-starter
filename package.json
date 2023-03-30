@@ -23,7 +23,7 @@
   "homepage": "https://case.app",
   "dependencies": {
     "@angular-devkit/schematics-cli": "^15.0.0",
-    "@casejs/schematics": "^1.0.0",
+    "@casejs/schematics": "^1.0.1",
     "@types/jest": "^29.0.0"
   }
 }
