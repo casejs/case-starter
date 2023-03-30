@@ -11,8 +11,8 @@
     "start:docs": "cd docs && docsify serve -p 2000",
     "seed": "cd server && npm run seed",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "case:resource": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@case-app/schematics/collection.json:createResource --debug=false",
-    "case:property": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@case-app/schematics/collection.json:createProperty --debug=false"
+    "case:resource": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createResource --debug=false",
+    "case:property": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createProperty --debug=false"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "homepage": "https://case.app",
   "dependencies": {
     "@angular-devkit/schematics-cli": "^15.0.0",
-    "@case-app/schematics": "^0.5.5",
+    "@casejs/schematics": "^1.0.0",
     "@types/jest": "^29.0.0"
   }
 }
