@@ -8,7 +8,7 @@ import {
   TopMenuLink,
   User,
   ViewportService
-} from '@case-app/angular-library'
+} from '@casejs/angular-library'
 import { environment } from '../environments/environment'
 
 import { menuItems } from './menu-items'

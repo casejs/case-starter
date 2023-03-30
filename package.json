@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/case-app/case-starter"
+    "url": "https://github.com/casejs/case-starter"
   },
   "author": "CASE",
   "license": "MIT",

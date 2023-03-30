@@ -10,7 +10,7 @@ import {
   InputType,
   ResourceDefinition,
   ResourceService
-} from '@case-app/angular-library'
+} from '@casejs/angular-library'
 
 import { userDefinition } from './user.definition'
 
