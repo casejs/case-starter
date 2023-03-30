@@ -1,6 +1,5 @@
 import { CaseUser } from '@casejs/nest-library'
 import {
-  AfterLoad,
   Column,
   CreateDateColumn,
   Entity,
@@ -63,16 +62,4 @@ export class User implements CaseUser {
 
   @UpdateDateColumn({ select: false })
   updatedAt: Date
-
-  imageObjects: { label?: string; link?: string; image?: string }[]
-
-  @AfterLoad()
-  public async afterLoad() {
-    this.imageObjects = [
-      {
-        label: this.name,
-        image: this.image
-      }
-    ]
-  }
 }
