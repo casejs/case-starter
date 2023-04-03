@@ -41,6 +41,3 @@ And Use your CASE admin’s user credentials to log in.
 
 > You can use the email `admin@case.app` and password `case` to log in.
 
-# Deploying to production
-
-...Coming soon
