@@ -5,11 +5,14 @@
   "author": "A CASE developer",
   "license": "MIT",
   "scripts": {
-    "develop": "node_modules/http-server/bin/http-server ./node_modules/@casejs/client -p 2000 -c-1 -a localhost -o"
+    "start:client": "node_modules/http-server/bin/http-server ./node_modules/@casejs/client -p 2000 -c-1 -a localhost -o",
+    "start:server": "cd node_modules/@casejs/server && ts-node src/main.ts"
   },
   "dependencies": {
     "@casejs/client": "^0.0.3",
-    "@casejs/server": "^0.0.1",
-    "http-server": "^14.1.1"
+    "@casejs/server": "^0.0.5",
+    "http-server": "^14.1.1",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.16"
   }
 }
