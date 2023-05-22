@@ -1,29 +1,31 @@
 {
-  "name": "case",
-  "version": "0.5.0",
+  "name": "case-starter",
+  "version": "2.0.0",
   "description": "CASE Starter",
+  "main": "index.js",
   "scripts": {
-    "case:install": "npm install && npm run install:client && npm run install:server",
-    "install:client": "cd client && npm i",
-    "install:server": "cd server && npm i --force && cp .env.example .env",
-    "start:client": "cd client && ./node_modules/@angular/cli/bin/ng.js serve",
-    "start:server": "cd server && npm run start:dev",
-    "start:docs": "cd docs && docsify serve -p 2000",
-    "seed": "cd server && npm run seed",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "case:resource": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createResource --debug=false",
-    "case:property": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createProperty --debug=false"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/casejs/case-starter"
+    "url": "git+https://github.com/case-app/case-starter.git"
   },
-  "author": "CASE",
+  "keywords": [
+    "CASE",
+    "CRUD",
+    "app",
+    "admin",
+    "panel",
+    "dashboard",
+    "mobile",
+    "app",
+    "web",
+    "app"
+  ],
+  "author": "Buddyweb",
   "license": "MIT",
-  "homepage": "https://case.app",
-  "dependencies": {
-    "@angular-devkit/schematics-cli": "^15.0.0",
-    "@casejs/schematics": "^1.0.1",
-    "@types/jest": "^29.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/case-app/case-starter/issues"
+  },
+  "homepage": "https://github.com/case-app/case-starter#readme"
 }
