@@ -6,10 +6,11 @@
   "license": "MIT",
   "scripts": {
     "install": "cd node_modules/@casejs/case/server && npm install",
-    "start": "cd node_modules/@casejs/case/server && ts-node src/main.ts"
+    "start": "cd node_modules/@casejs/case/server && ts-node src/main.ts",
+    "seed": "cd node_modules/@casejs/case/server && npm run seed"
   },
   "dependencies": {
-    "@casejs/case": "^2.0.1",
+    "@casejs/case": "^2.0.4",
     "ts-node": "^10.9.1",
     "typeorm": "^0.3.16"
   }

@@ -1,17 +1,15 @@
 # CASE Starter
 
-## Install
-
-```
-npm install
-```
-
 ## Run (local)
 
-Run commands on both terminals
+```
+npm start
+```
+
+And go to `http://localhost:3000`
+
+Once the task is running, you can seed initial data:
 
 ```
-npm run start:client
-
-npm run start:server
+npm run seed
 ```
