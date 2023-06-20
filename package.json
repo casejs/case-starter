@@ -10,7 +10,7 @@
     "seed": "ts-node node_modules/@casejs/case/server/src/dynamic-entity/seed.ts"
   },
   "dependencies": {
-    "@casejs/case": "^2.0.9",
+    "@casejs/case": "^2.0.10",
     "ts-node": "^10.9.1",
     "typeorm": "^0.3.16"
   }
