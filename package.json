@@ -5,12 +5,12 @@
   "author": "A CASE developer",
   "license": "MIT",
   "scripts": {
-    "install": "cd node_modules/@casejs/case/server && npm install",
-    "start": "ts-node node_modules/@casejs/case/server/src/main.ts",
+    "install": "cd node_modules/@casejs/case/server && npm install && npm run build",
+    "start": "ts-node node_modules/@casejs/case/server/dist/main.js",
     "seed": "cd node_modules/@casejs/case/server && npm run seed"
   },
   "dependencies": {
-    "@casejs/case": "^2.0.4",
+    "@casejs/case": "^2.0.8",
     "ts-node": "^10.9.1",
     "typeorm": "^0.3.16"
   }
