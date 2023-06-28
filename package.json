@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "install": "cd node_modules/@casejs/case/server && npm install && npm run build",
-    "start": "ts-node node_modules/@casejs/case/server/src/main.ts",
+    "start": "nodemon",
     "seed": "ts-node node_modules/@casejs/case/server/src/dynamic-entity/seed.ts",
     "case:resource": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createEntity --debug=false"
   },
@@ -15,6 +15,7 @@
     "@casejs/case": "^2.0.15",
     "@casejs/schematics": "^2.0.0",
     "@faker-js/faker": "^8.0.2",
+    "nodemon": "^2.0.22",
     "ts-node": "^10.9.1"
   }
 }
