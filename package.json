@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@angular-devkit/schematics-cli": "^15.0.0",
-    "@casejs/case": "^2.0.17",
+    "@casejs/case": "^2.0.18",
     "@casejs/schematics": "^2.0.1",
     "@faker-js/faker": "^8.0.2",
     "nodemon": "^2.0.22",
