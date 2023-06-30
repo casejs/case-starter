@@ -1,0 +1,5 @@
+{
+  "watch": ["entities", "app-settings.ts"],
+  "ext": "ts",
+  "exec": "ts-node node_modules/@casejs/case/server/src/main.ts"
+}

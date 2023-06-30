@@ -1,29 +1,21 @@
 {
-  "name": "case",
-  "version": "0.5.0",
-  "description": "CASE Starter",
-  "scripts": {
-    "case:install": "npm install && npm run install:client && npm run install:server",
-    "install:client": "cd client && npm i",
-    "install:server": "cd server && npm i --force && cp .env.example .env",
-    "start:client": "cd client && ./node_modules/@angular/cli/bin/ng.js serve",
-    "start:server": "cd server && npm run start:dev",
-    "start:docs": "cd docs && docsify serve -p 2000",
-    "seed": "cd server && npm run seed",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "case:resource": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createResource --debug=false",
-    "case:property": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createProperty --debug=false"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/casejs/case-starter"
-  },
-  "author": "CASE",
+  "name": "case-starter",
+  "version": "0.0.1",
+  "description": "A super cool CASE application",
+  "author": "A CASE developer",
   "license": "MIT",
-  "homepage": "https://case.app",
+  "scripts": {
+    "install": "cd node_modules/@casejs/case/server && npm install && npm run build",
+    "start": "nodemon",
+    "seed": "ts-node node_modules/@casejs/case/server/src/dynamic-entity/seed.ts",
+    "case:entity": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createEntity --debug=false --name "
+  },
   "dependencies": {
     "@angular-devkit/schematics-cli": "^15.0.0",
-    "@casejs/schematics": "^1.0.1",
-    "@types/jest": "^29.0.0"
+    "@casejs/case": "^2.0.19",
+    "@casejs/schematics": "^2.0.1",
+    "@faker-js/faker": "^8.0.2",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
   }
 }
