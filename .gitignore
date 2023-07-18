@@ -30,5 +30,8 @@ lerna-debug.log*
 # Environment.
 .env
 
-# Databse
+# Database.
 /db
+
+# Dist.
+/dist
