@@ -1,6 +1,6 @@
 # Getting started with CASE
 
-CASE comes with a full featured Command Line Interface (CLI) which lets you scaffold and manage your project in seconds.
+Create a CRUD app in minutes with [CASE](https://case.app).
 
 ## Install
 
@@ -16,4 +16,10 @@ npm start
 
 Voilà ! Your application is accessible at http://localhost:3000.
 
-The API is accessible at http://localhost:3000/api.
+## Create an entity
+
+```
+npm run case:entity my-entity
+```
+
+Check out the [docs](https://docs.case.app) to help you create your CASE application.
