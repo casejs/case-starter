@@ -1,10 +1,7 @@
-# compiled output
-/dist
+# Dependencies
 /node_modules
-/deps/nest-app/dist
-/deps/nest-app/node_modules
 
-# Logs
+# Logs.
 logs
 *.log
 npm-debug.log*
@@ -13,14 +10,14 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# OS
+# OS.
 .DS_Store
 
-# Tests
+# Tests.
 /coverage
 /.nyc_output
 
-# IDEs and editors
+# IDEs and editors.
 /.idea
 .project
 .classpath
@@ -28,10 +25,16 @@ lerna-debug.log*
 *.launch
 .settings/
 *.sublime-workspace
-
-# IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+
+# Environment.
+.env
+
+# Database.
+/db
+
+# Dist.
+/dist
+
+# Storage.
+/public/storage
