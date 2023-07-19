@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@casejs/case": "2.0.20-beta.4",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
   }
 }
