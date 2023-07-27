@@ -13,7 +13,7 @@
     "case:entity": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createEntity --debug=false --name"
   },
   "dependencies": {
-    "@casejs/case": "2.0.20-beta.5",
+    "@casejs/case": "2.0.20-beta.6",
     "nodemon": "^3.0.1",
     "typescript": "^5.1.6"
   }
