@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true
-  }
+    "module": "commonjs",
+    "target": "ES6",
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "outDir": "dist"
+  },
+  "include": ["entities/**/*.ts", "app-config.ts"]
 }

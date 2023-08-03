@@ -2,20 +2,20 @@
   "name": "case-starter",
   "version": "0.0.1",
   "description": "A super cool CASE application",
-  "author": "A CASE developer",
+  "author": "A great CASE developer",
   "license": "MIT",
   "scripts": {
-    "install": "cd node_modules/@casejs/case/server && npm install && npm run build",
+    "build": "tsc",
+    "compile": "tsc && node node_modules/@casejs/case/server/src/main.js",
     "start": "nodemon",
-    "seed": "ts-node node_modules/@casejs/case/server/src/dynamic-entity/seed.ts",
-    "case:entity": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createEntity --debug=false --name "
+    "start:prod": "node node_modules/@casejs/case/server/src/main.js",
+    "seed": "node node_modules/@casejs/case/server/src/dynamic-entity/seed.js",
+    "case:entity": "node_modules/@angular-devkit/schematics-cli/bin/schematics.js ./node_modules/@casejs/schematics/collection.json:createEntity --debug=false --name"
   },
   "dependencies": {
-    "@angular-devkit/schematics-cli": "^15.0.0",
-    "@casejs/case": "^2.0.19",
-    "@casejs/schematics": "^2.0.1",
+    "@casejs/case": "2.0.21",
     "@faker-js/faker": "^8.0.2",
-    "nodemon": "^2.0.22",
-    "ts-node": "^10.9.1"
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
   }
 }
