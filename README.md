@@ -1,5 +1,7 @@
 # Getting started with CASE
 
+This repo is a demo of what you can do with CASE.
+
 Create a CRUD app in minutes with [CASE](https://case.app).
 
 ## Install
