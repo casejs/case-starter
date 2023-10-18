@@ -1,7 +1,6 @@
 {
   "name": "case-starter",
-  "version": "0.0.1",
-  "description": "A super cool CASE application",
+  "description": "A cool CASE application",
   "author": "A great CASE developer",
   "license": "MIT",
   "scripts": {
