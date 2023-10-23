@@ -6,5 +6,5 @@
     "moduleResolution": "node",
     "outDir": "dist"
   },
-  "include": ["entities/**/*.ts", "app-config.ts"]
+  "include": ["entities/**/*.ts"]
 }
