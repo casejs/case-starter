@@ -4,7 +4,8 @@
     "target": "ES6",
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "rootDir": "./",
     "outDir": "dist"
   },
-  "include": ["entities/**/*.ts"]
+  "exclude": ["public"]
 }
